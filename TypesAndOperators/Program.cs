@@ -5,12 +5,12 @@ using System;
     // комментарий
     /*
      Это сообщение будет выведено на экран
-    */
+
     Console.WriteLine("Hello, World!");
         { 
             Console.WriteLine("It's a nice day!"); 
         }
-
+    */
     // Переменные
     /*
         const int MINUTES_IN_HOUR = 60;
@@ -76,27 +76,26 @@ using System;
         double height = 1.7;
         Console.WriteLine("Имя:{0} Возраст:{2} Рост:{1}", name, height, age);
         Console.WriteLine($"Имя:{name} Возраст:{age} Рост:{height}");
+
+
+        Console.WriteLine("введите свое имя:");
+        string? name = Console.ReadLine();
+        Console.WriteLine($"Ваше имя:{name}");
+
+        Console.WriteLine("введите свой возраст:");
+        string? age_str = Console.ReadLine();
+        int age = Convert.ToInt32(age_str);
+        Console.WriteLine($"Ваше возраст:{age}");
+
     */
-
-    Console.WriteLine("введите свое имя:");
-    string? name = Console.ReadLine();
-    Console.WriteLine($"Ваше имя:{name}");
-
-    Console.WriteLine("введите свой возраст:");
-    string? age_str = Console.ReadLine();
-    int age = Convert.ToInt32(age_str);
-    Console.WriteLine($"Ваше возраст:{age}");
-
-    /*
-            // решение задачи
-            // подготовка данных
-
-            bool isWhiteBreadFresh = true;
-            ushort whiteBreadPrice = 150;
-            ushort butterPrice = 230;
-            ushort milkPrice = 170;
-            float milkFatPercentage = 1.2F;
-        */
-
-
 }
+    // решение задачи
+        // подготовка данных
+
+        bool isWhiteBreadFresh = true;
+        ushort whiteBreadPrice = 150;
+        ushort butterPrice = 230;
+        ushort milkPrice = 170;
+        float milkFatPercentage = 1.2F;
+
+  
