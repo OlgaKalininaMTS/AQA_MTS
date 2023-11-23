@@ -82,7 +82,7 @@ const int MINUTES_IN_HOUR = 60;
 
 // решение задачи
 // подготовка данных
-
+/*
   {
     bool isWhiteBreadFresh = true;
     ushort whiteBreadPrice = 150;
@@ -117,5 +117,25 @@ const int MINUTES_IN_HOUR = 60;
     {
         Console.WriteLine("Сумма не может быть меньше нуля");
     }
+*/
+
+////////////////////////////////////ДЗ
+///
+/////////задача 1
+{
+
+    int[] ar = new int[5];
+    ar[0] = 2;
+    ar[1] = 4;
+    ar[2] = 6;
+    ar[3] = 8;
+    ar[4] = 9;
+    Console.WriteLine($"ar:{ar[0]}, {ar[1]}, {ar[2]}, {ar[3]}, {ar[4]}");
+    Console.Write("Введите любое число: ");
+    string? sumString = Console.ReadLine();
+    short sum = Convert.ToInt16(sumString);
+
+    
+
 }
 
