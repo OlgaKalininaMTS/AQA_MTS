@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TypesAndOperators", "TypesAndOperators\TypesAndOperators.csproj", "{DE9ADEFD-6993-4B35-ADA5-CCB5DAC3681A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolsAndLines_KW", "SymbolsAndLines_KW\SymbolsAndLines_KW.csproj", "{45B0C56B-4366-44DD-8BE1-DD0C87378471}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolsAndLines_hw", "SymbolsAndLines_KW\SymbolsAndLines_hw.csproj", "{45B0C56B-4366-44DD-8BE1-DD0C87378471}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays_kw", "Arrays_kw\Arrays_kw.csproj", "{AE12358C-9EFC-489F-874D-30862863101B}"
 EndProject
