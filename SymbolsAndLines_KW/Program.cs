@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace StringApp // Примечание. Фактическое пространство имен зависит от названия проекта
 {
@@ -361,12 +362,12 @@ namespace StringApp // Примечание. Фактическое простр
             //StringBuilder sb1AppendFormat = new StringBuilder();
             //sb1AppendFormat.AppendFormat("Hello, {0}! Today is {1}.", "John", DateTime.Now.DayOfWeek);
             //Console.WriteLine(sb1AppendFormat.ToString());                          // Вывод: Hello, John! Today is Wednesday.
-           
+
             // Пример 2: Форматирование чисел
-             //StringBuilder sb2AppendFormat = new StringBuilder();
-             //sb2AppendFormat.AppendFormat("The price is: {0:C}", 123.45);
-             //Console.WriteLine(sb2AppendFormat.ToString());                          // Вывод: The price is: $123.45
-             
+            //StringBuilder sb2AppendFormat = new StringBuilder();
+            //sb2AppendFormat.AppendFormat("The price is: {0:C}", 123.45);
+            //Console.WriteLine(sb2AppendFormat.ToString());                          // Вывод: The price is: $123.45
+
             // Пример 3: Форматирование с использованием различных форматов
             /* 
             StringBuilder sb3AppendFormat = new StringBuilder();
@@ -375,17 +376,17 @@ namespace StringApp // Примечание. Фактическое простр
              */
 
             // -=================== Replace   замена
-             // StringBuilder sbReplace = new StringBuilder("Hello, world!");
-             //sbReplace.Replace("world", "C#");
+            // StringBuilder sbReplace = new StringBuilder("Hello, world!");
+            //sbReplace.Replace("world", "C#");
 
-             //Console.WriteLine($"Replace : {sbReplace}");                    // Вывод: Hello, C#!
-            
+            //Console.WriteLine($"Replace : {sbReplace}");                    // Вывод: Hello, C#!
+
             // -=================== Remove    удаление
-             //StringBuilder sbRemove = new StringBuilder("Hello, world!");
-             //sbRemove.Remove(7, 6);                                          // Удаляем "world" откуда (с  7 символа) и сколько удалить (6 символов)
+            //StringBuilder sbRemove = new StringBuilder("Hello, world!");
+            //sbRemove.Remove(7, 6);                                          // Удаляем "world" откуда (с  7 символа) и сколько удалить (6 символов)
 
-             //Console.WriteLine($"Remove : {sbRemove}");                      // Вывод: Hello!
-            
+            //Console.WriteLine($"Remove : {sbRemove}");                      // Вывод: Hello!
+
             // -=================== вставка
             /*  StringBuilder sbInsert = new StringBuilder("Hello!");
              sbInsert.Insert(5, " world");
@@ -394,14 +395,14 @@ namespace StringApp // Примечание. Фактическое простр
             */
 
             // -=================== Capacity  емкость
-          //  StringBuilder sbCapacity = new StringBuilder();  //по умолчанию значение 16 ,можно изменить
-          //  StringBuilder sbCapacity1 = new StringBuilder(1000);  //по умолчанию значение 16 ,можно изменить
+            //  StringBuilder sbCapacity = new StringBuilder();  //по умолчанию значение 16 ,можно изменить
+            //  StringBuilder sbCapacity1 = new StringBuilder(1000);  //по умолчанию значение 16 ,можно изменить
 
 
             // Получаем текущую емкость
-         //   int initialCapacity = sbCapacity.Capacity;
-          //   Console.WriteLine($"Initial Capacity: {initialCapacity}");
-            
+            //   int initialCapacity = sbCapacity.Capacity;
+            //   Console.WriteLine($"Initial Capacity: {initialCapacity}");
+
             // Добавляем текст
             //sbCapacity.Append("Hello, world!");
 
@@ -415,6 +416,75 @@ namespace StringApp // Примечание. Фактическое простр
             // Получаем емкость после установки
             // int updatedCapacity = sbCapacity.Capacity;
             // Console.WriteLine($"Updated Capacity: {updatedCapacity}");
+
+            // Регулярные выражения
+            // соответствие строки регулярному выражению
+
+            /* string input = "Hello, 123!";
+             string pattern = @"(\d+)"; // Шаблон: одна или более цифр
+
+             bool isMatch = Regex.IsMatch(input, pattern);
+
+             if (isMatch)
+             {
+                 Console.WriteLine("Строка содержит цифры.");
+             }
+             else
+             {
+                 Console.WriteLine("Строка не содержит цифры.");
+             }
+            */
+
+            // извлечение подстрок
+
+            // -=================== Пример 1
+          /*
+            string input1 = "Дата: 2023-11-19";
+            string pattern1 = @"Дата: (\d{4}-\d{2}-\d{2})"; // Группа для извлечения даты
+
+            Match match = Regex.Match(input1, pattern1);
+
+            if (match.Success)
+            {
+                string date = match.Groups[1].Value;
+                Console.WriteLine($"Извлеченная дата: {date}");
+            }
+            else
+            {
+                Console.WriteLine("Дата не найдена.");
+            }
+
+            // -=================== Пример 2
+            string input11 = "Дата: 2023-11-19, Дата: 2023-12-25";
+            string pattern12 = @"Дата: (\d{4}-\d{2}-\d{2})"; // Группа для извлечения даты
+
+            MatchCollection matches = Regex.Matches(input11, pattern12);
+
+            if (matches.Count > 0)
+            {
+                Console.WriteLine($"Найдено {matches.Count} вхождений:");
+
+                foreach (Match matchItem in matches)
+                {
+                    string date = matchItem.Groups[1].Value;
+                    Console.WriteLine($"Извлеченная дата: {date}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Дата не найдена.");
+            }
+          */
+            // -=================== Замена с использованием регулярного выражения
+            string input2 = "Текст с цифрами: 12345 и 67890";
+            string pattern2 = @"\d+"; // = @"(\d+) Шаблон: одна или более цифр
+
+            string replacement = "###";
+
+            string result2 = Regex.Replace(input2, pattern2, replacement);
+
+            Console.WriteLine($"Исходная строка: {input2}");
+            Console.WriteLine($"Строка после замены: {result2}");
 
         }
     }
