@@ -420,7 +420,7 @@ namespace StringApp // Примечание. Фактическое простр
             // Регулярные выражения
             // соответствие строки регулярному выражению
 
-            /* string input = "Hello, 123!";
+             string input = "Hello, 123!";
              string pattern = @"(\d+)"; // Шаблон: одна или более цифр
 
              bool isMatch = Regex.IsMatch(input, pattern);
@@ -433,7 +433,7 @@ namespace StringApp // Примечание. Фактическое простр
              {
                  Console.WriteLine("Строка не содержит цифры.");
              }
-            */
+            
 
             // извлечение подстрок
 
