@@ -1,28 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// Домашняя работа
+// Домашняя работа по теме "Циклы и массивы"
+
 // Задача 1
-/*
+
 Console.WriteLine("Введите любое число :");
-int a = Convert.ToInt32(Console.ReadLine());
-int b = 0;
-int[] array = { 1, 9, 3, 6, 5 };
-foreach (int i in array)
+int a1 = Convert.ToInt32(Console.ReadLine());
+int b1 = 0;
+int[] array1 = { 1, 9, 3, 6, 5 };
+foreach (int i in array1)
 {
-    if (i == a)
+    if (i == a1)
     {
        Console.WriteLine($"Веденное число входит в массив");
-        b = 1;
+        b1 = 1;
     }
  }
-if (b == 0)
+if (b1 == 0)
 {
     Console.WriteLine($"Веденное число не входит в массив");
 }
-*/
+
 
 // Задача 2
-/*
+
 Console.WriteLine("Введите любое число :");
 int a = Convert.ToInt16(Console.ReadLine());
 
@@ -45,57 +46,57 @@ else
     var str = string.Join(" ", array2);
     Console.WriteLine(str);
 }
-*/
+
 // Задача 3
 
 Console.WriteLine("Введите размер массива (число от 0 до 100):");
-int a = Convert.ToInt16(Console.ReadLine());
+int ab = Convert.ToInt16(Console.ReadLine());
 
-int[] array = new int[a];
+int[] array3 = new int[ab];
 Random rand = new Random();
-for (int i = 0; i < array.Length; i++)
-    array[i] = rand.Next(100);
+for (int i = 0; i < array3.Length; i++)
+    array3[i] = rand.Next(100);
 
 Console.WriteLine();
-foreach (int item in array)
+foreach (int item in array3)
 {
     Console.Write($"{item} ");
 }
 
-int max = array.Max();
+int max = array3.Max();
 Console.Write($"\n Максимальное значение массива: {max}");
 
-int min = array.Min();
+int min = array3.Min();
 Console.Write($"\n Минимальное значение массива: {min}");
 
 int summ = 0;
-for (int i = 0; i < array.Length; i++)
-    summ += array[i];
-int aver = summ / array.Length;
+for (int i = 0; i < array3.Length; i++)
+    summ += array3[i];
+int aver = summ / array3.Length;
 Console.WriteLine($"\n Среднее значение массива: {aver}");
 
 // Задача 4
-/*
-int[] spi1 = { 5, 4, 3, 2, 1 };  //3
-var str1 = string.Join(" ", spi1);
 
-int[] spi2 = { 5, 4, 100, 2, 1 };  //8
-var str2 = string.Join(" ", spi2);
+int[] spi14 = { 5, 4, 3, 2, 1 };  //3
+var str14 = string.Join(" ", spi14);
 
-Console.WriteLine($"Массив 1:{str1}\nМассив 2:{str2}");
+int[] spi24 = { 5, 4, 100, 2, 1 };  //8
+var str24 = string.Join(" ", spi24);
+
+Console.WriteLine($"Массив 1:{str14}\nМассив 2:{str24}");
 
 // среднее арифметическое массива 1
-int summ = 0;
-for (int i = 0; i < spi1.Length; i++)
-    summ += spi1[i];
-int mid = summ / spi1.Length;
+int summ4 = 0;
+for (int i = 0; i < spi14.Length; i++)
+    summ4 += spi14[i];
+int mid = summ4 / spi14.Length;
 Console.WriteLine($"Среднее арифметическое массива 1: {mid}");
 
 // среднее арифметическое массива 2
 int summ2 = 0;
-for (int i = 0; i < spi2.Length; i++)
-    summ2 += spi2[i];
-int mid2 = summ2 / spi1.Length;
+for (int i = 0; i < spi24.Length; i++)
+    summ2 += spi24[i];
+int mid2 = summ2 / spi14.Length;
 Console.WriteLine($"Среднее арифметическое массива 2: {mid2}");
 
 if (mid > mid2)
@@ -110,7 +111,7 @@ if (mid == mid2)
 {
      Console.WriteLine("Средние арифметические массива 1 и массива 2 равны");
 }
-*/
+
 
 
 
