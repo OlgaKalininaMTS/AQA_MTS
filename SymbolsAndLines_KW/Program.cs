@@ -159,8 +159,8 @@ namespace StringApp // Примечание. Фактическое простр
             */
 
             // -=================== Split (Разделение строк) =================== возвращает массив
-            string text1 = "This is just an ordinary string.";
-            string text2 = "10: 99: :: 55";  //string text2 = "10:99:::55"; так парвильнее
+            // string text1 = "This is just an ordinary string.";
+            //  string text2 = "10: 99: :: 55";  //string text2 = "10:99:::55"; так парвильнее
 
 
             /*    string[] words1 = text1.Split(" ");  // разделение на отдельные элементы массива на основании пробела
@@ -186,7 +186,7 @@ namespace StringApp // Примечание. Фактическое простр
             */
 
             // -=================== Trim (Обрезка строки) ===================
-            string originalString = "   Hello, world!   ";
+            // string originalString = "   Hello, world!   ";
 
             /*  string trimmedString = originalString.Trim();  // после обрезания получаем новую строку, которую надо обозначить
               Console.WriteLine($"Trim: {trimmedString}");                // Вывод: "Hello, world!"
@@ -314,111 +314,108 @@ namespace StringApp // Примечание. Фактическое простр
                Console.WriteLine(s12.Equals(s22));
             */
             // -=================== Форматирование строк string.Format ===================-
-            string formattedString1 = string.Format("Hello, {0}! Today is {1}.", "John", DateTime.Now.DayOfWeek);
-            Console.WriteLine(formattedString1);                                            // Вывод: Hello, John! Today is Wednesday.
+            //   string formattedString1 = string.Format("Hello, {0}! Today is {1}.", "John", DateTime.Now.DayOfWeek);
+            //  Console.WriteLine(formattedString1);                                            // Вывод: Hello, John! Today is Wednesday.
 
             // Пример 2: Форматирование чисел/валюта
-            string formattedString2 = string.Format("The price is: {0:C}", 123.45);
-            Console.WriteLine(formattedString2);                                            // Вывод: The price is: $123.45
+            //string formattedString2 = string.Format("The price is: {0:C}", 123.45);
+            //Console.WriteLine(formattedString2);                                            // Вывод: The price is: $123.45
 
             // Пример 3: Форматирование с использованием различных форматов
-            string formattedString3 = string.Format("Decimal: {0:D}, Hexadecimal: {0:X}, Scientific: {1:E}", 42, Math.PI);
-            Console.WriteLine(formattedString3);                                            // Вывод: Decimal: 42, Hexadecimal: 2A, Scientific: 3.141593E+00
+            //string formattedString3 = string.Format("Decimal: {0:D}, Hexadecimal: {0:X}, Scientific: {1:E}", 42, Math.PI);
+            //Console.WriteLine(formattedString3);                                            // Вывод: Decimal: 42, Hexadecimal: 2A, Scientific: 3.141593E+00
 
             // Настраиваемые форматы
-            long number = 19876543210;
-            string result = string.Format("{0:+# (###) ###-##-##}", number);
-            Console.WriteLine(result);                                                      // +1 (987) 654-32-10
+            //long number = 19876543210;
+            //string result = string.Format("{0:+# (###) ###-##-##}", number);
+            //Console.WriteLine(result);                                                      // +1 (987) 654-32-10
 
+
+
+            // ============================================================================================
+            // -=================== String Builder ===================
+            // -=================== Constructor
+            /*
+                        StringBuilder sb = new StringBuilder();
+            StringBuilder sb1 = new StringBuilder("Hello World!!!");
+             Console.WriteLine($"Значение переменной: {sb1.ToString()}");    // Hello World!!!
+             Console.WriteLine(sb1.ToString());                              // Hello World!!!
+             Console.WriteLine($"Просто объект: {sb1}");                     // Hello World!!!
+            */
+            // -=================== Append =================== добавление
+            // -=================== AppendLine    Добавить строку
+            /* StringBuilder sbAppendLine = new StringBuilder();
+             sbAppendLine.Append("Hello, ");
+             sbAppendLine.AppendLine("world!");
+             sbAppendLine.AppendLine("How are you?");
+            */
+            //Console.WriteLine($"AppendLine : {sbAppendLine}");
+            /* Вывод:
+               Hello,
+               world!
+               How are you?
+            */
+
+            // -=================== AppendFormat Добавить формат
+            // Пример 1: Простой пример форматирования
+            //StringBuilder sb1AppendFormat = new StringBuilder();
+            //sb1AppendFormat.AppendFormat("Hello, {0}! Today is {1}.", "John", DateTime.Now.DayOfWeek);
+            //Console.WriteLine(sb1AppendFormat.ToString());                          // Вывод: Hello, John! Today is Wednesday.
+           
+            // Пример 2: Форматирование чисел
+             //StringBuilder sb2AppendFormat = new StringBuilder();
+             //sb2AppendFormat.AppendFormat("The price is: {0:C}", 123.45);
+             //Console.WriteLine(sb2AppendFormat.ToString());                          // Вывод: The price is: $123.45
+             
+            // Пример 3: Форматирование с использованием различных форматов
+            /* 
+            StringBuilder sb3AppendFormat = new StringBuilder();
+             sb3AppendFormat.AppendFormat("Decimal: {0:D}, Hexadecimal: {0:X}, Scientific: {1:E}", 42, Math.PI);
+             Console.WriteLine(sb3AppendFormat.ToString());                          // Вывод: Decimal: 42, Hexadecimal: 2A, Scientific: 3.141593E+00
+             */
+
+            // -=================== Replace   замена
+             // StringBuilder sbReplace = new StringBuilder("Hello, world!");
+             //sbReplace.Replace("world", "C#");
+
+             //Console.WriteLine($"Replace : {sbReplace}");                    // Вывод: Hello, C#!
+            
+            // -=================== Remove    удаление
+             //StringBuilder sbRemove = new StringBuilder("Hello, world!");
+             //sbRemove.Remove(7, 6);                                          // Удаляем "world" откуда (с  7 символа) и сколько удалить (6 символов)
+
+             //Console.WriteLine($"Remove : {sbRemove}");                      // Вывод: Hello!
+            
+            // -=================== вставка
+            /*  StringBuilder sbInsert = new StringBuilder("Hello!");
+             sbInsert.Insert(5, " world");
+
+             Console.WriteLine($"Insert : {sbInsert}");                      // Вывод: Hello world!        
+            */
+
+            // -=================== Capacity  емкость
+          //  StringBuilder sbCapacity = new StringBuilder();  //по умолчанию значение 16 ,можно изменить
+          //  StringBuilder sbCapacity1 = new StringBuilder(1000);  //по умолчанию значение 16 ,можно изменить
+
+
+            // Получаем текущую емкость
+         //   int initialCapacity = sbCapacity.Capacity;
+          //   Console.WriteLine($"Initial Capacity: {initialCapacity}");
+            
+            // Добавляем текст
+            //sbCapacity.Append("Hello, world!");
+
+            // Получаем новую емкость после добавления текста
+            //int newCapacity = sbCapacity.Capacity;
+            // Console.WriteLine($"New Capacity: {newCapacity}");
+
+            // Устанавливаем явно емкость (в данном случае, увеличиваем)
+            // sbCapacity.Capacity = newCapacity * 2;
+
+            // Получаем емкость после установки
+            // int updatedCapacity = sbCapacity.Capacity;
+            // Console.WriteLine($"Updated Capacity: {updatedCapacity}");
 
         }
     }
 }
-
-// ============================================================================================
- // -=================== String Builder ===================
- // -=================== Constructor
-/* StringBuilder sb = new StringBuilder();
- StringBuilder sb1 = new StringBuilder("Hello World!!!");
- Console.WriteLine($"Значение переменной: {sb1.ToString()}");    // Hello World!!!
- Console.WriteLine(sb1.ToString());                              // Hello World!!!
- Console.WriteLine($"Просто объект: {sb1}");                     // Hello World!!!
- */
- // -=================== Append ===================
-/* StringBuilder sbAppend = new StringBuilder();
- sbAppend.Append("Hello, ");
- sbAppend.Append("world!");
-
- Console.WriteLine($"Append : {sbAppend}");                     // Hello World!
- Console.WriteLine($"Length : {sbAppend.Length}");              // 13
-*/
- // -=================== AppendLine
-/* StringBuilder sbAppendLine = new StringBuilder();
- sbAppendLine.Append("Hello, ");
- sbAppendLine.AppendLine("world!");
- sbAppendLine.AppendLine("How are you?");
-*/
-//Console.WriteLine($"AppendLine : {sbAppendLine}");
- /* Вывод:
-    Hello,
-    world!
-    How are you?
- */
-
- // -=================== AppendFormat
- // Пример 1: Простой пример форматирования
- /*StringBuilder sb1AppendFormat = new StringBuilder();
- sb1AppendFormat.AppendFormat("Hello, {0}! Today is {1}.", "John", DateTime.Now.DayOfWeek);
- Console.WriteLine(sb1AppendFormat.ToString());                          // Вывод: Hello, John! Today is Wednesday.
- */
- // Пример 2: Форматирование чисел
-/* StringBuilder sb2AppendFormat = new StringBuilder();
- sb2AppendFormat.AppendFormat("The price is: {0:C}", 123.45);
- Console.WriteLine(sb2AppendFormat.ToString());                          // Вывод: The price is: $123.45
- */
- // Пример 3: Форматирование с использованием различных форматов
-/* 
-StringBuilder sb3AppendFormat = new StringBuilder();
- sb3AppendFormat.AppendFormat("Decimal: {0:D}, Hexadecimal: {0:X}, Scientific: {1:E}", 42, Math.PI);
- Console.WriteLine(sb3AppendFormat.ToString());                          // Вывод: Decimal: 42, Hexadecimal: 2A, Scientific: 3.141593E+00
- */
-
- // -=================== Replace
-/*  StringBuilder sbReplace = new StringBuilder("Hello, world!");
- sbReplace.Replace("world", "C#");
-
- Console.WriteLine($"Replace : {sbReplace}");                    // Вывод: Hello, C#!
- */
- // -=================== Remove
-/* StringBuilder sbRemove = new StringBuilder("Hello, world!");
- sbRemove.Remove(7, 6);                                          // Удаляем "world"
-
- Console.WriteLine($"Remove : {sbRemove}");                      // Вывод: Hello!
-*/
- // -=================== Remove
-/*  StringBuilder sbInsert = new StringBuilder("Hello!");
- sbInsert.Insert(5, " world");
-
- Console.WriteLine($"Insert : {sbInsert}");                      // Вывод: Hello world!        
-*/
-
- // -=================== Capacity
- //StringBuilder sbCapacity = new StringBuilder();
-
- // Получаем текущую емкость
-/* int initialCapacity = sbCapacity.Capacity;
- Console.WriteLine($"Initial Capacity: {initialCapacity}");
-*/
- // Добавляем текст
- //sbCapacity.Append("Hello, world!");
-
- // Получаем новую емкость после добавления текста
- //int newCapacity = sbCapacity.Capacity;
-// Console.WriteLine($"New Capacity: {newCapacity}");
-
- // Устанавливаем явно емкость (в данном случае, увеличиваем)
-// sbCapacity.Capacity = newCapacity * 2;
-
- // Получаем емкость после установки
-// int updatedCapacity = sbCapacity.Capacity;
-// Console.WriteLine($"Updated Capacity: {updatedCapacity}");
