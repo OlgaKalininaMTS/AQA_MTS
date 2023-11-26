@@ -7,18 +7,17 @@ namespace Classes
     class Program
     {
         static void Main(string[] args)
-        {
-            class Phone
-            {
-               public int number;
-               public int model;
-               public int weight;
-               public void Print()
-               {
-                Console.WriteLine($"Номер: {number}  Модель: {model} Вес: {weight}");
-               }
-         }
-       
+        { 
+         class Book {
+	public int pages;
+	public string name;
+	public float weight;
+ 
+	public void getInfoBook () {
+		Console.WriteLine("В книге " + name + " находиться " + pages + " страниц. ");
+		Console.WriteLine("При этом она весит " + weight);
+	} 
+}
         
 
 
