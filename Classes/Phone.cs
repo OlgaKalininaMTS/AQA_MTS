@@ -1,16 +1,18 @@
 ﻿namespace Classes.Models;
 
-public class Person
+public class Phone
 {
     // Блок полей (переменных)
-    public string name = "Undefined";   // имя
-    public int age;                     // возраст
+    public int number;   // номер
+    public int model;      // возраст
+    public int weight;    // вес
+    
 
     // Блок конструктора
 
     // Блок методов и свойств
     public void Print()
     {
-        Console.WriteLine($"Имя: {name}  Возраст: {age}");
+        Console.WriteLine($"Имя: {number}  Возраст: {model} Возраст: {weight}");
     }
 }
