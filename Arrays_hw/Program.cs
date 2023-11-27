@@ -8,14 +8,16 @@ Console.WriteLine("Введите любое число :");
 int a1 = Convert.ToInt32(Console.ReadLine());
 int b1 = 0;
 int[] array1 = { 1, 9, 3, 6, 5 };
+// оставлять пустую строку
 foreach (int i in array1)
 {
     if (i == a1)
     {
        Console.WriteLine($"Веденное число входит в массив");
-        b1 = 1;
+        b1 = 1;    // лучше использовать bool
     }
  }
+// оставлять пустую строку
 if (b1 == 0)
 {
     Console.WriteLine($"Веденное число не входит в массив");
@@ -98,7 +100,7 @@ for (int i = 0; i < spi24.Length; i++)
     summ2 += spi24[i];
 int mid2 = summ2 / spi14.Length;
 Console.WriteLine($"Среднее арифметическое массива 2: {mid2}");
-
+// вместо if использовать else if
 if (mid > mid2)
 {
      Console.WriteLine("Среднее арифметическое массива 1 больше среднего арифметического массива 2");
