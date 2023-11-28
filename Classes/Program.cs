@@ -68,154 +68,178 @@ namespace Classes
 */
 
             // -=================== Метод с переменным числом аргументов ===================-
-         int CalculateSum(params int[] numbers)
-               {
-                   int sum = 0;
+            /*    int CalculateSum(params int[] numbers)
+                      {
+                          int sum = 0;
 
-                   foreach (int num in numbers)
-                   {
-                       sum += num;
-                   }
-                   return sum;
-               }
+                          foreach (int num in numbers)
+                          {
+                              sum += num;
+                          }
+                          return sum;
+                      }
 
-               int sum1 = CalculateSum(1, 2, 3, 4, 5);
-               int sum2 = CalculateSum(); // Пустой вызов
+                      int sum1 = CalculateSum(1, 2, 3, 4, 5);
+                      int sum2 = CalculateSum(); // Пустой вызов
 
-               Console.WriteLine("Sum 1: " + sum1);  // Sum 1: 15
-               Console.WriteLine("Sum 2: " + sum2);     // Sum 2: 0
+                      Console.WriteLine("Sum 1: " + sum1);  // Sum 1: 15
+                      Console.WriteLine("Sum 2: " + sum2);     // Sum 2: 0
+            */
 
-
-            // -=================== Передача параметров ===================-
+            // -=================== Передача параметров ===================-   28.11.2023
             // -=================== По значению
-            /* 
-                      void SimpleAdd(int x, int y)                //По умолчанию аргументы передаются по значению,
-                      {
-                          int ans = x + y;
-                          // Вызывающий код не увидит эти изменения, т.к. модифицируется копия исходных данных,
 
-                          // Разкомментировать
-                          //х = 10000;
-                          //у = 88888;
-                      }
+            /*     void SimpleAdd(int x, int y)                //По умолчанию аргументы передаются по значению,
+                 {
+                     int ans = x + y;                        // Вызывающий код не увидит эти изменения, т.к. модифицируется копия исходных данных,
 
-                      // -=================== По ссылке
-                      // -=================== Out
-                      // Значения выходных параметров должны быть установлены внутри вызываемого метода.
-                      static void OutAdd (int x, int y, out int ans)
-                      {
-                          ans = x + y;
-                      }
-                      // Присваивать начальные значения локальным переменным, используемым как выходные параметры, не обязательно
-                      // при условии, что они впервые используются
-                      OutAdd(90, 90, out int ans); // - Первый вариант
+                     // Разкомментировать  нельзя присвоить значения параметров из метода
+                    // х = 10000;       нельзя
+                    // у = 88888;       нельзя
+                 }
+      */
+            // -=================== По ссылке
+            // -=================== Out  необязательно инициализировать, но обязательно менять
+            // Значения выходных параметров должны быть установлены внутри вызываемого метода.
+            /* void OutAdd(int x, int y, out int ans)    // с использованием ключевого слова out
+             {                                          // ans позволяет присвоить значения параметрам
+                 ans = x + y;
+             }
 
-                      //int ans;
-                      //Add(90, 90, out ans); // - Второй вариант
+             OutAdd(90, 90, out int ans1);
+             Console.WriteLine("OutAdd: 90 + 90 = {0}", ans1);
 
-                      Console.WriteLine("OutAdd: 90 + 90 = {0}", ans);
+             //   int ans;
+             //   OutAdd(90, 90, out ans);
+             //   Console.WriteLine("OutAdd: 90 + 90 = {0}", ans);
+            */
+            /* static void OutAdd (int x, int y, out int ans)    // с использованием ключевого слова out
+                       {
+                           ans = x + y;
+                       }
+             */
+            // Присваивать начальные значения локальным переменным, используемым как выходные параметры, не обязательно
+            // при условии, что они впервые используются
+            /*  OutAdd(90, 90, out int ans); // - Первый вариант
 
-                      // Практическое применение в тестировании - возврат данных
-                      void FillTheseValues(out int a, out string b, out bool c)
-                      {
-                          a = 9;
-                          b = "Enjoy your string.";
-                          c = true;
-                      }
+                        //int ans;
+                        //Add(90, 90, out ans); // - Второй вариант
 
+                        Console.WriteLine("OutAdd: 90 + 90 = {0}", ans);
 
-                      // -=================== Ref
-                      void ModifyValue(ref int value)
-                      {
-                          value = value * 2;
-                      }
+                        // Практическое применение в тестировании - возврат данных
+                        void FillTheseValues(out int a, out string b, out bool c)
+                        {
+                            a = 9;
+                            b = "Enjoy your string.";
+                            c = true;
+                        }
+            */
 
-                      int mainValue = 5;      // Если закоментировать - будет ошибка
-                      Console.WriteLine($"mainValue is {mainValue}");
-                      ModifyValue(ref mainValue);
-                      Console.WriteLine($"mainValue now is {mainValue}");
+            // -=================== Ref  обязательно инициализировать, но необязательно менять
+            /*            void ModifyValue(ref int value)
+                        {
+                            value = value * 2;    //можно написать так value *=2;
+                        }
 
-                      // -=================== Возврат значений ===================-
-                      // -=================== Возврат значения
-                      int GetPersonAge()
-                      {
+                        int mainValue = 5;      // Если закоментировать - будет ошибка, обязательно необходимо присваивать значение
+                        Console.WriteLine($"mainValue is {mainValue}");
+                     
+                        ModifyValue(ref mainValue);
+                        Console.WriteLine($"mainValue now is {mainValue}");
+
+                        // -=================== Возврат значений ===================-
+                        // -=================== Возврат значения
+                        int GetPersonAge()      // если проставляем методу тип, то обязательно использовать return
+                        {                                               //
                           return 25;
-                      }
 
-                      Console.WriteLine($"Age: {GetPersonAge()}");
+                        }
 
-                      // -=================== Возврат нескольких значений
-                      (string, int) GetPersonInfo()
-                      {
-                          return ("John", 25);
-                      }
+                        Console.WriteLine($"Age: {GetPersonAge()}");
 
-                      var person = GetPersonInfo();
-                      Console.WriteLine($"Name: {person.Item1}, Age: {person.Item2}");
+                        // -=================== Возврат нескольких значений
+                        (string, int) GetPersonInfo()       //  (string, int) это сигнатура
+            {
+                            return ("John", 25);           // последовательность должна соответствовать сигнатуре
+                        }
 
-                      // -=================== Сжатый метод
-                      int ShortAdd(int х, int у) => х + у;
+                        var person = GetPersonInfo();
+                        Console.WriteLine($"Name: {person.Item1}, Age: {person.Item2}");
+           */
+            // -=================== Сжатый метод
+            /*        int ShortAdd(int х, int у) => х + у;
 
-                      // -=================== Рекурсивная функция
-                      int Factorial(int n)
-                      {
-                          if (n == 1) return 1;
+                     // -=================== Рекурсивная функция   главное правильно установить точку остановки
+                     int Factorial(int n)
+                     {
+                         if (n == 1) return 1;    // точка остановки
 
-                          return n * Factorial(n - 1);
-                      }
+                         return n * Factorial(n - 1);
+                     }
 
-                      int factorial4 = Factorial(4);  // 24
-                      int factorial5 = Factorial(5);  // 120
-                      int factorial6 = Factorial(6);  // 720
+                     int factorial4 = Factorial(4);  // 24=4*3*2
+                     int factorial5 = Factorial(5);  // 120=5*4*3*2
+                     int factorial6 = Factorial(6);  // 720=6*5*4*3*2
 
-                      Console.WriteLine($"Факториал числа 4 = {factorial4}");
-                      Console.WriteLine($"Факториал числа 5 = {factorial5}");
-                      Console.WriteLine($"Факториал числа 6 = {factorial6}");
+                     Console.WriteLine($"Факториал числа 4 = {factorial4}");
+                     Console.WriteLine($"Факториал числа 5 = {factorial5}");
+                     Console.WriteLine($"Факториал числа 6 = {factorial6}");
+            */
 
-                      // -=================== Классы ===================-
-                      // -=================== Структура класса
-                      EmptyClass emptyClassObject = new EmptyClass();
+            // -=================== КЛАССЫ ========================================================================================================-
+            // -=================== Структура класса
+            /*         EmptyClass emptyClassObject = new EmptyClass();   // тип классов содержит название класса, обект класса содержит название класса
 
-                      Person personObj = new Person();
+                     Person personObj = new Person();         // создали объект класс Person
+                     Person personObj2 = new Person();         // создали объект класс Person
 
-                      personObj.Print();
+                    personObj.Print();        // метод вернет начальные значения класса
 
-                      personObj.name = "Alex";
-                      personObj.age = 45;
-                      personObj.Print();
+                     personObj.name = "Alex";     // меняем значения класса и выводим это на экран
+                     personObj.age = 45;
+                     personObj.Print();
+                     personObj2.Print();
+            */
+            // -=================== Создание конструкторов
 
-                      // -=================== Создание конструкторов
-                      ConstructorByDefault constructorByDefault = new ConstructorByDefault();
+            /*  PersonWithConstructor personWithConstructor = new PersonWithConstructor();
+              personWithConstructor.Print();
 
-                      ConstructorCustom constructorCustom1 = new ConstructorCustom(1);
-                      ConstructorCustom constructorCustom2 = new ConstructorCustom("test");
+                     ConstructorByDefault constructorByDefault = new ConstructorByDefault();
 
-                      ConstructorFull constructorFull1 = new ConstructorFull();
-                      ConstructorFull constructorFull2 = new ConstructorFull(1);
-                      ConstructorFull constructorFull3 = new ConstructorFull("test");
+                     ConstructorCustom constructorCustom1 = new ConstructorCustom(10);
+                     constructorCustom1 = new ConstructorCustom("text");   // пересоздаем коструктор
 
-                      // -=================== Цепочка вызова конструкторов
-                      PersonChain personChain1 = new PersonChain();
-                      PersonChain personChain2 = new PersonChain("Alex");
-                      PersonChain personChain3 = new PersonChain("Alex", 45);
+                    ConstructorCustom constructorCustom2 = new ConstructorCustom("text");
 
-                      personChain1.Print();
-                      personChain2.Print();
-                      personChain3.Print();
+                     ConstructorFull constructorFull1 = new ConstructorFull();
+                     ConstructorFull constructorFull2 = new ConstructorFull(1);
+                     ConstructorFull constructorFull3 = new ConstructorFull("test");
+            */
+            // -=================== Цепочка вызова конструкторов
+                   PersonChain personChain1 = new PersonChain();
+                   PersonChain personChain2 = new PersonChain("Alex");
+                   PersonChain personChain3 = new PersonChain("Alex", 45);
 
-                      // -=================== Первичные конструкторы
-                                               // PersonPrimaryConstructors personPrimaryConstructors1 = new PersonPrimaryConstructors();          - Ошибка
-                      PersonPrimaryConstructors personPrimaryConstructors2 = new PersonPrimaryConstructors(name: "Alex");
-                      // PersonPrimaryConstructors personPrimaryConstructors3 = new PersonPrimaryConstructors(age: 45);   - Ошибка
-                      PersonPrimaryConstructors personPrimaryConstructors4 = new PersonPrimaryConstructors(name: "Alex", age: 45);
+                   personChain1.Print();
+                   personChain2.Print();
+                   personChain3.Print();
 
-                      personPrimaryConstructors2.Print();
-                      personPrimaryConstructors4.Print();
+                   // -=================== Первичные конструкторы
+                   // PersonPrimaryConstructors personPrimaryConstructors1 = new PersonPrimaryConstructors();          - Ошибка
+                   PersonPrimaryConstructors personPrimaryConstructors2 = new PersonPrimaryConstructors(name: "Alex");
+                   // PersonPrimaryConstructors personPrimaryConstructors3 = new PersonPrimaryConstructors(age: 45);   - Ошибка соответствия сигнатуре (порядку параметров)
+                   PersonPrimaryConstructors personPrimaryConstructors4 = new PersonPrimaryConstructors(name: "Alex", age: 45);
 
-                      // -=================== This
-                      PersonThis personThis = new PersonThis("Alex", 45);
+                   personPrimaryConstructors2.Print();
+                   personPrimaryConstructors4.Print();
+            
+            // -=================== This
 
-                      */
+         //   PersonThis personThis = new PersonThis("Alex", 45);
+            
+                   
         }
     }
 }

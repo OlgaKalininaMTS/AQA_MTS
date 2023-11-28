@@ -1,6 +1,6 @@
 namespace Classes.Models;
 
-public class Person
+public class PersonWithConstructor
 {
     // Блок полей (переменных)
     public string name = "Undefined";   // имя
@@ -8,7 +8,11 @@ public class Person
     public int surname;                     // фамилия
 
 
-
+    public PersonWithConstructor()
+    {
+        name = "Undefined";   // имя
+        age = 1;
+}
 
     // Блок конструктора
 
