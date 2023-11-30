@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Abstraction;
+using Abstraction;   // из файла класса = namespace
 
 Client client1 = new Client();
 client1.Id = 1;

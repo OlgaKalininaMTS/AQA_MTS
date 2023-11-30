@@ -1,5 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using Abstraction;
+
+/*Corporate corporate1 = new Corporate();
+corporate1.Id = 1;
+
+Corporate corporate2 = new Corporate();
+corporate2.Id = 1;
+
+Console.WriteLine(corporate1.Id);
+Console.WriteLine(corporate2.Id);
+*/
+
 Individual individual1 = new Individual(1);
 individual1.PhoneNumber = "+375 29 12345678";
 individual1.Email = "individual@test.com";
