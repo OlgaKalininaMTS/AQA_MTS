@@ -18,6 +18,9 @@ individual1.Email = "individual@test.com";
 individual1.Firstname = "Иван";
 individual1.Lastname = "Иванов";
 individual1.Activate();
+//
+Individual individual2 = new Individual(2);
+
 
 Corporate corporate1 = new Corporate(1);
 corporate1.PhoneNumber = "+375 29 10000001";
