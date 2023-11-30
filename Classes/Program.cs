@@ -1,7 +1,9 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using Classes.Models;
+using NamespaceA;
+using NamespaceB;
 
-namespace Classes
+namespace Classes        //
 {
     class Program
     {
@@ -234,12 +236,80 @@ namespace Classes
 
                    personPrimaryConstructors2.Print();
                    personPrimaryConstructors4.Print();
-            
+
             // -=================== This
 
-         //   PersonThis personThis = new PersonThis("Alex", 45);
-            
-                   
+            //   PersonThis personThis = new PersonThis("Alex", 45);
+            /*
+
+                        NamespaceA.ClassA classA = new NamespaceA.ClassA();
+                        classA.Print();
+
+                        NamespaceB.ClassA classA1 = new NamespaceB.ClassA();
+                        classA.Print();*/
+
+            // ===================ПРАКТИКА
+            //// =========================================Задача 1 про студента
+
+            Student[] student = new Student[14];   // 14 студентов
+
+            for (int i = 0; i < 14; i++)
+            {
+                student[i] = new Student();
+                student[i].name = "Alex" + 1;
+                student[i].group = new Random().Next(2);
+                student[i].diplomMark = new Random().Next(1,11);
+            }
+
+            Console.WriteLine($"Students.Lengh: {student.Length}");
+
+            /*    foreach (var student in students)
+                { 
+                          Console.WriteLine($"Name: {student.name}, Group: {student.group}, Mark: {student.diplomMark}");
+                          Console.WriteLine();
+
+                }
+            */
+            // Задача 2
+
+            /*   Console.WriteLine();
+               foreach (Student student in students)
+               {
+                   if (student.diplomMark == 9 || student.diplomMark == 10)
+                   {
+                       student.Print();
+                   }
+               }
+               Console.WriteLine();
+            */
+            /// Задача 3
+            /*
+             Student[] students1 = new Student[14]; 
+
+            for (int i = 0; i < 14; i++) students1[i] = new Student("Alex" + i);
+            foreach (var student in students1) student.Print();
+            Console.WriteLine();
+             */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
