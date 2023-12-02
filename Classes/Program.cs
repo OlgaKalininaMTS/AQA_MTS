@@ -25,28 +25,24 @@ namespace Classes
             // экземпляр класса с конструктором 3
             PhoneConstructor3 tom3 = new PhoneConstructor3(number: "8-999-99-999-99", model: "samsung", weight:200);
             tom3.Print();
-            
-         
-            /*
-                        // 1 экземпляр класса Phone с методом Print
-                        Phone tom4 = new Phone();
 
-                        tom4.number = 5;
-                        tom4.model = 15;
-                        tom4.weight = 55;      
+            // экземпляр класса Phone с методом receiveCall
+            Phone tom5 = new Phone();
+            tom5.receiveCall("Olga");
 
-                        tom4.Print();
 
-                        // 2 экземпляр класса Phone с методом receiveCall
-                        Phone tom5 = new Phone();
+            // экземпляр класса Phone с методом getNumber
+            Phone tom6 = new Phone();
+            tom6.getNumber("8-999-99-999-99");
 
-                        tom5.receiveCall("Olga");
+            //экземпляр класса Phone с методом sendMessage 
+            Phone tom7 = new Phone();
+            tom7.sendMessage("8-999-99-999-99", "8-999-99-333-99");
 
-                        // 3 экземпляр класса Phone с методом getNumber
-                        Phone tom6 = new Phone();
+            Phone tom8 = new Phone();
+            tom7.sendMessage("8-999-99-999-99", "8-999-99-333-99", "8-999-99-333-99", "8-999-99-222-99", "8-999-99-111-99");
 
-                        tom6.getNumber(101010);
-            */
+
 
         }
     }

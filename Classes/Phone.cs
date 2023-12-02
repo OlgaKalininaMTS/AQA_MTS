@@ -11,18 +11,30 @@ public class Phone
     public int weight;    // вес
     public string name;
 
-    public void Print()
-    {
-        Console.WriteLine($"Номер: {number}  Модель: {model} Вес: {weight}");
-    }
+  
     public void receiveCall(string name)
     {
         Console.WriteLine($"Звонит: {name}");
     }
+
     public void getNumber(string number)
     {
         Console.WriteLine($"Номер телефона: {number}");
     }
+    
+     public string sendMessage (params string[] numbers)
+    {
+        string num = " ";
+        Console.WriteLine($"Номера телефонов, на которые будет отправлено сообщение: ");
+        foreach (string numb in numbers)
+        {
+            Console.WriteLine(numb);
+        }
+        return num;
+       
+    }
+    
+
 }
 
 
