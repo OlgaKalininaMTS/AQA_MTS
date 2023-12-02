@@ -8,40 +8,49 @@ public class Person
     private string address;
     private bool isMan;
     private int weight;
+
+    public Person()
+    { 
     
-    
+    }
+
+
     // Стандартный вариант работы с блоком данных
-    public void setName(string name)
+    public void SetName(string name)    // 
     {
         // Какая-то логика
         this.name = name;
     }
 
-    public string getName()
+    public string GetName()      //
     {
         // Какая-то логика
         return name;
     }
     
     // В C# есть Свойство для доступа к полю name
-    public string Name
+    public string Name     // это Свойство
     {
-        get { return name; }
-        set
+        get      // в get обязательно д.б. return
+        { 
+            return name; 
+        }
+        set                                   
         {
             // Логика проверки при установке значения
-            if (!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value))    // 
             {
-                name = value;
+                name = value;                 // единичный параметр который передается данному свойству
             }
         }
     }
     
     // свойство только для записи
-    public int Age
+    public int Age   // значение устанавливается, но не используется
     {
         set { age = value; }
     }
+    
     // свойство только для чтения
     public string Surname
     {
@@ -63,16 +72,16 @@ public class Person
     }
     
     // Автоматические свойства
-    public int Salary { get; set; }
-    // public int Salary { get; set; } = 12500;
-    // public int Salary { get; private set; }
+    //public int Salary { get; set; }
+   //  public int Salary { get; set; } = 12500;
+     public int Salary { get; private set; }   // можем прописать права для какого-то параметра
     
     // Блок init
     // Первый способ
-    public string ID { get; init; } = "XXX-712";
+  //  public string ID { get; init; } = "XXX-712";  //
     
     // Второй способ
-    //public Person(string id) => ID = id;
+  //public Person(string id) => ID = id; 
     // Или так
     /*
     public Person(string id)
