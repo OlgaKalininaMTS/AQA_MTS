@@ -16,17 +16,17 @@ namespace Classes
             Phone tom1 = new Phone();
 
             // 1 экземпляр класса Phone с конструктором 1
-         /*   Phone tom2 = new Phone(89049049904, 01);
-            { 
+            ConstructorPhone1 tom2 = new ConstructorPhone1(25, 01);
             
-            }
-
-*/
-
+                tom2.Print();
+            
 
 
 
 
+
+
+/*
             // 1 экземпляр класса Phone с методом Print
             Phone tom4 = new Phone();
 
@@ -45,7 +45,7 @@ namespace Classes
             Phone tom6 = new Phone();
 
             tom6.getNumber(101010);
-
+*/
 
         }
     }

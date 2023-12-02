@@ -24,28 +24,32 @@ public class Phone
         Console.WriteLine($"Номер телефона: {number}");
     }
 }
-
+/*
 public class ConstructorPhone
 {
-    public ConstructorPhone()
+   public ConstructorPhone()
     {
 
     }
+  
     public ConstructorPhone(int number, int model) // третий конструктор
     {
         number = number;
         model = model;
         
-        void Print()
+       public void Print()
         {
             Console.WriteLine($"Номер: {number}  Модель: {model}");
 
         }
        
     }
-    public ConstructorPhone(int number, int model, int weight) // третий конструктор
+  
+   public ConstructorPhone(int number, int model, int weight) // третий конструктор
     {
     }
-
+  
+  
 }
+*/
 

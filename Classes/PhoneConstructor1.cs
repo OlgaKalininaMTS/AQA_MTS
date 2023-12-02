@@ -2,25 +2,21 @@ using System.Reflection;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Classes.Models;
-/*public class ConstructorPhone
+namespace Classes;
+public class ConstructorPhone1
 {
    
-    public ConstructorPhone(int a, int b) // третий конструктор
+    public ConstructorPhone1(int number, int model) // третий конструктор
     {
-        a = number;
-        model = b;
-    }
+        number = number;
+        model = model;
 
-    public void Print() => Console.WriteLine($"Номер: {number}, Модель: {model}");
-    
-    public ConstructorPhone(int number, int model, int weight) // третий конструктор
-    {
-    }
+         void Print()
+        {
+            Console.WriteLine($"Номер: {number}  Модель: {model}");
 
-     public ConstructorPhone()
-    {
+        }
 
     }
-    */
+
 }
