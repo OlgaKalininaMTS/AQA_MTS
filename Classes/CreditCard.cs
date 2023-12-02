@@ -19,7 +19,7 @@ public class CreditCard
 
     void SimpleSub(int b)
     {
-        Accountsumma = Accountsumma + b;
+        Accountsumma = Accountsumma - b;
 
         Console.WriteLine($"Сумма на счету после снятия: {Accountsumma}");
     }
