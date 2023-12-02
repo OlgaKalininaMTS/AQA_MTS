@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolsAndLines_hw", "SymbolsAndLines_KW\SymbolsAndLines_hw.csproj", "{45B0C56B-4366-44DD-8BE1-DD0C87378471}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrays_kw", "Arrays_kw\Arrays_kw.csproj", "{AE12358C-9EFC-489F-874D-30862863101B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{45B0C56B-4366-44DD-8BE1-DD0C87378471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45B0C56B-4366-44DD-8BE1-DD0C87378471}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45B0C56B-4366-44DD-8BE1-DD0C87378471}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE12358C-9EFC-489F-874D-30862863101B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE12358C-9EFC-489F-874D-30862863101B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE12358C-9EFC-489F-874D-30862863101B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE12358C-9EFC-489F-874D-30862863101B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
