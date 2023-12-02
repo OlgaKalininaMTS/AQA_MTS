@@ -9,7 +9,7 @@ namespace StringApp //  Примечание. Фактическое прост�
     {
         static void Main(string[] args)
         {
-            //Классная работа 
+            // КЛАССНАЯ РАБОТА
 
             /* Console.WriteLine("Hello, World!");
 
