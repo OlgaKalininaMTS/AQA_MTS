@@ -10,14 +10,22 @@ public class CreditCard
     public int Accountsumma;    
    
 
-    void SimpleAdd (int x, int y)
+    void SimpleAdd ( int y)
     {
-        int ans = x + y;
-        x = 0;
-      //  y = 
-       
+        Accountsumma = Accountsumma + y;
+
+        Console.WriteLine($"Сумма на счету после зачисления: {Accountsumma}");
     }
-    
+
+    void SimpleSub(int b)
+    {
+        Accountsumma = Accountsumma + b;
+
+        Console.WriteLine($"Сумма на счету после снятия: {Accountsumma}");
+    }
+
+
+
 
 }
 
