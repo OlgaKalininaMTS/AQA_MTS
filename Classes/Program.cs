@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
-using Classes.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Classes
@@ -10,42 +9,44 @@ namespace Classes
     {
         static void Main(string[] args)
         {
+            // Домашняя работа по теме "Методы и классы"
+
             //Задание 1
 
-            // 1 экземпляр класса Phone с конструктором 1
-            Phone tom1 = new Phone();
+            // экземпляр класса с конструктором 1
+           PhoneConstructor1 tom1 = new PhoneConstructor1();
+           tom1.Print();
 
-            // 1 экземпляр класса Phone с конструктором 1
-            ConstructorPhone1 tom2 = new ConstructorPhone1(25, 01);
+
+            // экземпляр класса с конструктором 2
+            PhoneConstructor2 tom2 = new PhoneConstructor2(number: "8-999-99-999-99", model:"samsung");
+            tom2.Print();
+
+            // экземпляр класса с конструктором 3
+            PhoneConstructor3 tom3 = new PhoneConstructor3(number: "8-999-99-999-99", model: "samsung", weight:200);
+            tom3.Print();
             
-                tom2.Print();
-            
+         
+            /*
+                        // 1 экземпляр класса Phone с методом Print
+                        Phone tom4 = new Phone();
 
+                        tom4.number = 5;
+                        tom4.model = 15;
+                        tom4.weight = 55;      
 
+                        tom4.Print();
 
+                        // 2 экземпляр класса Phone с методом receiveCall
+                        Phone tom5 = new Phone();
 
+                        tom5.receiveCall("Olga");
 
+                        // 3 экземпляр класса Phone с методом getNumber
+                        Phone tom6 = new Phone();
 
-/*
-            // 1 экземпляр класса Phone с методом Print
-            Phone tom4 = new Phone();
-
-            tom4.number = 5;
-            tom4.model = 15;
-            tom4.weight = 55;      
-
-            tom4.Print();
-
-            // 2 экземпляр класса Phone с методом receiveCall
-            Phone tom5 = new Phone();
-            
-            tom5.receiveCall("Olga");
-
-            // 3 экземпляр класса Phone с методом getNumber
-            Phone tom6 = new Phone();
-
-            tom6.getNumber(101010);
-*/
+                        tom6.getNumber(101010);
+            */
 
         }
     }

@@ -1,22 +1,20 @@
-using System.Reflection;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace Classes;
-public class ConstructorPhone1
+using Classes;
+
+//public class PhoneConstructor1
+public class PhoneConstructor1 
 {
-   
-    public ConstructorPhone1(int number, int model) // третий конструктор
+    public string number;   // номер
+    public string model;      // модель
+    public int weight;   // вес
+
+    public PhoneConstructor1() // второй конструктор
     {
-        number = number;
-        model = model;
-
-         void Print()
-        {
-            Console.WriteLine($"Номер: {number}  Модель: {model}");
-
-        }
-
+        this.number = number;             //"8-999-99-999-99";
+        this.model = number;              //"samsung";
+        this.weight = weight;
     }
 
+    public void Print() => Console.WriteLine($"Конструктор 1:\nНомер: {number}  Модель: {model} Вес (в граммах): {weight}");
+ 
 }
