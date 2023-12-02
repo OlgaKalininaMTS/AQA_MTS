@@ -1,3 +1,5 @@
+using Polymorphism;
+
 public class Individual : Client
 {
     public string Firstname;
@@ -8,9 +10,9 @@ public class Individual : Client
         Console.WriteLine("Individual Base HashCode: " + base.GetHashCode());
     }
 
-    public override void SendNotification()
+    public override void SendNotification()  // перегружаем виртуальный метод
     {
-        base.SendNotification();
-        Console.WriteLine("Уважаемый клиент...");
+        base.SendNotification();  // сначала вызываем метод из базового класса
+        Console.WriteLine("Уважаемый клиент...");   // потом делаем свое
     }
 }

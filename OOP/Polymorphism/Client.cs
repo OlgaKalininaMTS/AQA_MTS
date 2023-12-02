@@ -14,13 +14,17 @@ public class Client
         Id = id;
     }
 
-    public void CountBill(int hours, int rate)
+   /* public Client()
+    { 
+    }
+   */
+    /*public void CountBill(int hours, int rate)   /// вывод счета, параметры: часы, ставка
     {
         int result = hours * rate;
         Console.WriteLine("void CountBill: " + result);
     }
 
-    public void CountBill(int hours, int rate, int debt)
+    public void CountBill(int hours, int rate, int debt)    /// вывод задолженности, т.к. у методов разные сигнатуры (количество параме тров), то прога не ругается
     {
         int result = hours * rate + debt;
         Console.WriteLine("void CountBill: " + result);
@@ -39,7 +43,7 @@ public class Client
         double result = hours * rate;
         Console.WriteLine("void CountBill: " + result);
     }
-    
+    */
     /*
     int Sum(int x, int y)
     {
@@ -59,7 +63,7 @@ public class Client
     */
 
 
-    public virtual void SendNotification()
+    public virtual void SendNotification()     // данный метод может быть переопределен в дочернем классе
     {
         Console.WriteLine("Base notification....");
     }
