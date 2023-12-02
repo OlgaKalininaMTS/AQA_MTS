@@ -3,12 +3,14 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace StringApp // Примечание. Фактическое пространство имен зависит от названия проекта
+namespace StringApp //  Примечание. Фактическое пространство имен зависит от названия проекта
 {
     static class Program
     {
         static void Main(string[] args)
         {
+            //Классная работа 
+
             /* Console.WriteLine("Hello, World!");
 
              // Объявите без инициализации
@@ -420,7 +422,7 @@ namespace StringApp // Примечание. Фактическое простр
             // Регулярные выражения
             // соответствие строки регулярному выражению
 
-             string input = "Hello, 123!";
+            string input = "Hello, 123!";
              string pattern = @"(\d+)"; // Шаблон: одна или более цифр
 
              bool isMatch = Regex.IsMatch(input, pattern);
