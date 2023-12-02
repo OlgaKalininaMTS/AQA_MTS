@@ -42,7 +42,44 @@ namespace Classes
             Phone tom8 = new Phone();
             tom7.sendMessage("8-999-99-999-99", "8-999-99-333-99", "8-999-99-333-99", "8-999-99-222-99", "8-999-99-111-99");
 
+            
 
+            // Задание 2
+           
+            CreditCard card = new CreditCard();
+            CreditCard card2 = new CreditCard();
+            CreditCard card3 = new CreditCard();
+
+            Random rand = new Random();
+            int value = rand.Next(111111111, 999999999);
+            card.AccountNumber = value;
+                      
+            value = rand.Next(9999);
+            card.Accountsumma = value;
+
+            value = rand.Next(111111111, 999999999);
+            card2.AccountNumber = value;
+
+            value = rand.Next(9999);
+            card2.Accountsumma = value;
+
+            value = rand.Next(111111111, 999999999);
+            card3.AccountNumber = value;
+
+            value = rand.Next(9999);
+            card3.Accountsumma = value;
+
+            card.SimpleInfo();
+            card2.SimpleInfo();
+            card3.SimpleInfo();
+
+           // card.SimpleAdd(500);
+          //  card2.SimpleAdd(350);
+          //  card3.SimpleSub(480);
+            
+            card.SimpleInfo();
+            card2.SimpleInfo();
+            card3.SimpleInfo();
 
         }
     }

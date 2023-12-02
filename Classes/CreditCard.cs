@@ -7,23 +7,31 @@ using Classes;
 public class CreditCard
 {
     public int AccountNumber;   
-    public int Accountsumma;    
-   
+    public int Accountsumma ;
 
-    void SimpleAdd ( int y)
+       public void SimpleAdd (int y)
     {
         Accountsumma = Accountsumma + y;
 
         Console.WriteLine($"Сумма на счету после зачисления: {Accountsumma}");
     }
 
-    void SimpleSub(int b)
+    public void SimpleSub(int b)
     {
         Accountsumma = Accountsumma - b;
 
         Console.WriteLine($"Сумма на счету после снятия: {Accountsumma}");
     }
+  
 
+    public void SimpleInfo()
+    {
+        Console.WriteLine($"Номер карты: {AccountNumber} \t Текущая сумма на счету: {Accountsumma}");
+    }
+    
+    
+    
+    
 
 
 
