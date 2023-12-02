@@ -2,6 +2,7 @@
 
 using Abstraction;   // из файла класса = namespace
 
+
 Client client1 = new Client();
 client1.Id = 1;
 client1.PhoneNumber = "+375 29 12345678";
