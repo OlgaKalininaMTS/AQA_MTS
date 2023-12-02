@@ -1,9 +1,9 @@
 namespace Classes.Models;
 
 // Set C# 12 для проекта
-public class PersonPrimaryConstructors(string name, int age)
+public class PhoneConstructor1(string name, int age)
 {
-    public PersonPrimaryConstructors(string name) : this(name, 18)
+    public PhoneConstructor1(string name) : this(name, 18)
     {
     }
 
