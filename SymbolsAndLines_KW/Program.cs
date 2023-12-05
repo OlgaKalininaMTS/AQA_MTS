@@ -4,7 +4,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Strings_hw // Примечание. Фактическое пространство имен зависит от названия проекта
+namespace Strings_HomeWork 
 {
     static class Program
     {
