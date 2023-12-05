@@ -1,9 +1,8 @@
 namespace AbstractClasses;
 
-public abstract class AbstractClassTemplate   // по сути это шаблон
+public abstract class AbstractClassTemplate
 {
     // Блок переменных
     // Блок конструкторов
     // Блок методов и абстрактных методов
-    // блок свойств
 }
