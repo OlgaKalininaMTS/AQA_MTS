@@ -1,9 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+
+
+
+
+
+
+//===================================================================
 using Interfaces;
 using Interfaces.BaseImpl;
 using Interfaces.ExplicitImpl;
 using Interfaces.FinalExample;
+
+//========================================================Static
+//StaticExample obj1 = new StaticExample();
+
+//StaticExample obj1 = new StaticExample();
+//Console.WriteLine($obj1:);
+
+
+
+//====================================================================================== Interfaces
 
 // IDisplayable displayable = new IDisplayable(); - Ошибка 
 
@@ -11,12 +28,14 @@ Smartphone smartphone = new Smartphone();
 Tablet tablet = new Tablet();
 
 // -======================== Обычное применение метода ========================-
+/*
 smartphone.DisplayInformation("Hello from smartphone!");
 tablet.DisplayInformation("Hello from tablet!");
 
 // -======================== Продвинутое применение метода ========================-
 // Мы можем использовать их, как будто они одинаковые, потому что они реализуют интерфейс
-DisplayInformationOnDevice(smartphone, "Hello from smartphone!");
+
+DisplayInformationOnDevice(smartphone, "Hello from smartphone!");  // Device - уточняет конкретный класс
 DisplayInformationOnDevice(tablet, "Hello from tablet!");
 
 // Метод, который принимает любой объект, реализующий интерфейс IDisplayable
@@ -25,15 +44,16 @@ static void DisplayInformationOnDevice(IDisplayable device, string information)
     // Вызываем метод отображения, и не важно, что за устройство - смартфон, планшет или другое
     device.DisplayInformation(information);
 }
-
+*/
 // -======================== Реализация интерфейсов по умолчанию ========================-
 // smartphone.DrawBorders(); Ошибка - метод DrawBorders() не определен в классе
-tablet.DrawBorders();
+
+ tablet.DrawBorders();
 
 // -======================== Множественная реализация интерфейсов ========================-
 Tablet1 tablet1 = new Tablet1();
 tablet1.Charge();
-
+/*
 // -======================== Интерфейсы в преобразованиях типов ========================-
 // Все объекты Tablet1 являются объектами IChargeable или IDisplayable
 IChargeable tablet21 = new Tablet1();
@@ -104,3 +124,4 @@ applicationTester.AddTest(new UnitTest());
 applicationTester.AddTest(new UITest());
 
 applicationTester.RunTests();
+*/

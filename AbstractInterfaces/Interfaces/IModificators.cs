@@ -1,6 +1,6 @@
 namespace Interfaces;
 
-public interface IModificators
+public interface IModificators    // объявляем для статических переменных права private, либо protected
 {
     public const int minSpeed = 0;     // минимальная скорость
     private static int maxSpeed = 60;   // максимальная скорость
