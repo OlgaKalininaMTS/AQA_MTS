@@ -1,7 +1,7 @@
 namespace Interfaces;
 
 // Класс планшета, также реализующий интерфейс
-public class Tablet1 : IDisplayable, IChargeable
+public class Tablet1 : IDisplayable, IChargeable  // имплементируем два интерфейса
 {
     public void DisplayInformation(string information)
     {
