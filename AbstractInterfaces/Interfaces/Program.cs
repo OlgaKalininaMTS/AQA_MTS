@@ -34,6 +34,7 @@ Console.WriteLine($"obj3: StaticVariable = {StaticExample.StaticVariable}, Insta
 // IDisplayable displayable = new IDisplayable(); - Ошибка 
 
 //Smartphone smartphone = new Smartphone();
+/*
 Tablet1 tablet1 = new Tablet1();
 tablet1.Charge();
 
@@ -41,8 +42,8 @@ tablet1.Charge();
 
 Smartphone smartphone = new Smartphone();
 Tablet tablet = new Tablet();
-
-
+*/
+/*
 // -======================== Интерфейсы в преобразованиях типов ========================-
 // Все объекты Tablet1 являются объектами IChargeable или IDisplayable
 IChargeable tablet21 = new Tablet1();   // new IChargeable написать не можем, Tablet1 это общий класс для IChargeable и IDisplayable
@@ -63,9 +64,9 @@ Tablet1 anotherTable1 = tablet1; // Никаких проблем
 ((IDisplayable)smartphone).DrawBorders();
 tablet.DrawBorders();
 ((IDisplayable)tablet).DrawBorders();
-
+*/
 // -======================== Явная реализация интерфейсов ========================-
-
+/*
 BaseAction baseAction = new BaseAction(); 
 // baseAction.Move(); - Ошибка, нет метода Move  // небезопасное приведение
 
@@ -85,14 +86,14 @@ NewAction newAction = new NewAction();
 HeroAction heroAction = new HeroAction();
 heroAction.Move();  // от базового класса
 ((IMovable)heroAction).Move();   // метод от IMovable
-
+*/
 // -======================== Реализация интерфейсов в базовых и производных классах ========================-
 
-Tablet3 tablet3 = new Tablet3();
-tablet3.DisplayInformation("Hello from tablet3!");
+//Tablet3 tablet3 = new Tablet3();
+//tablet3.DisplayInformation("Hello from tablet3!");
 
 // -======================== Virtual
-
+/*
 Tablet4 tablet41 = new Tablet4();
 tablet41.DisplayInformation("Hello from tablet41!");
 
@@ -106,7 +107,7 @@ tablet51.DisplayInformation("Hello from tablet51!");
 
 IDisplayable tablet52 = new Tablet5();  
 tablet52.DisplayInformation("Hello from tablet52!");
-
+*/
 // -======================== Обычное применение метода ========================-
 /*
 smartphone.DisplayInformation("Hello from smartphone!");
@@ -134,7 +135,7 @@ static void DisplayInformationOnDevice(IDisplayable device, string information)
 /*
 Tablet1 tablet1 = new Tablet1();
 tablet1.Charge();
-
+*/
 
 // -======================== Задача ========================-
 ApplicationTester applicationTester = new ApplicationTester();
@@ -143,4 +144,3 @@ applicationTester.AddTest(new UnitTest());
 applicationTester.AddTest(new UITest());
 
 applicationTester.RunTests();
-*/

@@ -1,6 +1,6 @@
 namespace Interfaces.FinalExample;
 
-public interface ITestable
+public interface ITestable   // интерфейс
 {
     void RunTests();
 }

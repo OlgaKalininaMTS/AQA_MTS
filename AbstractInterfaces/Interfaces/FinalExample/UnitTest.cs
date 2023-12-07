@@ -1,6 +1,6 @@
 namespace Interfaces.FinalExample;
 
-public class UnitTest : Test
+public class UnitTest : Test  // используем шаблон Test
 {
     public override void Run()
     {
