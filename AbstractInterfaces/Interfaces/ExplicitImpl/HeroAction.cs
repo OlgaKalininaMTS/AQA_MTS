@@ -1,8 +1,10 @@
 namespace Interfaces.ExplicitImpl;
 
-public class HeroAction : BaseAction1, IAction
+//public class HeroAction : BaseAction1, IAction  // HeroAction дочерний от BaseAction1, который имплементирован от IAction
+
+public class HeroAction : BaseAction1, IMovable
 {
-    void IAction.Move()
+    void IMovable.Move()
     {
         Console.WriteLine("Move in HeroAction class...");
     }
