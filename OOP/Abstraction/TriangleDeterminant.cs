@@ -7,20 +7,39 @@ public class TriangleDeterminent : Triangle   // определитель типа треугольника
     {
         if (side1  == side2 || side1 == side3 || side2 == side3)
         {
-            Console.WriteLine("Треугольник равнобедренный");
+            resultTr = "равнобедренный";
+            //Console.WriteLine("Треугольник равнобедренный");
         }
         if (side1 == side2 && side1 == side3)
         {
-            Console.WriteLine("Треугольник равносторронний");
+            resultTr = "равносторронний";
+            //Console.WriteLine("Треугольник равносторронний");
         }
         if (side1 != side2 && side1 != side3 && side2 != side3)
         {
-            Console.WriteLine("Треугольник разносторонний");
+            resultTr = "разносторонний";
+            //Console.WriteLine("Треугольник разносторонний");
         }
+        if (side1 > side2 && side1 > side2)
+        {
+          double  a = Math.Pow(side1, 2);
+          double b = Math.Pow(side2, 2);
+          double c = Math.Pow(side3, 2);
+
+         /*   if (a = b + c)
+            {
+            resultTr = "прямоугольный";
+            //Console.WriteLine("Треугольник разносторонний");
+            }
+         */
+        }
+
         else
         {
-            Console.WriteLine("Треугольник прямоугольный");
+            resultTr = "неопределен";
+            //Console.WriteLine("Треугольник прямоугольный");
         }
+        Console.WriteLine($"Тип треугольника: {resultTr}");
     }
 }
 // public void Print(string TriangleType)

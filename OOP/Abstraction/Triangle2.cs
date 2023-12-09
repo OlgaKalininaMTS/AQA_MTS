@@ -10,7 +10,7 @@ public class Triangle2 : Triangle   // равносторонний треугольник
     
     public void TriangleResult() 
     {
-        resultTr = ((Math.Sqrt(3)) / 4) *(side1*side1);
+        resultTri = ((Math.Sqrt(3)) / 4) *(side1*side1);
     }
 }
 

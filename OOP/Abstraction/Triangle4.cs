@@ -9,7 +9,7 @@ public class Triangle4 : Triangle // разносторронний треугольник
     {
         p = (side1 + side2 + side3) / 2;
 
-        resultTr = Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
+        resultTri = Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
     }
  }
 

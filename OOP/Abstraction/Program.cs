@@ -3,10 +3,10 @@
 using Abstraction;   // из файла класса = namespace
 
 TriangleDeterminent tr1 = new TriangleDeterminent();
-tr1.side1 = 5;
-tr1.side2 = 6;
-tr1.side3 = 7;
-tr1.TriangleResult();
+//tr1.side1 = 5;
+//tr1.side2 = 6;
+//tr1.side3 = 7;
+tr1.TriangleResult(5,5,5);
 
 /*Client client1 = new Client();
 client1.Id = 1;
