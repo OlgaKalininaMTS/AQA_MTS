@@ -28,7 +28,7 @@ public class CustomExceptionUsage
     {
         if (string.IsNullOrWhiteSpace(input))
         {
-            throw new InvalidInputException(nameof(input), "Поле не должно быть пустым или содержать только пробелы.");
+            throw new InvalidInputException(nameof(input), "Поле не должно быть пустым или содержать только пробелы.");   // nameof(input) - имя поля, которое используем
         }
 
         // Дополнительная логика обработки ввода
@@ -45,6 +45,20 @@ public class CustomExceptionUsage
             Console.WriteLine($"Ошибка: {ex.Message}");
             // Становиться доступным новое свойство в ex
             Console.WriteLine($"Некорректное значение: {ex.Value}");
+        }
+    }
+
+    public void UseCustomArgumentException1()
+    {
+        try
+        {
+            Employee person = new Employee { Name = "Tom", Age = 17 };
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine($"Ошибка: {ex.Message}");
+            // Становиться доступным новое свойство в ex
+            //Console.WriteLine($"Некорректное значение: {ex.Value}");
         }
     }
 }

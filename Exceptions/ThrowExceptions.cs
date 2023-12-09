@@ -39,12 +39,13 @@ public class ThrowExceptions
             catch (Exception e)
             {
                 Console.WriteLine($"Ошибка: {e.Message}");
-                throw;
+                throw;   // вызов Exception еще раз
             }
         }
-        catch (Exception ex)
+        catch (Exception ex)  // снова срабатывает блок catch, но более высокоуровневый
         {
             Console.WriteLine(ex.Message);
         }
     }
+    
 }
