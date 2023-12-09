@@ -2,17 +2,13 @@
 
 using Abstraction;
 
-/*Corporate corporate1 = new Corporate();
-corporate1.Id = 1;
+TriangleDeterminent tr = new TriangleDeterminent();
+tr.side1 = 5;
+tr.side2 = 6;
+tr.side3 = 7;
+tr.square();
 
-Corporate corporate2 = new Corporate();
-corporate2.Id = 1;
-
-Console.WriteLine(corporate1.Id);
-Console.WriteLine(corporate2.Id);
-*/
-
-Individual individual1 = new Individual(1);
+/*Individual individual1 = new Individual(1);
 individual1.PhoneNumber = "+375 29 12345678";
 individual1.Email = "individual@test.com";
 individual1.Firstname = "Иван";
@@ -38,3 +34,4 @@ Console.Out.WriteLine(corporate1.Id);
 Console.Out.WriteLine(corporate1.PhoneNumber);
 Console.Out.WriteLine(corporate1.INN);
 Console.Out.WriteLine(corporate1.INN);
+*/
