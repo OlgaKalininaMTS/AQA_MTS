@@ -2,33 +2,32 @@ using System.Collections;
 using System.Text;
 using Collections.Helper;
 
-namespace Collections.IList;
+namespace Collections.IList;   // ArrayList - устаревший класс
 
-public class ArrayListExample
+public class ArrayListExample     // используются для создания элементов
 {
-    public void Run()
+    public void Run()   // метод
     {
-        // Создаем ArrayList для хранения строк
-        ArrayList stringList = new ArrayList();
+        ArrayList stringList = new ArrayList();    // Создаем ArrayList для хранения строк
 
         // Добавляем элементы в ArrayList
-        stringList.Add("Первый");
+        stringList.Add("Первый");    // значение, кот хотим добавить
         stringList.Add("Второй");
         stringList.Add("Третий");
 
         // Создаем ArrayList для хранения строк в С# 12
         ArrayList stringList1 =
         [
-            "Первый",
-            2,
-            false,
-            new StringBuilder("Object")
+            "Первый",                     //   это
+            2,                           //   все 
+            false,                       // элементы
+            new StringBuilder("Object")  // одной коллекции
         ];
 
         // Выводим элементы ArrayList
         Console.WriteLine("Элементы в ArrayList:");
         // foreach (string item in stringList1) // Ошибка
-        foreach (var item in stringList) // Рекомендуемый вариант
+        foreach (var item in stringList) // Рекомендуемый вариант, когда  используем тип var (он сам определяет тип элемента)
         {
             Console.WriteLine(item);
         }

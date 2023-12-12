@@ -4,11 +4,11 @@ using Collections.ISet;
 
 // -==================== IList ====================-
 // -==================== ArrayList
-new ArrayListExample().Run();
+//new ArrayListExample().Run();
 
 // -==================== List<T>
 new ListExample().Run();
-
+/*
 // -==================== LinkedList<T>
 new LinkedListExample().Run();
 
@@ -30,3 +30,4 @@ new StackExample().Run();
 
 // -==================== Queue<T>
 new QueueExample().Run();
+*/
