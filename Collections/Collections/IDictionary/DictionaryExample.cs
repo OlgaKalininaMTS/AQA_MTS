@@ -36,6 +36,10 @@ public class DictionaryExample
             Console.WriteLine($"Value for key 'apple': {value}");
         }
 
+
+
+
+
         foreach (var key2 in myDictionary.Keys)
         {
             Console.WriteLine($"'{key2}' : {myDictionary[key2]}");
