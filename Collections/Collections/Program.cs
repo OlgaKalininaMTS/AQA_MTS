@@ -7,15 +7,15 @@ using Collections.ISet;
 //new ArrayListExample().Run();
 
 // -==================== List<T>
-new ListExample().Run();
-/*
+//new ListExample().Run();
+
 // -==================== LinkedList<T>
-new LinkedListExample().Run();
+//new LinkedListExample().Run();
 
 // -==================== IDictionary ====================-
 // -==================== Dictionary<TKey, TValue>
 new DictionaryExample().Run();
-
+/*
 // -==================== SortedDictionary<TKey, TValue>
 new SortedDictionaryExample().Run();
 

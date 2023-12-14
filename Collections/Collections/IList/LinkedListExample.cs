@@ -2,7 +2,7 @@ using Collections.Helper;
 
 namespace Collections.IList;
 
-public class LinkedListExample
+public class LinkedListExample  // отсутствует доступ по порядковому номеру, не являетсямассивом
 {
     public void Run()
     {
@@ -21,30 +21,35 @@ public class LinkedListExample
         Console.WriteLine("Элементы в списке:");
         PrintHelper.PrintCollection(linkedList);
 
-        // Используем First и Last для получения первого и последнего элемента
+        // Используем First (первый) и Last (последний) для получения первого и последнего элемента
         Console.WriteLine($"Первый элемент: {linkedList.First.Value}");
         Console.WriteLine($"Последний элемент: {linkedList.Last.Value}");
+        
+                // Используем Contains для проверки наличия элемента
+                bool containsBanana = linkedList.Contains("banana");
+                Console.WriteLine($"Список содержит 'banana': {containsBanana}");
 
-        // Используем Contains для проверки наличия элемента
-        bool containsBanana = linkedList.Contains("banana");
-        Console.WriteLine($"Список содержит 'banana': {containsBanana}");
+                // Используем Find для поиска элемента по предикату
+                LinkedListNode<string> node = linkedList.Find("banana");
+                Console.WriteLine($"Найденный элемент: {node?.Value}");
 
-        // Используем Find для поиска элемента по предикату
-        LinkedListNode<string> node = linkedList.Find("banana");
-        Console.WriteLine($"Найденный элемент: {node?.Value}");
+        linkedList.AddBefore(node, "test");  // ставка перед элементом
 
-        // Используем Remove для удаления элемента
-        linkedList.Remove("banana");
+                // Используем Remove для удаления элемента
+          //      linkedList.Remove("banana");
 
-        // Выводим элементы после удаления
-        Console.WriteLine("Элементы после удаления:");
-        PrintHelper.PrintCollection(linkedList);
+       
 
-        // Используем Clear для очистки списка
-        linkedList.Clear();
+                // Выводим элементы после удаления
+                Console.WriteLine("Элементы после удаления:");
+                PrintHelper.PrintCollection(linkedList);
 
-        // Выводим элементы после очистки
-        Console.WriteLine("Элементы после очистки:");
-        PrintHelper.PrintCollection(linkedList);
+                // Используем Clear для очистки списка
+                linkedList.Clear();
+
+                // Выводим элементы после очистки
+                Console.WriteLine("Элементы после очистки:");
+                PrintHelper.PrintCollection(linkedList);
+        
     }
 }
