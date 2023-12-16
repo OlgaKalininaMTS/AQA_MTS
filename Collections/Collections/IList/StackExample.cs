@@ -14,7 +14,7 @@ public class StackExample
         myStack.Push("Banana");
         myStack.Push("Cherry");
 
-        // Выводим элементы стека
+        // Выводим элементы стека - с конца Cherry, Banana, Apple
         Console.WriteLine("Stack elements:");
         PrintHelper.PrintCollection(myStack);
 

@@ -2,7 +2,7 @@ using Collections.Helper;
 
 namespace Collections.IDictionary;
 
-public class SortedDictionaryExample
+public class SortedDictionaryExample    // структура дерева
 {
     public void Run()
     {

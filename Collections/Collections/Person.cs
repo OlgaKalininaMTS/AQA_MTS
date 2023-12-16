@@ -2,12 +2,14 @@ namespace Collections;
 
 public class Person
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    //public int Age { get; set; }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(Name, Age);
+        return HashCode.Combine(FirstName, LastName);
     }
 
     public override bool Equals(object obj)
@@ -16,6 +18,6 @@ public class Person
             return false;
 
         Person otherPerson = (Person)obj;
-        return Name == otherPerson.Name && Age == otherPerson.Age;
+        return FirstName == otherPerson.FirstName && LastName == otherPerson.LastName;
     }
 }
