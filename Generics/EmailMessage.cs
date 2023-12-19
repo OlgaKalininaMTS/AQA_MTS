@@ -1,6 +1,6 @@
 namespace Generics;
 
-public class EmailMessage : Message
+public class EmailMessage : Message  // дочерний класс от Message
 {
     public EmailMessage(string text) : base(text)
     {

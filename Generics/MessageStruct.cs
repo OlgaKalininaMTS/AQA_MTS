@@ -1,10 +1,10 @@
 namespace Generics;
 
-public struct MessageStruct
+public struct MessageStruct  // структура
 {
-    public string Text { get; }
+    public string Text { get; }   
 
-    public MessageStruct(string text)
+    public MessageStruct(string text)  // конструктор
     {
         Text = text;
     }

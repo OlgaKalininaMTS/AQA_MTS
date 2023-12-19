@@ -1,6 +1,6 @@
 namespace Generics;
 
-public class MessengerNew<T> where T : new()
+public class MessengerNew<T> where T : new() // 
 {
     private T message;
 

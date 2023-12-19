@@ -1,6 +1,6 @@
 namespace Generics;
 
-public class Company<P>
+public class Company<P>  //
 {
     public P CEO { get; set; } // президент компании
 
