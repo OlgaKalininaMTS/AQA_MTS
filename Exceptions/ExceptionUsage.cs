@@ -11,9 +11,9 @@ public class ExceptionUsage
         {
             checkedExceptions.ReadFile("file.txt");  // Что-то что выбрасывает ошибку
         }
-        catch (Exception ex)  // в скобках пишется (конкретное исключение), может быть несколько блоков catch на разные случаи поведения, распологать блоки необходимо от частного к общему
+        catch (System.Exception ex)  // в скобках пишется (конкретное исключение), может быть несколько блоков catch на разные случаи поведения, распологать блоки необходимо от частного к общему
         {                                                                  // система идет последовательно от первого catch ко второму и т.д. - порядок важен     
-          //  Console.WriteLine("Произошла ошибка - почини");  // частный обработчик исключения
+                                                                           //  Console.WriteLine("Произошла ошибка - почини");  // частный обработчик исключения
             Console.WriteLine($"InnerException: {ex.InnerException}");
             Console.WriteLine($"Message: {ex.Message}");
             Console.WriteLine($"Source: {ex.Source}");
@@ -83,7 +83,7 @@ public class ExceptionUsage
         {
             Console.WriteLine($"Возникло исключение {ex.GetType()} {ex.Message}");
         }
-        catch (Exception genEx)
+        catch (System.Exception genEx)
         {
             Console.WriteLine($"Возникло общее исключение {genEx.Message}");
         }

@@ -17,7 +17,7 @@ public class CustomExceptionUsage
             // Обрабатываем собственное исключение
             Console.WriteLine($"Поймано собственное исключение: {ex.Message}");
         }
-        catch (Exception ex)
+        catch (System.Exception ex)
         {
             // Обработка других исключений, если они возникнут
             Console.WriteLine($"Поймано исключение: {ex.Message}");

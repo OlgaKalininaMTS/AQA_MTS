@@ -8,14 +8,14 @@ public class ThrowExceptions
         {
             Console.Write("Введите имя: ");
             string? name = Console.ReadLine();
-            if (name== null || name.Length < 2)
+            if (name == null || name.Length < 2)
             {
-                throw new Exception("Длина имени меньше 2 символов");
+                throw new System.Exception("Длина имени меньше 2 символов");
             }
 
             Console.WriteLine($"Ваше имя: {name}");
         }
-        catch (Exception e)
+        catch (System.Exception e)
         {
             Console.WriteLine($"Ошибка: {e.Message}");
         }
@@ -31,18 +31,18 @@ public class ThrowExceptions
                 string? name = Console.ReadLine();
                 if (name == null || name.Length < 2)
                 {
-                    throw new Exception("Длина имени меньше 2 символов");
+                    throw new System.Exception("Длина имени меньше 2 символов");
                 }
 
                 Console.WriteLine($"Ваше имя: {name}");
             }
-            catch (Exception e)
+            catch (System.Exception e)
             {
                 Console.WriteLine($"Ошибка: {e.Message}");
                 throw;   // вызов Exception еще раз
             }
         }
-        catch (Exception ex)  // снова срабатывает блок catch, но более высокоуровневый
+        catch (System.Exception ex)  // снова срабатывает блок catch, но более высокоуровневый
         {
             Console.WriteLine(ex.Message);
         }
