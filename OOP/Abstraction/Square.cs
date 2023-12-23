@@ -4,10 +4,13 @@ public class Square    // класс квадрат
 {
     public int sideSquare;
     public double result;
-
-    public void square() 
+/*
+    public void SquareResult(double side1, double side2) 
     {
-        result = sideSquare ^ 2;
+        resultTri = sideSquare ^ 2;
     }
+*/
  }
+
+
 

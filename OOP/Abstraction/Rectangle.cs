@@ -7,9 +7,10 @@ public class Rectangle   // класс прямоугольник
     public double result;
 
 
-    public void square() 
+ /*   public void SquareResult(double side1, double side2) 
     {
-        result = side1Rectangle * side2Rectangle;
+        resultTri = side1Rectangle * side2Rectangle;
     }
+ */
  }
 

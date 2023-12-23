@@ -1,46 +1,64 @@
 namespace Abstraction;
 
-public class TriangleDeterminent : Triangle   // определитель типа треугольника
-{
-   
-    public void TriangleResult(double side1, double side2, double side3)
+//public class TriangleDeterminent : Triangle   // определитель типа треугольника
+
+   public class TriangleDeterminent
     {
-        if (side1  == side2 || side1 == side3 || side2 == side3)
+    public static Triangle CreateTriangle(double sidea, double sideb, double sidec)
+    {
+        if (sidea == sideb || sidea == sidec || sideb == sidec)
         {
-            resultTr = "равнобедренный";
-            //Console.WriteLine("Треугольник равнобедренный");
+            // return "равнобедренный";
+            return new Triangle1 { Side1 = sidea, Side2 = sideb, Side3 = sidec };
         }
-        if (side1 == side2 && side1 == side3)
+        if (sidea == sideb && sidea == sidec && sideb == sidec)
         {
-            resultTr = "равносторронний";
-            //Console.WriteLine("Треугольник равносторронний");
+            //resultTr = "равносторронний";
+            return new Triangle2 { Side1 = sidea, Side2 = sideb, Side3 = sidec };
         }
-        if (side1 != side2 && side1 != side3 && side2 != side3)
+        if (sidea != sideb && sidea != sidec && sideb != sidec)
         {
-            resultTr = "разносторонний";
-            //Console.WriteLine("Треугольник разносторонний");
+            // resultTr = "разносторонний";
+            return new Triangle4 { Side1 = sidea, Side2 = sideb, Side3 = sidec };
         }
-        if (side1 > side2 && side1 > side2)
-        {
-          double  a = Math.Pow(side1, 2);
-          double b = Math.Pow(side2, 2);
-          double c = Math.Pow(side3, 2);
+ 
+      else  /*((Math.Pow(sidea, 2) == Math.Pow(sideb, 2) + Math.Pow(sidec, 2)) || (Math.Pow(sideb, 2) == Math.Pow(sidea, 2) + Math.Pow(sidec, 2)) || Math.Pow(sidec, 2) == Math.Pow(sidea, 2) + Math.Pow(sideb, 2))*/
+             {
+                 // resultTr = "прямоугольный";
+                 return new Triangle4 { Side1 = sidea, Side2 = sideb, Side3 = sidec };
+             }
 
-         /*   if (a = b + c)
-            {
-            resultTr = "прямоугольный";
-            //Console.WriteLine("Треугольник разносторонний");
-            }
-         */
+            
         }
+       
+        //  Console.WriteLine($"Тип треугольника: {resultTr}");
+    }
 
-        else
+
+
+/* if ((sidea > sideb && sidea > sidec) || (sideb > sidea && sideb > sidec) || (sidec > sidea && sidec > sideb))
         {
-            resultTr = "неопределен";
-            //Console.WriteLine("Треугольник прямоугольный");
+            double a = Math.Pow(sidea, 2);
+            double b = Math.Pow(sideb, 2);
+            double c = Math.Pow(sidec, 2);
+
+             if ((Math.Pow(sidea, 2) == Math.Pow(sideb, 2) + Math.Pow(sidec, 2)) || (Math.Pow(sideb, 2) == Math.Pow(sidea, 2) + Math.Pow(sidec, 2)) || Math.Pow(sidec, 2) == Math.Pow(sidea, 2) + Math.Pow(sideb, 2))
+             {
+                 // resultTr = "прямоугольный";
+                 return new Triangle4 { Side1 = sidea, Side2 = sideb, Side3 = sidec };
+             }
+
+           //else 
+            // {
+                 // resultTr = "прямоугольный";
+            //     return Console.WriteLine("Фигура не треугольник");
+            // }
         }
-        Console.WriteLine($"Тип треугольника: {resultTr}");
+       
+        //  Console.WriteLine($"Тип треугольника: {resultTr}");
     }
 }
+*/
+
 // public void Print(string TriangleType)
 // Console.WriteLine($"Тип треугольника: {TriangleType}");

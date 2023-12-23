@@ -6,24 +6,24 @@ TriangleDeterminent tr1 = new TriangleDeterminent();
 //tr1.side1 = 5;
 //tr1.side2 = 6;
 //tr1.side3 = 7;
-tr1.TriangleResult(5,5,5);
+//tr1.TriangleResult(5,4,3);      // 5,4,3 прямоугольный
 
-/*Client client1 = new Client();
-client1.Id = 1;
-client1.PhoneNumber = "+375 29 12345678";
-client1.Email = "client1@test.com";
-client1.Activate();
+Triangle tr5 = new Triangle();
+tr5.SquareResult(1,2,1);
 
-Client client2 = new Client();
-client2.Id = 2;
-client2.PhoneNumber = "+375 29 12345679";
-client2.Email = "client2@test.com";
-client2.Activate();
-client2.Pause();
 
-Console.Out.WriteLine(client1.Id);
-Console.Out.WriteLine(client1.PhoneNumber);
 
-Console.Out.WriteLine(client2.Id);
-Console.Out.WriteLine(client2.PhoneNumber);
+/*
+Triangle[] shapes = new Triangle[10];
+shapes[0] = new Square { side1 = 2 };
+shapes[3] = new Rectangle { side1 = 5, side2 = 2 };
+shapes[6] = TriangleDeterminent.CreateTriangle(3, 4, 5);
+
+
+foreach (var shape in shapes)
+{
+    shape.Area();
+    Console.WriteLine();
+}
+Console.ReadKey();
 */

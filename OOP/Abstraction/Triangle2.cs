@@ -8,9 +8,9 @@ public class Triangle2 : Triangle   // равносторонний треугольник
     double b = Math.Sqrt(2);
    // int c = Convert.ToInt32(2);
     
-    public void TriangleResult() 
+    public void SquareResult(double Side1, double Side2, double Side3) 
     {
-        resultTri = ((Math.Sqrt(3)) / 4) *(side1*side1);
+        resultTri = ((Math.Sqrt(3)) / 4) *(Side1*Side1);
     }
 }
 

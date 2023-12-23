@@ -2,9 +2,9 @@ namespace Abstraction;
 
 public class Triangle3 : Triangle // прямоугольный треугольник
 {
-    public void TriangleResult()
+    public void SquareResult(double Side1, double Side2, double Side3)
     {
-        resultTri = (side1 * side2) / 2;
+        resultTri = (Side1 * Side2) / 2;
     }
 }
 
