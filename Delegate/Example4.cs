@@ -3,13 +3,13 @@ namespace Delegate;
 public class Example4
 {
     // Тип делегата
-    public delegate void NoParameters();
+    private delegate void NoParameters();
 
     public void Run()
     {
-        NoParameters noPrm = delegate
+        NoParameters noPrm = delegate   // объявляем анонимный метод
         {
-            Console.WriteLine("Have fun!");
+            Console.WriteLine("Have funn!");
         };
         
         noPrm();

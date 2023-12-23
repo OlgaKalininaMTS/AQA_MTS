@@ -1,6 +1,6 @@
 namespace Delegate;
 
-public class DataCorrection
+public class DataCorrection  // содержит доп метод, который выдает на экран что цена изменилась на такую-то
 {
     public void UpdateData(int price)
     {

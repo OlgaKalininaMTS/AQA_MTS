@@ -1,19 +1,24 @@
+using System.Runtime.CompilerServices;
+
 namespace Delegate;
 
 public class Example5
 {
     // Тип делегата
-    public delegate void NoParameters();
-
-    delegate int Operation(int x, int y);
+    private delegate void NoParameters();  //
+    delegate int Operation(int x, int y);  //  вернуть делегат из метода - целочисленное значение
 
     public void Run()
     {
-        NoParameters noPrm = delegate { Console.WriteLine("Have fun!"); };
+        NoParameters noPrm = delegate { Console.WriteLine("Have fun!"); };  // делегат содержит анонимную функцию
 
         // Делегаты как параметры методов
-        Test(noPrm);
+        Console.WriteLine(Test(noPrm));
 
+        
+        
+
+        
         // Возвращение делегатов из метода
         Operation operation = SelectOperation(OperationType.Add);
         Console.WriteLine(operation(10, 4)); // 14
@@ -24,12 +29,15 @@ public class Example5
         operation = SelectOperation(OperationType.Multiply);
         Console.WriteLine(operation(10, 4)); // 40
     }
-
-    private void Test(NoParameters noParam)
+    
+    private bool Test(NoParameters noParam)  // метод у которого в качестве параметра делегат
     {
         noParam();
+        return true;
     }
-
+   
+   // private bool Test(NoParameters delegateValue) {...}
+    
     private int Add(int x, int y) => x + y;
     private int Subtract(int x, int y) => x - y;
     private int Multiply(int x, int y) => x * y;
@@ -43,4 +51,5 @@ public class Example5
             default: return Multiply;
         }
     }
+    
 }

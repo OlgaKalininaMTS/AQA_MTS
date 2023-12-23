@@ -1,6 +1,8 @@
 namespace Delegate;
 
-public enum OperationType
+public enum OperationType  // перечисление, кот содержит список операций
 {
-    Add, Subtract, Multiply
+    Add, 
+    Subtract, 
+    Multiply
 }
