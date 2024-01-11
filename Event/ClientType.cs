@@ -1,6 +1,6 @@
 namespace Event;
 
-public enum ClientType
+public enum ClientType  // перечисление
 {
     Individual,
     Corporate

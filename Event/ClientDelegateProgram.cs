@@ -1,26 +1,30 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿namespace Event;
 
-
-using Event;
-
-class ClientDelegateProgram
+public class ClientDelegateProgram
 {
-    public delegate int CalculateDiscount(ClientType clientType);
-
-    public CalculateDiscount CalculateDiscountForClient { get; set; }
-
-    private void CalculateDiscounts(IEnumerable<Client> clients)
+    public void Run()
     {
-        foreach (Client client in clients)
+        var clients = new Client[2];
+
+        Client client1 = new Client();
+        client1.Type = ClientType.Corporate;
+
+        Client client2 = new Client();
+        client2.Type = ClientType.Individual;
+
+        clients[0] = client1;
+        clients[1] = client2;
+
+        ClientDelegate clientDelegate = new ClientDelegate();
+        CalculateHelper calculateHelper = new CalculateHelper();
+
+        clientDelegate.CalculateDiscountForClient = calculateHelper.CalcDiscount;
+
+        clientDelegate.CalculateDiscounts(clients);
+
+        foreach (var client in clients)
         {
-            client.Discount = CalculateDiscountForClient(client.Type);
+            Console.WriteLine($"Discount is: {client.Discount}");
         }
     }
-    
-    
-    static void Main2()
-    {
-        
-    }
 }
- 

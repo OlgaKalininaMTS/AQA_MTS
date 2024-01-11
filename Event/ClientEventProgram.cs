@@ -1,28 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿namespace Event;
 
-
-using Event;
-
-class ClientEventProgram
+public class ClientEventProgram
 {
-    public delegate void Notificate(string email);
-
-    public event Notificate Notified;
-
-    public void NotifyClients(IEnumerable<Client> clients)
+    public void Run()
     {
-        foreach (Client client in clients)
-        {
-            // какой-то код бизнес логики - подготовки например сообщения
-            
-            // Оповещение
-            Notified(client.Email);
-        }
-    }
-    
-    static void Main()
-    {
-        
+        var clients = new Client[2];
+
+        Client client1 = new Client();
+        client1.Type = ClientType.Corporate;
+        client1.Email = "test1@test.com";
+
+        Client client2 = new Client();
+        client2.Type = ClientType.Individual;
+        client2.Email = "test2@test.com";
+
+        clients[0] = client1;
+        clients[1] = client2;
+
+        ClientEvent clientEvent = new ClientEvent();
+
+        clientEvent.Notified += new NotificationHelper().NotifyByEmail;
+
+        clientEvent.NotifyClients(clients);
     }
 }
- 
+
+
