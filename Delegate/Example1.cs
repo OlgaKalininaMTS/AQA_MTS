@@ -1,10 +1,10 @@
 ﻿
 namespace Delegate;
 
-class Example1
+public class Example1
 {
     // Тип делегата
-    public delegate void NoParameters();
+    private delegate void NoParameters();
     
     public void Run()
     {
@@ -29,3 +29,4 @@ class Example1
    
     
 }
+

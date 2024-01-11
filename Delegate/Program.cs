@@ -21,10 +21,12 @@ using Delegate;
 //new Example5().Run();
 
 // -================= Живой пример
- new Example6().Run();
+ //new Example6().Run();
 
 // -================= Invoke
 // new Example7().Run();
 
+
+
 // -================= Generic Delegates
-// new Example8().Run();
+ new Example8().Run();

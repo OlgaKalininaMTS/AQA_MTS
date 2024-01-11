@@ -7,9 +7,9 @@ public class Example7
     
     public void Run()
     {
-        Message? msg = null;
-        //msg(); // ! Ошибка: делегат равен null
-        msg?.Invoke();
+        Message? msg = null;  // переменная м.б. null
+        //msg(); выйдет ! Ошибка: делегат равен null
+        msg?.Invoke();  // ? означает, что параметр м.б. null
 
         Operation op = Add;
         int result1 = op.Invoke(1, 2);
@@ -20,5 +20,13 @@ public class Example7
     }
     
     private void ShowMessage() => Console.WriteLine("Have fun!"); 
+    
     private int Add(int x, int y) => x + y;
+   /*  верхнюю строку можно прописать так
+     private int Add(int x, int y)
+    {
+        return x + y;
+    }
+    */
+
 }

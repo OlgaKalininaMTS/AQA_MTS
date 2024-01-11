@@ -22,6 +22,15 @@ public class Example3
         noPrm.Invoke(); // Более унифицированный вызов методов делегата; 
      // noPrm2.Invoke(); // можно прописать и так 
 
+
+        noPrm.Invoke(); // Более унифицированный вызов методов делегата; 
+       
+        noPrm -= ShowMessage1;
+        noPrm -= ShowMessage1;
+        noPrm -= ShowMessage2;
+        noPrm -= ShowMessage2;
+
+        noPrm.Invoke();
     }
 
     private void ShowMessage1() => Console.WriteLine("Have fun!");  // метод 1

@@ -28,28 +28,44 @@ public class Example5
 
         operation = SelectOperation(OperationType.Multiply);
         Console.WriteLine(operation(10, 4)); // 40
+
+        OperationType[] operationTypes = (OperationType[])Enum.GetValues(typeof(OperationType));
+
+        Operation operation1;
+        foreach (OperationType type in operationTypes)
+        {
+            operation1 = SelectOperation(type);
+            Console.WriteLine(operation1(11, 5));
+        }
     }
-    
-    private bool Test(NoParameters noParam)  // метод у которого в качестве параметра делегат
+      
+    private bool Test(NoParameters delegateValue)  // метод у которого в качестве параметра делегат
     {
-        noParam();
+        delegateValue();
+
         return true;
     }
-   
-   // private bool Test(NoParameters delegateValue) {...}
-    
+
     private int Add(int x, int y) => x + y;
-    private int Subtract(int x, int y) => x - y;
+    private int Subtrack(int x, int y) => x - y;
     private int Multiply(int x, int y) => x * y;
 
-    private Operation SelectOperation(OperationType opType)
+
+    private Operation SelectOperation(OperationType operationType)
     {
-        switch (opType)
+        switch (operationType)
         {
-            case OperationType.Add: return Add;
-            case OperationType.Subtract: return Subtract;
+            case OperationType.Add:
+                return new Operation(ShowData) + Add;
+            case OperationType.Subtract: return Subtrack;
             default: return Multiply;
         }
     }
-    
+
+    private int ShowData(int x, int y)
+    {
+        Console.WriteLine($"Начало операции с {x} {y}");
+
+        return 0;
+    }
 }

@@ -2,7 +2,7 @@ namespace Delegate;
 
 public class CurrencyExchangeMonitor
 {
-    public delegate void PriceChange(int currentPrice);  // делегат с параметром цена
+    public delegate void PriceChange(int currentPrice);
 
     public PriceChange PriceChangeHandler { get; set; }
 
@@ -10,11 +10,11 @@ public class CurrencyExchangeMonitor
     {
         while (true)
         {
-            int currentPrice = new Random().Next(100);  // заддается рандомная цена
+            int currentPrice = new Random().Next(100);
 
             PriceChangeHandler(currentPrice);
-            
-            Thread.Sleep(2000);  // спим 2  секунды
+
+            Thread.Sleep(2000);
         }
     }
 }

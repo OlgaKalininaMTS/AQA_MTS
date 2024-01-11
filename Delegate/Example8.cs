@@ -2,7 +2,7 @@ namespace Delegate;
 
 public class Example8
 {
-    delegate T Operation<T, K>(K variable);
+    delegate T Operation<T, K>(K variable);  // Т возвращаемый тип,  К переменная
 
     public void Run()
     {
@@ -15,6 +15,7 @@ public class Example8
         Console.WriteLine(result2); 
     }
 
-    decimal Square(int n) => n * n;
-    int Double(int n) => n + n;
+
+    private decimal Square(int n) => n * n;
+    private int Double(int n) => n + n;
 }

@@ -2,9 +2,9 @@
 
 namespace Delegate;
 
-class Example2
+public  class Example2
 {
-    public delegate string WithParameters(string name1, string name2);
+    private delegate string WithParameters(string name1, string name2);
     
     public void Run()
     {
