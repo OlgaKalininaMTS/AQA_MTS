@@ -8,7 +8,7 @@ public class Select
 
     public void RunQuerySyntax()
     {
-        var r = _testObjectSet.List[2].Equals(_testObjectSet.List[3]);
+       // var r = _testObjectSet.List[2].Equals(_testObjectSet.List[3]);
         
         // Query Syntax
         Console.WriteLine("Query Syntax");
@@ -18,12 +18,12 @@ public class Select
             from number in _testIntSet
             select number;
 
-        // Получение трансформированного типа данных
+        // Получение трансформированного типа данных  // трансформируем нумбер в строку
         IEnumerable<string> queryResult11 =
             from number in _testIntSet
             select number.ToString();
 
-        // Формирование нового типа данных
+        // Формирование нового типа данных     //
         IEnumerable<bool> queryResult12 =
             from number in _testIntSet
             select (number % 2 == 0);
@@ -32,25 +32,30 @@ public class Select
         PrintHelper.Print(queryResult11, i => Console.WriteLine($"String: {i}"));
         PrintHelper.Print(queryResult12, i => Console.WriteLine($"Bool: {i}"));
 
-        var queryResult3 =
+
+        var queryResult13 =
             from person in _testObjectSet
             select person.Name;
+        PrintHelper.Print(queryResult13, i => Console.WriteLine($"Obj: {i}"));
 
-        foreach (var i in queryResult3)
+
+        foreach (var i in queryResult13)
         {
             Console.WriteLine($"Persons Name: {i}");
         }
         
         // Создание нового типа данных
-        var queryResult4 =
+        var queryResult14 =
             from person in _testObjectSet
             select new
             {
                 person.Name,
-                YearOfBirth = (DateTime.Now.Year - person.Age)
+                YearOfBirth = (DateTime.Now.Year - person.Age)   // текущий год вычитаем г.р. персона
             };
-        
-        foreach (var i in queryResult4)
+        PrintHelper.Print(queryResult14, i => Console.WriteLine($"Object: {i}"));
+
+
+        foreach (var i in queryResult14)
         {
             Console.WriteLine($"Person's: Name - {i.Name}, Year of birth: {i.YearOfBirth}");
         }

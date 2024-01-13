@@ -13,18 +13,23 @@ public class Where
 
         var queryResult =
             from number in _testIntSet
-            where number % 2 == 0
+            where number % 2 == 0 && number > 5 // логическая операция отсева данных, можно использовать несколько условия (либо все условия в одном where либо в нескольких)
             select number;
+        PrintHelper.Print(queryResult, i => Console.WriteLine($"Int: {i}"));
 
         var queryResult1 =
             from text in _testStringSet.List
-            where text.StartsWith("A")
+            where text.StartsWith("A")  // строка начинается с буквы "А"
             select text;
+        PrintHelper.Print(queryResult1, text => Console.WriteLine($"String: {text}"));
+
 
         var queryResult2 =
             from obj in _testObjectSet
-            where obj.Age > 25
+            where obj.Age > 25  // возраст больше 25
             select obj;
+        PrintHelper.Print(queryResult1, obj => Console.WriteLine($"Obj: {obj}"));
+
 
         foreach (var i in queryResult)
         {
@@ -48,24 +53,31 @@ public class Where
         Console.WriteLine("Method Syntax");
 
         // public static IEnumerable<TSource> Where<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate)
-        var methodResult = _testIntSet.Where(num => num % 2 == 0).Select(number => number);
+        
+        var methodResult = _testIntSet.Where(num => num % 2 == 0 && num > 5).Select(num => num);
         //var methodResult = testSet.Where<int>(num => num % 2 == 0).Select(number => number);
+        PrintHelper.Print(methodResult, i => Console.WriteLine($"Int: {i}"));
+
 
         foreach (var i in methodResult)
         {
             Console.WriteLine($"{i}");
         }
         
-        var queryResult1 = _testStringSet.List.Where(text => text.StartsWith("A"));
+        var methodResult1 = _testStringSet.List.Where(text => text.StartsWith("A"));
+        PrintHelper.Print(methodResult1, text => Console.WriteLine($"String: {text}"));
 
-        var queryResult2 = _testObjectSet.Where(obj => obj.Age > 25);
 
-        foreach (var i in queryResult1)
+        var methodResult2 = _testObjectSet.Where(item => item.Age > 25);
+        PrintHelper.Print(methodResult1, item => Console.WriteLine($"Obj: {item}"));
+
+
+        foreach (var i in methodResult1)
         {
             Console.WriteLine($"{i}");
         }
 
-        foreach (var i in queryResult2)
+        foreach (var i in methodResult2)
         {
             Console.WriteLine($"{i}");
         }
