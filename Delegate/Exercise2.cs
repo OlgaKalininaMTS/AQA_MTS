@@ -1,10 +1,13 @@
 namespace Delegate;
 
-public class Example8
+public delegate double Exercise2(double radius);
+
+
+/*public class Exercise2
 {
     delegate T Operation<T, K>(K variable);  // Т возвращаемый тип,  К переменная
 
-    public void Run()
+    public double Calc(double radius)
     {
         Operation<decimal, int> squareOperation = Square;
         decimal result1 = squareOperation(5);
@@ -18,4 +21,4 @@ public class Example8
 
     private decimal Square(int n) => n * n;
     private int Double(int n) => n + n;
-}
+}*/
