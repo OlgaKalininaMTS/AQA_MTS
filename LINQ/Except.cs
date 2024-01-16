@@ -3,7 +3,11 @@ namespace LINQ;
 public class Except
 {
     private TestIntSet _testIntSet = new();
-    List<int> blackList = new() { 3, 6, 8 , -1, 12};
+   
+
+    List<int> blackList = new() { -12, 3, -1, 3, 6, 8 , 12};
+
+
 
     public void RunQuerySyntax()
     {
@@ -13,9 +17,11 @@ public class Except
         // Разность последовательностей
         // Начать с метода
         var queryResult =
-            from number in _testIntSet
-            where !blackList.Contains(number) 
+            from number in _testIntSet  // исходное множество
+            where !blackList.Contains(number) // Contains - содержится, ! - частица "не" это не стандартное решение
             select number;
+
+        PrintHelper.Print(queryResult, i => Console.WriteLine($"Except number: {i}"));
 
         foreach (var i in queryResult)
         {
@@ -30,6 +36,9 @@ public class Except
         
         // Разность последовательностей
         var queryResult = _testIntSet.Except(blackList);
+
+        PrintHelper.Print(queryResult, item => Console.WriteLine($"Int: {item}"));
+
 
         foreach (var i in queryResult)
         {

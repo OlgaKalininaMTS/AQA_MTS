@@ -10,17 +10,23 @@ public class Variables
     {
         // Query Syntax
         Console.WriteLine("Query Syntax");
-        
+
+
         // Создание временных переменных
         var queryResult =
             from person in _testObjectSet
-            let yearOfBirth = (DateTime.Now.Year - person.Age)
-            select new
+            let yearOfBirth = (DateTime.Now.Year - person.Age)  // let это объявление переменной yearOfBirth
+            let flag = true
+            select new  // создаем новую структуру
             {
-                person.Name, 
-                YearOfBirth = yearOfBirth
+                person.Name,   // можно написать Firstname=person.Name т.е. объявляем переменную с наименованием Firstname
+                YearOfBirth = yearOfBirth,
+                Flag = flag 
             };
-        
+
+        PrintHelper.Print(queryResult, item => Console.WriteLine($"person: {item}"));
+
+
         foreach (var i in queryResult)
         {
             Console.WriteLine($"Person's: Name - {i.Name}, Year of birth: {i.YearOfBirth}");
@@ -31,12 +37,14 @@ public class Variables
     {
         // Method Syntax
         Console.WriteLine("Method Syntax");
-        
+
         // Создание временных переменных
         var queryResult = _testObjectSet
             //.Let
-            .Select(person => new { person, YearOfBirth = (DateTime.Now.Year - person.Age) })
-            .Select(@t => new { @t.person.Name, @t.YearOfBirth });
+            .Select(person => new { person.Name, YearOfBirth = (DateTime.Now.Year - person.Age), Flag = true });  // воспользуемся командой .Select
+
+         PrintHelper.Print(queryResult, item => Console.WriteLine($"Person: {item}"));
+
 
         var queryResult1 = _testObjectSet
             .Select(person => new { person.Name, YearOfBirth = (DateTime.Now.Year - person.Age) });

@@ -1,9 +1,9 @@
 namespace LINQ;
 
-public class Intersect
+public class Intersect  // оставить только то, что есть в обоих множествах
 {
     private TestIntSet _testIntSet = new();
-    List<int> blackList = new() { 3, 6, 8 , -1, 12};
+    List<int> blackList = new() { -1, -3, 3, 6, 8 , 12};
     
     public void RunQuerySyntax()
     {
@@ -15,6 +15,7 @@ public class Intersect
             from number in _testIntSet
             where blackList.Contains(number) 
             select number;
+        PrintHelper.Print(queryResult, i => Console.WriteLine($"Number: {i}"));
 
         foreach (var i in queryResult)
         {
@@ -29,6 +30,8 @@ public class Intersect
         
         // Пересечение последовательностей
         var queryResult = _testIntSet.Intersect(blackList);
+        PrintHelper.Print(queryResult, i => Console.WriteLine($"Number: {i}"));
+
 
         foreach (var i in queryResult)
         {

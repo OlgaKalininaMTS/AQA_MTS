@@ -9,7 +9,7 @@ public class Distinct
         // Query Syntax
         Console.WriteLine("Query Syntax");
 
-        // Удаление дубликатов последовательностей
+        // Удаление дубликатов последовательностей   !!!!!!!!!!!  неправильно так исполдьзовать
         var queryResult = (
                 from number in numbers
                 select number
@@ -30,6 +30,8 @@ public class Distinct
 
         // Удаление дубликатов последовательностей
         var methodResult = numbers.Distinct();
+        PrintHelper.Print(methodResult, i => Console.WriteLine($"Number: {i}"));
+
 
         Console.WriteLine("Результат Distinct (Method Syntax):");
         foreach (var item in methodResult)

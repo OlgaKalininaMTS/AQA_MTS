@@ -14,18 +14,24 @@ public class OrderBy
         // Прямая сортировка
         var queryResult =
             from number in _testIntSet
-            orderby number
+            orderby number descending // сортировка по убыванию
             select number;
+        PrintHelper.Print(queryResult, item => Console.WriteLine($"Int: {item}"));
 
         var queryResult1 =
             from text in _testStringSet.List
-            orderby text
+            orderby text  // сортировка 
             select text;
+        PrintHelper.Print(queryResult, item => Console.WriteLine($"String: {item}"));
+
 
         var queryResult2 =
-            from obj in _testObjectSet
-            orderby obj.Age
-            select obj;
+            from person in _testObjectSet
+            orderby person.Age, person.Name descending  // указываем поле, по кот будет сортировка
+         //   orderby person.Name descending  в две строки писать сортировку некорректно
+            select person;
+        PrintHelper.Print(queryResult, i => Console.WriteLine($"Person: {i}"));
+
 
         foreach (var i in queryResult)
         {
@@ -70,11 +76,16 @@ public class OrderBy
         Console.WriteLine("Method Syntax");
         
         // Прямая сортировка
-        var queryResult = _testIntSet.OrderBy(number => number);
+        var queryResult = _testIntSet.OrderByDescending(number => number);  // сразу прописываем сортировку по убыванию
+        PrintHelper.Print(queryResult, number => Console.WriteLine($"Number: {number}"));
+
 
         var queryResult1 = _testStringSet.List.OrderBy(text => text);
+        PrintHelper.Print(queryResult1, text => Console.WriteLine($"String: {text}"));
 
-        var queryResult2 = _testObjectSet.OrderBy(obj => obj.Age);
+
+        var queryResult2 = _testObjectSet.OrderBy(person => person.Age).ThenByDescending(person => person.Name);  // двухэтапная сортировка в объектах
+        PrintHelper.Print(queryResult2, item => Console.WriteLine($"Person: {item}"));
 
         foreach (var i in queryResult)
         {

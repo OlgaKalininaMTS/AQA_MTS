@@ -48,15 +48,24 @@ public class Aggregation
         // Method Syntax
         Console.WriteLine("Method Syntax");
 
+        //PrintHelper.Print(queryResult, i => Console.WriteLine($"Except number: {i}"));
+
+
         // Aggregate
-        var queryResult = _testIntSet.Aggregate((x, y) => x + y);
-        var queryResult1 = _testIntSet.Aggregate(0, (acc, i) => acc + i);
+        var queryResult = _testIntSet.Aggregate((x, y) => x + y);  // метод Aggregate
+        var queryResult1 = _testIntSet.Aggregate(10, (acc, i) => acc + i);  // 10 изначальное значение
 
         Console.WriteLine($"queryResult: {queryResult}");
         Console.WriteLine($"queryResult1: {queryResult1}");
 
         // Sum
         var queryResult3 = _testIntSet.Sum();
+        var queryResult31 = _testObjectSet.Sum(person =>person.Age); // уточняем ,что именно в объектах надо суммировать
+     
+        queryResult3 = _testIntSet.Max();
+        queryResult3 = _testIntSet.Min();
+        var queryResult32 = _testIntSet.Average();
+
 
         Console.WriteLine($"queryResult: {queryResult3}");
 

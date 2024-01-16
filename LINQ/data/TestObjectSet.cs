@@ -4,13 +4,14 @@ namespace LINQ;
 
 public class TestObjectSet : IEnumerable<Person>   // берем данные
 {
-    public IEnumerator<Person> GetEnumerator()  // вернет коллекцию Персонов
+    public IEnumerator<Person> GetEnumerator()  // вернет коллекцию Персонов, простой набор
     {
         
         var list = new List<Person>()
         {
             new Person("Michel", 18),
-            new Person("Oleg", 23),
+            new Person("Olga", 36),
+            new Person("Oleg", 28),
             new Person("Alex", 45),
             new Person("Olga", 25),
             new Person("Stanislav", 36),
@@ -23,7 +24,7 @@ public class TestObjectSet : IEnumerable<Person>   // берем данные
         }
     }
 
-    public List<Hotel> List { get; } = new()
+    public List<Hotel> List { get; } = new()  // сложный набор отелей, кот содержат Person
     {
         new Hotel("Sharaton", new List<Person>()
         {
