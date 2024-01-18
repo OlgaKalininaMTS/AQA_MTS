@@ -25,24 +25,24 @@ public class SkipTake
 
         // Skip
         Console.WriteLine("Skip");
-        var queryResult = _testStringSet.List.Skip(2);
+        var queryResult = _testStringSet.List.Skip(2);    // первые 2 элемента пропущены
         PrintHelper.Print(queryResult, s => Console.WriteLine(s));
 
         Console.WriteLine("SkipLast");
-        queryResult = _testStringSet.List.SkipLast(2);
+        queryResult = _testStringSet.List.SkipLast(2);   // первые 2 элемента пропущены  2 элемента с конца
         PrintHelper.Print(queryResult, s => Console.WriteLine(s));
 
         Console.WriteLine("SkipWhile");
-        queryResult = _testStringSet.List.SkipWhile(p => p.Length == 3);
+        queryResult = _testStringSet.List.SkipWhile(p => p.Length == 3);  // выбрать элементы с длиной = 3
         PrintHelper.Print(queryResult, s => Console.WriteLine(s));
 
         // Take
         Console.WriteLine("Take");
-        queryResult = _testStringSet.List.Take(2);
+        queryResult = _testStringSet.List.Take(2);   // выбрать 2 первых элемента сначала
         PrintHelper.Print(queryResult, s => Console.WriteLine(s));
 
         Console.WriteLine("TakeLast");
-        queryResult = _testStringSet.List.TakeLast(2);
+        queryResult = _testStringSet.List.TakeLast(2);  // выбрать 2  элемента с конца
         PrintHelper.Print(queryResult, s => Console.WriteLine(s));
 
         Console.WriteLine("TakeWhile");
