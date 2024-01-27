@@ -18,7 +18,7 @@ namespace NUnitTest.Core
 
             Driver?.Manage().Window.Maximize();
             Driver?.Manage().Cookies.DeleteAllCookies();  // удаляем все куки
-         // Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }
