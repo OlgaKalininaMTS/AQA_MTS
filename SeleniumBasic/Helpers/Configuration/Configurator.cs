@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace NUnitTest.Utilites.Configuration
+namespace SeleniumBasic.Helpers.Configuration
 {
     public static class Configurator
     {
@@ -10,7 +10,7 @@ namespace NUnitTest.Utilites.Configuration
 
         static Configurator()
         {
-            s_configuration = new Lazy<IConfiguration>(BuildConfiguration);  // ленивая инициализация файлов
+            s_configuration = new Lazy<IConfiguration>(BuildConfiguration);
         }
 
         private static IConfiguration BuildConfiguration()
@@ -18,7 +18,7 @@ namespace NUnitTest.Utilites.Configuration
             var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var builder = new ConfigurationBuilder()
                 .SetBasePath(basePath ?? throw new InvalidOperationException())
-                .AddJsonFile("appsettings.json");  //
+                .AddJsonFile("appsettings.json");
 
             var appSettingFiles = Directory.EnumerateFiles(basePath ?? string.Empty, "appsettings.*.json");
 
@@ -38,6 +38,8 @@ namespace NUnitTest.Utilites.Configuration
                 var child = Configuration.GetSection("AppSettings");
 
                 appSettings.URL = child["URL"];
+                appSettings.Username = child["Username"];
+                appSettings.Password = child["Password"];
 
                 return appSettings;
             }

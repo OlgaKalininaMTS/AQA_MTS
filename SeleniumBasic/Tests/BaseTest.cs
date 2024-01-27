@@ -1,22 +1,20 @@
-using NUnit.Framework;
+//using NUnit.Allure.Core;
 using NUnitTest.Core;
-using NUnitTest.Utilites.Configuration;
 using OpenQA.Selenium;
+//using SeleniumBasic.Core;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
-
-public class BaseTest  // инициализация и закрытие драйвера
+public class BaseTest
 {
-    protected IWebDriver Driver { get; set; }  // свойство с 2 параметрами
-    
+    protected IWebDriver Driver { get; private set; }
+
     [SetUp]
     public void Setup()
     {
-        Driver = new Browser().Driver!;   // свойствую присваиваем значение драйвера
-        Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
+        Driver = new Browser().Driver;
     }
 
     [TearDown]
