@@ -1,7 +1,9 @@
-﻿using NUnitTest.Utilites.Configuration;
+﻿using Locators.Helpers;
+//using Locators.Helpers.Configuration;
+//using NUnitTest.Core;
 using OpenQA.Selenium;
 
-namespace NUnitTest.Core
+namespace SeleniumBasic.Core
 {
     public class Browser
     {
@@ -17,7 +19,7 @@ namespace NUnitTest.Core
             };
 
             Driver?.Manage().Window.Maximize();
-            Driver?.Manage().Cookies.DeleteAllCookies();  // удаляем все куки
+            Driver?.Manage().Cookies.DeleteAllCookies();
             //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }

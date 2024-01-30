@@ -1,7 +1,5 @@
-//using NUnit.Allure.Core;
-using NUnitTest.Core;
 using OpenQA.Selenium;
-//using SeleniumBasic.Core;
+using SeleniumBasic.Core;
 
 namespace SeleniumBasic.Tests;
 
@@ -9,10 +7,10 @@ namespace SeleniumBasic.Tests;
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class BaseTest
 {
-    protected IWebDriver Driver { get; private set; }
+    protected IWebDriver Driver { get; set; }
 
     [SetUp]
-    public void Setup()
+    public void FactoryDriverTest()
     {
         Driver = new Browser().Driver;
     }
@@ -22,4 +20,5 @@ public class BaseTest
     {
         Driver.Quit();
     }
+
 }

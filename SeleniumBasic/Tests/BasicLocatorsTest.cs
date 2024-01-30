@@ -1,5 +1,6 @@
+using Locators.Helpers;
 using OpenQA.Selenium;
-using SeleniumBasic.Helpers.Configuration;
+//using SeleniumBasic.Helpers;
 
 namespace SeleniumBasic.Tests;
 
@@ -18,8 +19,6 @@ public class BasicLocatorsTest : BaseTest
 
         // Find webElement by TagName
         Driver.FindElement(By.TagName("button")).Click();
-        
-        Console.WriteLine($"{this} Finished...");
     }
 
     [Test]

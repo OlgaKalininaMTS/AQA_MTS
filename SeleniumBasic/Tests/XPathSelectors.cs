@@ -1,5 +1,5 @@
 using OpenQA.Selenium;
-using SeleniumBasic.Helpers.Configuration;
+using Locators.Helpers.Configuration;
 
 namespace SeleniumBasic.Tests;
 

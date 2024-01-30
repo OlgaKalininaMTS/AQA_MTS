@@ -10,15 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\chromedriver.exe" />
     <None Remove="Helpers\appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\chromedriver.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Helpers\appsettings.json">
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
