@@ -1,65 +1,83 @@
+using System;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace Delegate;
 
 
+  public class TypeSort
+{
+    public static SortArrayDelegate SelectSortMetDelegate(TypeSorting array)
+    {
+        switch (array)
+        {
+            case TypeSorting.GnomeSort:
+                return new TypeSorting(GnomeSort.Gnome);
+            case TypeSorting.InsertionSort:
+                return new TypeSorting(InsertionSort.Insertion);
+            default: throw new ArgumentException("Некорректный тип сортировки");
+        }
+    }
 
     public class GnomeSort
-{    
-    static void Swap(int item1, int item2)  //метод для обмена элементов
     {
-        var temp = item1;
-        item1 = item2;
-        item2 = temp;
-    }
-    public static int[] Gnome(int[] inputArray)  // гномья сортировка
-    {
-        var index = 1;
-        var nextIndex = index + 1;
-
-        while (index < inputArray.Length)
+        static void Swap(int item1, int item2)  //метод для обмена элементов
         {
-            if (inputArray[index - 1] < inputArray[index])
+            var temp = item1;
+            item1 = item2;
+            item2 = temp;
+        }
+        public static int[] Gnome(int[] inputArray)  // гномья сортировка
+        {
+            var index = 1;
+            var nextIndex = index + 1;
+
+            while (index < inputArray.Length)
             {
-                index = nextIndex;
-                nextIndex++;
-            }
-            else
-            {
-                Swap(inputArray[index - 1], inputArray[index]);
-                index--;
-                if (index == 0)
+                if (inputArray[index - 1] < inputArray[index])
                 {
                     index = nextIndex;
                     nextIndex++;
                 }
+                else
+                {
+                    Swap(inputArray[index - 1], inputArray[index]);
+                    index--;
+                    if (index == 0)
+                    {
+                        index = nextIndex;
+                        nextIndex++;
+                    }
+                }
             }
+            return inputArray;
         }
-        return inputArray;
+
     }
-    
-}
-public class InsertionSort
-{
-    static void Swap(int item1, int item2)  //метод для обмена элементов
+    public class InsertionSort
     {
-        var temp = item1;
-        item1 = item2;
-        item2 = temp;
-    }
-    public static int[] Insertion(int[] inputArray) //сортировка вставками
-    {
-        for (var i = 1; i < inputArray.Length; i++)
+        static void Swap(int item1, int item2)  //метод для обмена элементов
         {
-            var key = inputArray[i];
-            var j = i;
-            while ((j > 1) && (inputArray[j - 1] > key))
+            var temp = item1;
+            item1 = item2;
+            item2 = temp;
+        }
+        public static int[] Insertion(int[] inputArray) //сортировка вставками
+        {
+            for (var i = 1; i < inputArray.Length; i++)
             {
-                Swap(inputArray[j - 1], inputArray[j]);
-                j--;
+                var key = inputArray[i];
+                var j = i;
+                while ((j > 1) && (inputArray[j - 1] > key))
+                {
+                    Swap(inputArray[j - 1], inputArray[j]);
+                    j--;
+                }
+
+                inputArray[j] = key;
             }
 
-            inputArray[j] = key;
+            return inputArray;
         }
-
-        return inputArray;
     }
 }
+

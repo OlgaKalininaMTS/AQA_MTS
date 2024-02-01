@@ -7,4 +7,5 @@ public enum TypeSorting
     InsertionSort
 }
 
+public delegate int[] SortArrayDelegate(int[] numbers);
 

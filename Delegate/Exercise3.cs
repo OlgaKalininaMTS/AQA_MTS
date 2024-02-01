@@ -1,13 +1,14 @@
 ﻿
 using static Delegate.TypeSorting;
 
+/*
 namespace Delegate;
 
-public class Exercise3
-{
-    public delegate int[] SortArray(int[] numbers);
 
-    public SortArray SelectSortMet(TypeSorting array)
+public class GlobalSort 
+{
+
+    public static SortArrayDelegate SelectSortMetDelegate(TypeSorting array)
     {
         switch (array)
         {
@@ -15,8 +16,9 @@ public class Exercise3
                 return new SortArray(GnomeSort.Gnome);
             case TypeSorting.InsertionSort:
                 return new SortArray(InsertionSort.Insertion);
-            default:  throw new ArgumentException("Invalid sort type");
+            default: throw new ArgumentException("Некорректный тип сортировки");
         }
     }
 }
+*/
 
