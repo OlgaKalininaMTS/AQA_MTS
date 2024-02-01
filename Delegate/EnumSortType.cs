@@ -3,9 +3,10 @@ namespace Delegate;
 
 public enum TypeSorting
 {
-    GnomeSort,
-    InsertionSort
+    Gnome,
+    Insertion
 }
 
-public delegate int[] SortArrayDelegate(int[] numbers);
+public delegate int[] SortArrayDelegate(int[] inputArray);
+
 

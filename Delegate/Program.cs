@@ -3,7 +3,7 @@ using Delegate;
 using System;
 using System.Drawing;
 using System.Numerics;
-using static Delegate.Exercise3;
+//using static Delegate.Exercise3;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
@@ -28,40 +28,42 @@ Console.WriteLine($"Объем шара: {volume}");
 /////////////////////////////////////////////////// Домашняя работа Задание 3
 static void Main(string[] args)
 {
-  //  int[] randomArray = GenerateRandomArray(int size); // создание массива из 10 случайных чисел с помощью метода GenerateRandomArray
-  //  Console.WriteLine("Исходный массив:");
-   
-
-    static int[] GenerateRandomArray(int size)   // Генерация случайного массива состоящий из 10 чисел от 0 до 100
-    {
-        int[] runArray = new int[10];
-        for (int i = 0; i < runArray.Length; i++)
-        {
-            runArray[i] = new Random().Next(100);
-        }
-        return runArray;
-    }
-
-   
         int[] randomArray = GenerateRandomArray(10); // создание массива из 10 случайных чисел с помощью метода GenerateRandomArray
         Console.WriteLine("Исходный массив:");
         PrintArray(randomArray); //вывод на экран созданного массива
-
-        TypeSorting sortingType = (TypeSorting)new Random().Next(0, 2); //выбор случайным образом тип сортировки из SortingType
-    SortArray sortingDelegate = Exercise3.SelectSortMet(numbers); //инстанцируем экземпляр делегата с ссылкой на метод сортировки
+    
+        TypeSorting typesorting = (TypeSorting)new Random().Next(0, 2); //выбор случайным образом тип сортировки из SortingType
+        SortArrayDelegate sortingDelegate = TypeSort.GetSelectSortMetDelegate(typesorting); //инстанцируем экземпляр делегата с ссылкой на метод сортировки
         int[] sortedArray = sortingDelegate(randomArray); //вызов делегата
 
-        Console.WriteLine($"Отсортированный массив с использованием {array}:");
-        PrintArray(sortedArray); //вывод сортированного массива в виде строки
+        Console.WriteLine($"Отсортированный массив с использованием {typesorting}:");
+            PrintArray(sortedArray); //вывод сортированного массива в виде строки
+   
+     
 
-    static void PrintArray(int[] array) //метод печати массива на экран
+    static int[] GenerateRandomArray(int size)   // Генерация случайного массива состоящий из 10 чисел от 0 до 100
     {
-        foreach (var element in array)
+        var random = new Random();
+        int[] runArray = new int[size];
+        for (int i = 0; i < size; i++)           //runArray.Length; i++)
         {
-            Console.Write(element + " ");
+            // runArray[i] = new Random().Next(100);
+            runArray[i] = random.Next(100);
         }
-        Console.WriteLine();
+        return runArray;
     }
-
+    static void PrintArray(int[] runArray)
+    {
+        Console.Write("[");
+        for (int i = 0; i < runArray.Length; i++)
+        {
+            Console.Write(runArray[i]);
+            if (i < runArray.Length - 1)
+            {
+                Console.Write(", ");
+            }
+        }
+        Console.WriteLine("]");
+    }
 
 }
