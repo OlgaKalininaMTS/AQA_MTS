@@ -1,7 +1,7 @@
 using NUnitTest.Core;
 using NUnitTest.Helpers;
 using NUnitTest.Helpers.Configuration;
-using OpenQA.Selenium;
+//using OpenQA.Selenium;
 
 namespace NUnitTest.Tests;
 

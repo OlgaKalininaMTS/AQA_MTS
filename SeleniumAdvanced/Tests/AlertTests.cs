@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class AlertTests : BaseTest
 {
@@ -16,6 +16,9 @@ public class AlertTests : BaseTest
         Assert.That(alert.Text, Is.EqualTo("I am a JS Alert"));
 
         alert.Accept();
+
+        Driver.FindElement(By.XPath("//button[. = 'Click for JS Alert']")).Click();
+
     }
 
     [Test]
