@@ -28,16 +28,16 @@ Console.WriteLine($"Объем шара: {volume}");
 /////////////////////////////////////////////////// Домашняя работа Задание 3
 static void Main(string[] args)
 {
-        int[] randomArray = GenerateRandomArray(10); // создание массива из 10 случайных чисел с помощью метода GenerateRandomArray
+        int[] randomArray = GenerateRandomArray(8); // создание массива из 10 случайных чисел с помощью метода GenerateRandomArray
         Console.WriteLine("Исходный массив:");
-        PrintArray(randomArray); //вывод на экран созданного массива
+        PrintArrayRun(randomArray); //вывод на экран созданного массива
     
         TypeSorting typesorting = (TypeSorting)new Random().Next(0, 2); //выбор случайным образом тип сортировки из SortingType
         SortArrayDelegate sortingDelegate = TypeSort.GetSelectSortMetDelegate(typesorting); //инстанцируем экземпляр делегата с ссылкой на метод сортировки
         int[] sortedArray = sortingDelegate(randomArray); //вызов делегата
 
         Console.WriteLine($"Отсортированный массив с использованием {typesorting}:");
-            PrintArray(sortedArray); //вывод сортированного массива в виде строки
+    PrintArrayRun(sortedArray); //вывод сортированного массива в виде строки
    
      
 
@@ -52,7 +52,7 @@ static void Main(string[] args)
         }
         return runArray;
     }
-    static void PrintArray(int[] runArray)
+    static void PrintArrayRun(int[] runArray)
     {
         Console.Write("[");
         for (int i = 0; i < runArray.Length; i++)
