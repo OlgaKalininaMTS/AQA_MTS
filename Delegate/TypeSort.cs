@@ -6,7 +6,7 @@ namespace Delegate;
 
   public class TypeSort
 {
-    public static SortArrayDelegate SelectSortMetDelegate(TypeSorting array)
+   /* public static SortArrayDelegate SelectSortMetDelegate(TypeSorting array)
     {
         switch (array)
         {
@@ -17,7 +17,7 @@ namespace Delegate;
             default: throw new ArgumentException("Некорректный тип сортировки");
         }
     }
-
+   */
     public class GnomeSort
     {
         static void Swap(int item1, int item2)  //метод для обмена элементов
