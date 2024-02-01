@@ -1,4 +1,4 @@
-namespace Locators.Helpers;
+namespace Locators.Helpers.Configuration;
 
 public class AppSettings
 {

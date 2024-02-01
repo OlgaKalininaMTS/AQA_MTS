@@ -1,4 +1,4 @@
-using Locators.Helpers;
+using Locators.Helpers.Configuration;
 using OpenQA.Selenium;
 //using SeleniumBasic.Helpers;
 

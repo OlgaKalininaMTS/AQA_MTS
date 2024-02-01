@@ -1,4 +1,5 @@
-﻿using Locators.Helpers;
+﻿using Locators.Helpers.Configuration;
+
 //using Locators.Helpers.Configuration;
 //using NUnitTest.Core;
 using OpenQA.Selenium;

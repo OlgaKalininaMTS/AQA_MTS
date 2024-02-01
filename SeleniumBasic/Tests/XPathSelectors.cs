@@ -5,11 +5,11 @@ namespace SeleniumBasic.Tests;
 
 public class XPathSelectors : BaseTest
 {
-    private static String absolutePath = "/html/body/div";
+    private static String absolutePath = "/html/body/div";  // абсолютный путь xpath - НИКОГДА НЕ ПОЛЬЗОВАТЬСЯ ЭТИМ
 
     private static String allElementsInHTMLPath = "//*"; // Все элементы на странице начиная с html - тэга
 
-    private static String bodyPath = "//body"; // Элемент по тэгу
+    private static String bodyPath = "//body"; // Элемент по тэгу - ТАК ПРАВИЛЬНО
 
     private static String childPath = "//form/input"; // Дочерний элемент относительно родителя
 

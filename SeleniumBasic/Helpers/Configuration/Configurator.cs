@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace Locators.Helpers
+namespace Locators.Helpers.Configuration
 {
     public static class Configurator
     {
