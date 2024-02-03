@@ -1,5 +1,5 @@
-﻿using NUnitTest.Core;
-using NUnitTest.Helpers.Configuration;
+﻿//using NUnitTest.Core;
+//using NUnitTest.Helpers.Configuration;
 using OpenQA.Selenium;
 using SeleniumBasic.Helpers.Configuration;
 

@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class FrameTests : BaseTest
 {
