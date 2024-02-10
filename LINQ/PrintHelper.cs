@@ -1,12 +1,15 @@
+using System.Collections;
+
 namespace LINQ;
 
-public class PrintHelper
+    internal class PrintHelper
 {
-    public static void Print<T>(IEnumerable<T> array, Action<T> action)  // первый параметр - массив с неизвестным типом (общим), делегат Action с обим типом данных
+    public static void Print(IEnumerable array)
     {
-        foreach (T item in array)
+        foreach (var item in array)
         {
-            action(item);
+            Console.Write($"{item}");
         }
-    } 
+        Console.WriteLine();
+    }
 }
