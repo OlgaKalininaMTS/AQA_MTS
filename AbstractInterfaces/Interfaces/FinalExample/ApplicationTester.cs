@@ -1,6 +1,6 @@
 namespace Interfaces.FinalExample;
 
-public class ApplicationTester : ITestable  // 
+public class ApplicationTester : ITestable  // //
 {
     private Test[] _tests = new Test[100];   // группа тестов (через массив) присутствует только в этом классе (private)
     private int _index = 0;                     // параметр - с каким тестом сейчас работаю
