@@ -1,6 +1,6 @@
 namespace Interfaces.BaseImpl;
 
-public class Tablet3 : Device    // наследуется от базового абстрактного класса
+public class Circle : Figures    // круг наследуется от базового абстрактного класса
 {
     public override void DisplayInformation(string information)
     {
