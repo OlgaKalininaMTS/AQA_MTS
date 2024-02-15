@@ -1,6 +1,6 @@
-using Collections.Helper;
+using Wrappers.Collections.Helper;
 
-namespace Collections.ISet;
+namespace Wrappers.Collections.ISet;
 
 public class HashSetExample
 {
@@ -17,7 +17,7 @@ public class HashSetExample
         // Вывод элементов
         Console.WriteLine("Unique Names:");
         PrintHelper.PrintCollection(uniqueNames);
-        
+
         // Проверка наличия элемента
         bool containsBob = uniqueNames.Contains("Bob");
         Console.WriteLine($"Contains 'Bob': {containsBob}");

@@ -1,7 +1,8 @@
 using OpenQA.Selenium;
+using Wrappers.Pages;
 
 
-namespace Allure.Pages.ProjectPages;
+namespace Wrappers.Pages.ProjectPages;
 
 public class ProjectBasePage : BasePage
 {

@@ -1,4 +1,4 @@
-namespace Collections;
+namespace Wrappers.Collections;
 
 public class Person
 {

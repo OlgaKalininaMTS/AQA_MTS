@@ -2,7 +2,7 @@ using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
 
 
-namespace Allure.Tests;
+namespace Wrappers.Tests;
 
 [AllureEpic("Web Interface")]
 [AllureFeature("Essential feature", "Integration feature")]

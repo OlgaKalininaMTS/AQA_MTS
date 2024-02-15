@@ -1,14 +1,14 @@
 using System.Text;
-using Allure.Helpers;
 using Allure.Core;
-using Allure.Helpers.Configuration;
 using Allure.Net.Commons;
-using Allure.Steps;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
+using Wrappers.Helpers;
+using Wrappers.Helpers.Configuration;
+using Wrappers.Steps;
 
 
-namespace Allure.Tests;
+namespace Wrappers.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]

@@ -1,4 +1,4 @@
-namespace Allure.Tests;
+namespace Wrappers.Tests;
 
 public class ScreenShotTest : BaseTest
 {

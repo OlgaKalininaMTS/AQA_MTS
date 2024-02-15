@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 
 
-namespace Allure.Pages.ProjectPages;
+namespace Wrappers.Pages.ProjectPages;
 
 public class AddProjectPage : ProjectBasePage
 {

@@ -1,6 +1,6 @@
 using Allure.Steps;
 
-namespace Allure.Tests;
+namespace Wrappers.Tests;
 
 public class StepsAllureTest : BaseTest
 {

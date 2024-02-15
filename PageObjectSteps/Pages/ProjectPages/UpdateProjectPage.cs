@@ -1,7 +1,8 @@
 using Allure.Helpers;
 using OpenQA.Selenium;
+using Wrappers.Pages;
 
-namespace Allure.Pages.ProjectPages;
+namespace Wrappers.Pages.ProjectPages;
 
 public class UpdateProjectPage : BasePage
 {

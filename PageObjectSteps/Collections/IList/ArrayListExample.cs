@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Text;
-using Collections.Helper;
+using Wrappers.Collections.Helper;
 
-namespace Collections.IList;
+namespace Wrappers.Collections.IList;
 
 public class ArrayListExample
 {

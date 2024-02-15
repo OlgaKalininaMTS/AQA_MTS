@@ -1,6 +1,6 @@
-using Collections.Helper;
+using Wrappers.Collections.Helper;
 
-namespace Collections.IDictionary;
+namespace Wrappers.Collections.IDictionary;
 
 public class SortedListExample
 {
@@ -17,7 +17,7 @@ public class SortedListExample
         // Выводим элементы отсортированного списка
         Console.WriteLine("SortedList elements:");
         PrintHelper.PrintCollection(mySortedList);
-        
+
         // Проверяем наличие ключа в отсортированном списке
         bool containsKey = mySortedList.ContainsKey("Banana");
         Console.WriteLine($"ContainsKey(\"Banana\"): {containsKey}");

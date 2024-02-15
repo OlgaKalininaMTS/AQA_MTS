@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Collections.Helper;
+namespace Wrappers.Collections.Helper;
 
 public static class PrintHelper
 {
@@ -32,7 +32,7 @@ public static class PrintHelper
         }
     }
     */
-    
+
     // Общий метод для печати элементов IEnumerable
     public static void PrintCollection(IEnumerable collection)
     {

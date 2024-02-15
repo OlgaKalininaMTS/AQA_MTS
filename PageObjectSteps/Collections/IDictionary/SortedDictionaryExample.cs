@@ -1,6 +1,6 @@
-using Collections.Helper;
+using Wrappers.Collections.Helper;
 
-namespace Collections.IDictionary;
+namespace Wrappers.Collections.IDictionary;
 
 public class SortedDictionaryExample
 {

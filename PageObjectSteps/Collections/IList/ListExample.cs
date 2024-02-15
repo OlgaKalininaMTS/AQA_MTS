@@ -1,6 +1,6 @@
-using Collections.Helper;
+using Wrappers.Collections.Helper;
 
-namespace Collections.IList;
+namespace Wrappers.Collections.IList;
 
 public class ListExample
 {
@@ -42,7 +42,7 @@ public class ListExample
         // Поиск индекса элемента
         var index = stringList.IndexOf("Новый Второй");
         Console.WriteLine($"Поиск индекса 'Новый Второй': {index}");
-        
+
         // Удаление элемента
         stringList.Remove("Второй");
 

@@ -1,6 +1,6 @@
-using Collections.Helper;
+using Wrappers.Collections.Helper;
 
-namespace Collections.IList;
+namespace Wrappers.Collections.IList;
 
 public class QueueExample
 {

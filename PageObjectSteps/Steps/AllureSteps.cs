@@ -2,7 +2,7 @@ using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
 using OpenQA.Selenium;
 
-namespace Allure.Steps;
+namespace Wrappers.Steps;
 
 public class AllureSteps : BaseSteps
 {

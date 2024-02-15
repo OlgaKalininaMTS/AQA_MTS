@@ -1,7 +1,7 @@
 using Allure.Net.Commons;
 using NUnit.Allure.Attributes;
 
-namespace Allure.Tests;
+namespace Wrappers.Tests;
 
 public class ParametrizedAllureTest : BaseTest
 {
