@@ -1,6 +1,6 @@
 namespace Interfaces.BaseImpl;
 
-public class Device1 : IDisplayable
+public class Rectangle : IDisplayable  // прямоугольник
 {
     public virtual void DisplayInformation(string information)  // virtual переопределяем метод в дочерних классах
     {
