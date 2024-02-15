@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Drawing;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using Wrappers.Helpers;
 using Wrappers.Helpers.Configuration;
 
@@ -9,7 +10,7 @@ namespace Wrappers.Elements
 {
     public class UIElement : IWebElement
     {
-        private IWebElement _webElementImplementation;
+        private IWebElement _webElement;
         private Actions _actions;
         protected WaitsHelper _waitHelper;
 
@@ -21,47 +22,62 @@ namespace Wrappers.Elements
 
         public UIElement(IWebDriver webDriver, By @by) : this(webDriver)  //  
         {
-            _webElementImplementation = _waitHelper.WaitForExists(by);
+            _webElement = _waitHelper.WaitForExists(by);
         }
 
         public UIElement(IWebDriver webDriver, IWebElement webElement) : this(webDriver)
         {
-            _webElementImplementation = webElement;
+            _webElement = webElement;
         }
 
         public IWebElement FindElement(By @by)
         {
-            return _webElementImplementation.FindElement(@by);
+            return _webElement.FindElement(@by);  // берем конкретный блок элемента и ищем в нем
         }
+        /*public UIElement FindUIElement(By @by)
+        {
+            return new UIElement.FindElement(_web);  // берем конкретный блок элемента и ищем в нем
+        }*/
 
         public ReadOnlyCollection<IWebElement> FindElements(By @by)
         {
-            return _webElementImplementation.FindElements(@by);
+            return _webElement.FindElements(@by);   // берем конкретный блок элемента и ищем в нем
         }
 
         public void Clear()
         {
-            _webElementImplementation.Clear();
+            _webElement.Clear();
         }
 
         public void SendKeys(string text)
         {
-            _webElementImplementation.SendKeys(text);
+            _webElement.SendKeys(text);
         }
 
         public void Submit()
         {
-            _webElementImplementation.Submit();
+            _webElement.Submit();
         }
 
         public void Click()
         {
-            _webElementImplementation.Click();
+            _webElement.Click();
+          /*  try
+            {
+                _webElement.Click();
+            }
+            catch (ElementNotInteractableException)
+            { 
+            _actions
+                    .MoveToElement(_webElement)
+                    .
+            }
+          */
         }
 
         public string GetAttribute(string attributeName)
         {
-            return _webElementImplementation.GetAttribute(attributeName);
+            return _webElement.GetAttribute(attributeName);
         }
 
         public string GetDomAttribute(string attributeName)
@@ -71,36 +87,37 @@ namespace Wrappers.Elements
 
         public string GetDomProperty(string propertyName)
         {
-            return _webElementImplementation.GetDomProperty(propertyName);
+            return _webElement.GetDomProperty(propertyName);
         }
 
         public string GetCssValue(string propertyName)
         {
-            return _webElementImplementation.GetCssValue(propertyName);
+            return GetCssValue(propertyName);
         }
 
         public ISearchContext GetShadowRoot()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return GetShadowRoot();
         }
 
         public void Hover()
         {
-            _actions.MoveToElement(_webElementImplementation).Build().Perform();
+            _actions.MoveToElement(_webElement).Build().Perform();
         }
 
-        public string TagName => _webElementImplementation.TagName;
+        public string TagName => _webElement.TagName;
 
-        public string Text => _webElementImplementation.Text;
+        public string Text => _webElement.Text;
 
-        public bool Enabled => _webElementImplementation.Enabled;
+        public bool Enabled => _webElement.Enabled;
 
-        public bool Selected => _webElementImplementation.Selected;
+        public bool Selected => _webElement.Selected;
 
-        public Point Location => _webElementImplementation.Location;
+        public Point Location => _webElement.Location;
 
-        public Size Size => _webElementImplementation.Size;
+        public Size Size => _webElement.Size;
 
-        public bool Displayed => _webElementImplementation.Displayed;
+        public bool Displayed => _webElement.Displayed;
     }
 }

@@ -2,13 +2,15 @@ using OpenQA.Selenium;
 
 namespace Wrappers.Elements
 {
-    public class Button
+    public class RadioButton
     {
-        private readonly UIElement _uiElement;
+        private UIElement _uiElement;
+        //private List<UIElement> _uIElements;
 
-        public Button(IWebDriver? driver, By @by)
+        public RadioButton(IWebDriver? driver, By by)
         {
-            _uiElement = new UIElement(driver, @by);
+            _uiElements = new List<UIElement>();
+
         }
 
         public void Click() => _uiElement.Click();
