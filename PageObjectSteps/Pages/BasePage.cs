@@ -1,34 +1,35 @@
+using Allure.Helpers;
+using Allure.Helpers.Configuration;
 using OpenQA.Selenium;
-using PageObjectSteps.Helpers;
-using PageObjectSteps.Helpers.Configuration;
 
-namespace PageObjectSteps.Pages;
+namespace Allure.Pages;
 
 public abstract class BasePage
 {
-    protected IWebDriver Driver;
+    protected IWebDriver Driver { get; private set; }
     protected WaitsHelper WaitsHelper { get; private set; }
+
+    public BasePage(IWebDriver driver)
+    {
+        Driver = driver;
+        WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+    }
 
     public BasePage(IWebDriver driver, bool openPageByUrl)
     {
         Driver = driver;
         WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
-        
+
         if (openPageByUrl)
         {
-            OpenPageByUrl();
+            OpenPageByURL();
         }
     }
-    
-    public BasePage(IWebDriver driver) : this(driver, false)
-    {
-    }
-    
 
-    public abstract bool IsPageOpened();
     protected abstract string GetEndpoint();
+    public abstract bool IsPageOpened();
 
-    private void OpenPageByUrl()
+    protected void OpenPageByURL()
     {
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL + GetEndpoint());
     }

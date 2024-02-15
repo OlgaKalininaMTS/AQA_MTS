@@ -1,11 +1,11 @@
-﻿using OpenQA.Selenium;
-using PageObjectSteps.Helpers.Configuration;
+﻿using Allure.Helpers.Configuration;
+using OpenQA.Selenium;
 
-namespace PageObjectSteps.Core
+namespace Allure.Core
 {
     public class Browser
     {
-        public IWebDriver Driver { get; }
+        public IWebDriver? Driver { get; }
 
         public Browser()
         {
@@ -14,11 +14,11 @@ namespace PageObjectSteps.Core
                 "chrome" => new DriverFactory().GetChromeDriver(),
                 "firefox" => new DriverFactory().GetFirefoxDriver(),
                 _ => Driver
-            } ?? throw new InvalidOperationException("Browser is not supported.");
+            };
 
-            Driver.Manage().Window.Maximize();
-            Driver.Manage().Cookies.DeleteAllCookies();
-            //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            Driver?.Manage().Window.Maximize();
+            Driver?.Manage().Cookies.DeleteAllCookies();
+            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }

@@ -1,19 +1,16 @@
 using OpenQA.Selenium;
 
-namespace PageObjectSteps.Pages.ProjectPages;
+
+namespace Allure.Pages.ProjectPages;
 
 public class AddProjectPage : ProjectBasePage
 {
     private static string END_POINT = "index.php?/admin/projects/add";
-    
+
     // Описание элементов
     private static readonly By AddButtonBy = By.Id("name");
-    
-    public AddProjectPage(IWebDriver driver) : base(driver)
-    {
-    }
 
-    public AddProjectPage(IWebDriver driver, bool openByUrl) : base(driver, openByUrl)
+    public AddProjectPage(IWebDriver driver) : base(driver)
     {
     }
 
@@ -28,5 +25,5 @@ public class AddProjectPage : ProjectBasePage
     }
 
     // Атомарные Методы
-    public IWebElement AddButton => Driver.FindElement(AddButtonBy); 
+    public IWebElement AddButton => Driver.FindElement(AddButtonBy);
 }
