@@ -1,22 +1,58 @@
 using OpenQA.Selenium;
+using Wrappers.Helpers;
+using Wrappers.Helpers.Configuration;
 
-namespace Wrappers.Elements
+namespace Wrappers.Elements;
+
+public class RadioButton
 {
-    public class RadioButton
+    private List<UIElement> _uiElements;
+    private List<string> _values;
+
+    /// <summary>
+    /// Данный элемент должен использовать атрибут name для локатора
+    /// </summary>
+    /// <param name="webDriver"></param>
+    /// <param name="by"></param>
+    public RadioButton(IWebDriver webDriver, By by)
     {
-        private UIElement _uiElement;
-        //private List<UIElement> _uIElements;
+        _uiElements = new List<UIElement>();
+        _values = new List<string>();
 
-        public RadioButton(IWebDriver? driver, By by)
+        WaitsHelper _waitsHelper = new WaitsHelper(webDriver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
+
+        foreach (var webElement in _waitsHelper.WaitForPresenceOfAllElementsLocatedBy(by))
         {
-            _uiElements = new List<UIElement>();
-
+            UIElement uiElement = new UIElement(webDriver, webElement);
+            _uiElements.Add(uiElement);
+            _values.Add(uiElement.GetAttribute("value"));
         }
+    }
 
-        public void Click() => _uiElement.Click();
-        public void Submit() => _uiElement.Submit();
-        public string Text => _uiElement.Text;
+    public RadioButton(IWebDriver webDriver, IWebElement webElement)
+    {
 
-        public bool Displayed => _uiElement.Displayed;
+    }
+
+    public void SelectByIndex(int index)
+    {
+        if (index < _uiElements.Count)
+        {
+            _uiElements[index].Click();
+        }
+        else
+        {
+            throw new AssertionException("Превышен индекс");
+        }
+    }
+
+    public void SelectByValue(string value)
+    {
+        _uiElements[_values.IndexOf(value)].Click();
+    }
+
+    public void SelectByText(string text)
+    {
+
     }
 }

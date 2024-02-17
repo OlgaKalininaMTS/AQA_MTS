@@ -1,20 +1,31 @@
 using OpenQA.Selenium;
 
-namespace Wrappers.Elements
+namespace Wrappers.Elements;
+
+public class Button
 {
-    public class Button
+    private UIElement _uiElement;
+
+    public Button(IWebDriver webDriver, By by)
     {
-        private readonly UIElement _uiElement;
-
-        public Button(IWebDriver? driver, By @by)
-        {
-            _uiElement = new UIElement(driver, @by);
-        }
-
-        public void Click() => _uiElement.Click();
-        public void Submit() => _uiElement.Submit();
-        public string Text => _uiElement.Text;
-
-        public bool Displayed => _uiElement.Displayed;
+        _uiElement = new UIElement(webDriver, by);
     }
+
+    public Button(IWebDriver webDriver, IWebElement webElement)
+    {
+        _uiElement = new UIElement(webDriver, webElement);
+    }
+
+    public void Click()
+    {
+        _uiElement.Click();
+    }
+
+    public void Submit()
+    {
+        _uiElement.Submit();
+    }
+
+    public string Text => _uiElement.Text;
+    public bool Displayed => _uiElement.Displayed;
 }

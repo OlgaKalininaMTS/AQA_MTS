@@ -1,12 +1,11 @@
 using System.Text;
-using Allure.Core;
 using Allure.Net.Commons;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
+using Wrappers.Core;
 using Wrappers.Helpers;
 using Wrappers.Helpers.Configuration;
 using Wrappers.Steps;
-
 
 namespace Wrappers.Tests;
 
@@ -19,7 +18,6 @@ public class BaseTest
     protected WaitsHelper WaitsHelper { get; private set; }
 
     protected UserSteps UserSteps;
-    protected AllureSteps AllureSteps;
 
     [OneTimeSetUp]
     public static void GlobalSetup()
@@ -34,7 +32,6 @@ public class BaseTest
         WaitsHelper = new WaitsHelper(Driver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
 
         UserSteps = new UserSteps(Driver);
-        AllureSteps = new AllureSteps(Driver);
 
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
     }
@@ -55,8 +52,8 @@ public class BaseTest
             AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
 
             // Вариант 2
-            AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
-            AllureApi.AddAttachment("data.txt", "text/plain", Encoding.UTF8.GetBytes("This os the file content."));
+            // AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            // AllureApi.AddAttachment("data.txt", "text/plain", Encoding.UTF8.GetBytes("This os the file content."));
         }
 
         Driver.Quit();

@@ -1,5 +1,4 @@
-﻿using Wrappers.Core;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using Wrappers.Helpers.Configuration;
 
 namespace Wrappers.Core

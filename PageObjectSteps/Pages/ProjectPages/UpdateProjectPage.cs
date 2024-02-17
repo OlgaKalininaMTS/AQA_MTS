@@ -1,6 +1,4 @@
-using Allure.Helpers;
 using OpenQA.Selenium;
-using Wrappers.Pages;
 
 namespace Wrappers.Pages.ProjectPages;
 
