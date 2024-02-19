@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class FirstTest : BaseTest
 {
@@ -24,13 +24,13 @@ public class FirstTest : BaseTest
         IWebElement result = Driver.FindElement(By.Id("imt-result"));
         Assert.That(result.Text, Is.EqualTo("17.3 - Недостаточная (дефицит) масса тела"));
     }
-    
+
     [Test]
     public void ValidateSKF()
     {
         Driver.Navigate().GoToUrl("https://bymed.top/calc/%D1%81%D0%BA%D1%84-2148");
         Driver.SwitchTo().Frame(1); // переключаемся в iFrame1
-        
+
         IWebElement selectDropdown = Driver.FindElement(By.Id("cr-size"));
         SelectElement selectElement = new SelectElement(selectDropdown);
 
@@ -43,5 +43,5 @@ public class FirstTest : BaseTest
         selectElement.SelectByText("мкмоль/л");
         Thread.Sleep(2000);
     }
-    
+
 }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Playwright;
-using NUnitTest.Core;
+using SeleniumBasic.Core;
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 [TestFixture]
 public class WebDriverTest
@@ -16,7 +16,7 @@ public class WebDriverTest
         // webDriver.Close(); //закрывает текущую закладку браузера
 
         webDriver.Manage().Window.Maximize();  // размеры окна браузера
-       // webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
+                                               // webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
         webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
 
 
@@ -27,7 +27,7 @@ public class WebDriverTest
     {
         IWebDriver webDriver = new AdvancedDriver().GetChromeDriver();
         webDriver.Manage().Window.Maximize();  // размеры окна браузера
-      //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
+                                               //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
         webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
     }
 
@@ -36,7 +36,7 @@ public class WebDriverTest
     {
         IWebDriver webDriver = new Browser().Driver!;
         webDriver.Manage().Window.Maximize();  // размеры окна браузера
-      //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
+                                               //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
         webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
     }
 }

@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 public class SecondTest : BaseTest
 {

@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using System.Reflection;
 
-namespace NUnitTest.Core;
+namespace SeleniumBasic.Core;
 
 public class SimpleDriver  // отвечает за создание нового экземпляра браузера
 {
@@ -10,12 +10,12 @@ public class SimpleDriver  // отвечает за создание новог�
     {
         get
         {
-         var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); // путь к папке debug/reliase ПРАВИЛЬНО
-         // string path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName; // путь до директории
-        // return new ChromeDriver(@"C:\Users\Olga\source\repos\AQA_MTS\SeleniumBasic\Resources\");  // путь до драйвера на моем пк
+            var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); // путь к папке debug/reliase ПРАВИЛЬНО
+                                                                                            // string path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName; // путь до директории
+                                                                                            // return new ChromeDriver(@"C:\Users\Olga\source\repos\AQA_MTS\SeleniumBasic\Resources\");  // путь до драйвера на моем пк
 
-         //   Console.WriteLine(basePath);
-        //    Console.WriteLine(path);
+            //   Console.WriteLine(basePath);
+            //    Console.WriteLine(path);
 
 
             return new ChromeDriver(basePath + @"\Resources\");  // более правильный 

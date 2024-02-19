@@ -1,9 +1,9 @@
 using NUnit.Framework;
-using NUnitTest.Core;
-using NUnitTest.Utilites.Configuration;
+using SeleniumBasic.Core;
 using OpenQA.Selenium;
+using SeleniumBasic.Utilites.Configuration;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
@@ -11,7 +11,7 @@ namespace NUnitTest.Tests;
 public class BaseTest  // инициализаци€ и закрытие драйвера
 {
     protected IWebDriver Driver { get; set; }  // свойство с 2 параметрами
-    
+
     [SetUp]
     public void Setup()
     {

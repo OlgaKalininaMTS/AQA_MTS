@@ -5,7 +5,7 @@ using System.Reflection;
 //using WebDriverManager;
 //using WebDriverManager.DriverConfigs.Impl;
 
-namespace NUnitTest.Core;
+namespace SeleniumBasic.Core;
 
 public class AdvancedDriver
 {
