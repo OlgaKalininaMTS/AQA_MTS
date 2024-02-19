@@ -2,16 +2,16 @@
 
 namespace NUnitTest;
 
-[TestFixture, Category("Домашняя работа по теме NUnit")]
-[Author("Olga Kalinina")]
+  [TestFixture, Category("Домашняя работа по теме NUnit")]
+  [Author("Olga Kalinina")]
 
-public class CalcTests
-{
+   public class CalcTests
+   {
 
     [OneTimeSetUp]
     public void OnetimeSetup()
     {
-        Console.WriteLine("");
+        Console.WriteLine("Тестирование класса Calc");
     }
 
     [TestCaseSource(typeof(TestData), nameof(TestData.DivInt))]
@@ -55,7 +55,7 @@ public class CalcTests
 
         CollectionAssert.AreEqual(expectedList, actualList, "Списки должны быть равными");
     }
-        
+
     [TestCaseSource(typeof(TestData), nameof(TestData.DivInt))]
     [Order(6), Description("Проверка уникальности элементов Int")]
     public void CalcDivIntUniqueness(int x, int y, int result)
@@ -91,4 +91,10 @@ public class CalcTests
         Console.WriteLine($"{this}: Диапазон чисел Int... {rangeNumber}");
     }
 
-}
+    [OneTimeTearDown]
+    public void OnetimeTeardown()
+    {
+        Console.WriteLine("Окончание тестирования класса Calc");
+    }
+   }
+
