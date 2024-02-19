@@ -1,9 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using System.Reflection;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using System.Reflection;
-//using WebDriverManager;
-//using WebDriverManager.DriverConfigs.Impl;
 
 namespace SeleniumBasic.Core;
 
@@ -15,14 +13,14 @@ public class AdvancedDriver
     {
         var chromeOptions = new ChromeOptions();
         chromeOptions.AddArguments("--incognito");
-        chromeOptions.AddArguments("--disable-gpu");  // отключить графическую карту
-        chromeOptions.AddArguments("--disable-extensions");  // отключить все дополнения
-        //chromeOptions.AddArguments("--headless");  // режим без ui части (создается только в памяти, без визуала)
+        chromeOptions.AddArguments("--disable-gpu");
+        chromeOptions.AddArguments("--disable-extensions");
+        //chromeOptions.AddArguments("--headless");
 
-        chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All); // настройки логирования
-        chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All); // настройки логирования
+        chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
+        chromeOptions.SetLoggingPreference(LogType.Driver, LogLevel.All);
 
-        return new ChromeDriver(basePath + @"\Resources\", chromeOptions);
+        return new ChromeDriver(basePath + @"/Resources/", chromeOptions);
     }
 
     public IWebDriver GetFirefoxDriver()

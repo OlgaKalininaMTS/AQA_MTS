@@ -22,24 +22,5 @@ public class SecondTest : BaseTest
         IWebElement result = Driver.FindElement(By.Id("imt-result"));
         Assert.That(result.Text, Is.EqualTo("17.3 - Недостаточная (дефицит) масса тела"));
     }
-    /*
-    [Test]
-    public void ValidateSKF()
-    {
-        Driver.Navigate().GoToUrl("https://bymed.top/calc/%D1%81%D0%BA%D1%84-2148");
-        Driver.SwitchTo().Frame(1);
-        
-        IWebElement selectWebElement = Driver.FindElement(By.Id("cr-size"));
-        SelectElement selectSex = new SelectElement(selectWebElement);
-        
-        selectSex.SelectByIndex(1);
-        Thread.Sleep(2000);
-        
-        selectSex.SelectByValue("mm");
-        Thread.Sleep(2000);
-        
-        selectSex.SelectByText("мг/дл");
-        Thread.Sleep(2000);
-    }
-    */
+    
 }

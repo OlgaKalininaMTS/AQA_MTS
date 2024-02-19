@@ -34,9 +34,14 @@ public class WebDriverTest
     [Test]
     public void FactoryDriverTest()
     {
-        IWebDriver webDriver = new Browser().Driver!;
+        IWebDriver webDriver = new Browser().Driver;
+        IWebDriver webDriver1 = new Browser().Driver;
         webDriver.Manage().Window.Maximize();  // размеры окна браузера
-                                               //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
-        webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
+        webDriver.Navigate().GoToUrl("http://onliner.by");
+        webDriver1.Manage().Window.Maximize();
+        webDriver1.Navigate().GoToUrl("http://onliner.by");
+
+        webDriver.Quit();
+        webDriver1.Quit();
     }
 }

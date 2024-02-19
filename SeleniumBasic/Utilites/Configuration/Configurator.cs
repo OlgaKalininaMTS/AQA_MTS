@@ -10,7 +10,7 @@ namespace SeleniumBasic.Utilites.Configuration
 
         static Configurator()
         {
-            s_configuration = new Lazy<IConfiguration>(BuildConfiguration);  // ленивая инициализация файлов
+            s_configuration = new Lazy<IConfiguration>(BuildConfiguration);
         }
 
         private static IConfiguration BuildConfiguration()
@@ -18,7 +18,7 @@ namespace SeleniumBasic.Utilites.Configuration
             var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             var builder = new ConfigurationBuilder()
                 .SetBasePath(basePath ?? throw new InvalidOperationException())
-                .AddJsonFile("appsettings.json");  //
+                .AddJsonFile("appsettings.json");
 
             var appSettingFiles = Directory.EnumerateFiles(basePath ?? string.Empty, "appsettings.*.json");
 
