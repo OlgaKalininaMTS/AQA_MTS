@@ -1,6 +1,15 @@
 ﻿namespace NUnitTest;
 
-public static class Calc
+public  class Calc
 {
-    public static int Sum(int x, int y) => x + y;
+    public static int DivInt(int a, int b)
+    {
+        return a / b;
+    }
+
+    public static double DivDouble(double a, double b)
+    {
+        return a / b;
+    }
+
 }
