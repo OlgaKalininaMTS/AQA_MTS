@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,14 +11,14 @@
 
   <ItemGroup>
     <None Remove="Resources\chromedriver.exe" />
-    <None Remove="Utilites\appsettings.json" />
+    <None Remove="appsettings.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\chromedriver.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Utilites\appsettings.json">
+    <Content Include="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
