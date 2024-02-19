@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using Wrappers.Elements;
 
-namespace Wrappers.Helpers;
+namespace Wrappers.Pages;
 
 public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
 {
