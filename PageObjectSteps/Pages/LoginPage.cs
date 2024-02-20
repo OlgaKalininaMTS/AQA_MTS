@@ -7,7 +7,7 @@ namespace Wrappers.Pages
     {
         private static string END_POINT = "";
 
-        // Описание элементов
+        // Описание элементов /локаторов
         private static readonly By EmailInputBy = By.Id("name");
         private static readonly By PswInputBy = By.Id("password");
         private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
@@ -31,7 +31,7 @@ namespace Wrappers.Pages
 
         // Методы
         // Методы поиска элементов
-        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy);
+        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy); // паттерн page object
         public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);
         public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
         public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);
