@@ -1,40 +1,30 @@
+
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
+using ChainOfInvocations.Pages;
+using ChainOfInvocations.Pages.ProjectPages;
 
-namespace PageObjectSteps.Steps;
+namespace ChainOfInvocations.Steps;
 
-public class NavigationSteps : BaseStep
+public class NavigationSteps(IWebDriver driver) : BaseSteps(driver)
 {
-    public NavigationSteps(IWebDriver driver) : base(driver) { }
-    
-    public LoginPage NavigateToLoginPage()
+    // Комплексные
+    public DashboardPage SuccessfulLogin(string username, string password)
     {
-        return new LoginPage(Driver, true);
+        return Login<DashboardPage>(username, password);
     }
 
-    public DashboardPage NavigateToDashboardPage()
+    public LoginPage IncorrectLogin(string username, string password)
     {
-        return new DashboardPage(Driver, true);
-    }
-    
-    
-    public DashboardPage SuccessfulLogin(string username, string psw)
-    {
-        Login(username, psw);
-        return DashboardPage;
+        return Login<LoginPage>(username, password);
     }
 
-    public LoginPage IncorrectLogin(string username, string psw)
+    private T Login<T>(string username, string password) where T : BasePage
     {
-        Login(username, psw);
-        return LoginPage;
-    }
+        LoginPage = new LoginPage(Driver);
+        LoginPage.EmailInput.SendKeys(username);
+        LoginPage.PswInput.SendKeys(password);
+        LoginPage.LoginInButton.Click();
 
-    private void Login(string username, string psw)
-    {
-        LoginPage.EmailInput().SendKeys(username);
-        LoginPage.PswInput().SendKeys(psw);
-        LoginPage.LoginInButton().Click();
+        return (T)Activator.CreateInstance(typeof(T), Driver, false);
     }
-
 }

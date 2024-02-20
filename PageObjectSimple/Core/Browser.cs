@@ -1,11 +1,12 @@
-﻿using OpenQA.Selenium;
-using PageObjectSimple.Helpers.Configuration;
+﻿using LoadableComponent.Helpers.Configuration;
+using OpenQA.Selenium;
+using LoadableComponent.Core;
 
-namespace PageObjectSimple.Core
+namespace LoadableComponent.Core
 {
     public class Browser
     {
-        public IWebDriver Driver { get; }
+        public IWebDriver? Driver { get; }
 
         public Browser()
         {
@@ -14,11 +15,11 @@ namespace PageObjectSimple.Core
                 "chrome" => new DriverFactory().GetChromeDriver(),
                 "firefox" => new DriverFactory().GetFirefoxDriver(),
                 _ => Driver
-            } ?? throw new InvalidOperationException("Browser is not supported.");
+            };
 
-            Driver.Manage().Window.Maximize();
-            Driver.Manage().Cookies.DeleteAllCookies();
-            //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
+            Driver?.Manage().Window.Maximize();
+            Driver?.Manage().Cookies.DeleteAllCookies();
+            Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }
 }

@@ -1,17 +1,38 @@
 using OpenQA.Selenium;
-using PageObjectSteps.Pages;
-using PageObjectSteps.Pages.ProjectPages;
+using ChainOfInvocations.Pages;
+using ChainOfInvocations.Pages.ProjectPages;
 
-namespace PageObjectSteps.Steps;
+namespace ChainOfInvocations.Steps;
 
-public class ProjectSteps : BaseStep
+public class ProjectsSteps : BaseSteps
 {
-    public ProjectSteps(IWebDriver driver) : base(driver)
+    public ProjectsSteps(IWebDriver driver) : base(driver)
+    {
+        AddProjectPage addProjectPage = new AddProjectPage(Driver);
+        DashboardPage dashboardPage = new DashboardPage(Driver);
+    }
+
+    public void AddProductToCart(List<string> Products)
     {
     }
 
-    public void NavigateToAddProjectPage()
+    public void CreateProject()
     {
-        new AddProjectPage(Driver, true);
+
+    }
+
+    public void UpdateProject()
+    {
+
+    }
+
+    public void ReadProject()
+    {
+
+    }
+
+    public void DeleteProject()
+    {
+
     }
 }

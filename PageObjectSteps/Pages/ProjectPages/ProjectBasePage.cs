@@ -1,11 +1,12 @@
+using ChainOfInvocations.Pages;
 using OpenQA.Selenium;
 
-namespace PageObjectSteps.Pages.ProjectPages;
+namespace ChainOfInvocations.Pages.ProjectPages;
 
 public class ProjectBasePage : BasePage
 {
     private static readonly By NameInputBy = By.Id("name");
-    
+
     public ProjectBasePage(IWebDriver driver) : base(driver)
     {
     }

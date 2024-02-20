@@ -1,15 +1,27 @@
-using PageObjectSteps.Helpers.Configuration;
+using ChainOfInvocations.Helpers.Configuration;
+using ChainOfInvocations.Pages;
 
-namespace PageObjectSteps.Tests;
+namespace ChainOfInvocations.Tests;
 
 public class LoginTest : BaseTest
 {
     [Test]
-    public void SuccessLoginTest()
+    public void SuccessfulLoginTest()
     {
-        NavigationSteps.NavigateToLoginPage();
-        NavigationSteps.SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+        DashboardPage dashboardPage = _navigationSteps
+            .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
 
-        Assert.That(NavigationSteps.DashboardPage.IsPageOpened());
+        Assert.That(dashboardPage.IsPageOpened);
+    }
+
+    [Test]
+    public void InvalidUsernameLoginTest()
+    {
+        // Проверка
+        Assert.That(
+            _navigationSteps
+                .IncorrectLogin("ssdd", "")
+                .GetErrorLabelText(),
+            Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
     }
 }

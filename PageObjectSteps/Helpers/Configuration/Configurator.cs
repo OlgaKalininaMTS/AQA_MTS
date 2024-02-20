@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
-namespace PageObjectSteps.Helpers.Configuration
+namespace ChainOfInvocations.Helpers.Configuration
 {
     public static class Configurator
     {
@@ -46,7 +46,6 @@ namespace PageObjectSteps.Helpers.Configuration
         }
 
         public static string? BrowserType => Configuration[nameof(BrowserType)];
-
         public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
     }
 }

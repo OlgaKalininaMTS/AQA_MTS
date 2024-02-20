@@ -1,4 +1,4 @@
-namespace PageObjectSimple.Helpers.Configuration;
+namespace LoadableComponent.Helpers.Configuration;
 
 public class AppSettings
 {

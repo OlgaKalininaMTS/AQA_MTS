@@ -1,17 +1,12 @@
+using LoadableComponent.Pages;
 using OpenQA.Selenium;
 
-namespace PageObjectSimple.Pages.ProjectPages;
+namespace LoadableComponent.Pages.ProjectPages;
 
-public abstract class ProjectBasePage : BasePage
+public abstract class ProjectBasePage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
 {
     private static readonly By NameInputBy = By.Id("name");
-    private BasePage _basePageImplementation;
 
-    protected ProjectBasePage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
-    {
-    }
-    
     // Атомарные Методы
     public IWebElement NameInput => WaitsHelper.WaitForExists(NameInputBy);
-
 }

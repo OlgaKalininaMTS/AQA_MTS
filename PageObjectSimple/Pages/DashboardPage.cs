@@ -1,24 +1,21 @@
 using OpenQA.Selenium;
 
-namespace PageObjectSimple.Pages
+namespace LoadableComponent.Pages
 {
-    public class DashboardPage : BasePage
+    public class DashboardPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
         private static string END_POINT = "index.php?/dashboard";
-        
+
         // Описание элементов
         private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
-        
-        
-        public DashboardPage(IWebDriver? driver, bool openPageByUrl) : base(driver, openPageByUrl)
+
+        // Инициализация класса
+        protected override string GetEndpoint()
         {
+            return END_POINT;
         }
 
-        public DashboardPage(IWebDriver? driver) : base(driver, false)
-        {
-        }
-        
-        public override bool IsPageOpened()
+        protected override bool EvaluateLoadedStatus()
         {
             try
             {
@@ -28,14 +25,9 @@ namespace PageObjectSimple.Pages
             {
                 return false;
             }
-            
         }
 
-        protected override string GetEndpoint()
-        {
-            return END_POINT;
-        }
-
-        public IWebElement SidebarProjectsAddButton => Driver.FindElement(SidebarProjectsAddButtonBy);
+        // Методы
+        public IWebElement SidebarProjectsAddButton => WaitsHelper.WaitForExists(SidebarProjectsAddButtonBy);
     }
 }
