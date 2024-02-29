@@ -1,14 +1,14 @@
 using OpenQA.Selenium;
 
-namespace ValueOfObjects.Pages
+namespace NLogExample.Pages
 {
     public class DashboardPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
     {
         private const string END_POINT = "index.php?/dashboard";
-        
+
         // Описание элементов
         private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
-        
+
         protected override bool EvaluateLoadedStatus()
         {
             try
@@ -20,7 +20,7 @@ namespace ValueOfObjects.Pages
                 return false;
             }
         }
-        
+
         protected override string GetEndpoint()
         {
             return END_POINT;

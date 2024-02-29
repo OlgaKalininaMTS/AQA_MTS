@@ -1,7 +1,8 @@
-﻿using OpenQA.Selenium;
-using ValueOfObjects.Helpers.Configuration;
+﻿using NLogExample.Core;
+using OpenQA.Selenium;
+using NLogExample.Helpers.Configuration;
 
-namespace ValueOfObjects.Core
+namespace NLogExample.Core
 {
     public class Browser
     {

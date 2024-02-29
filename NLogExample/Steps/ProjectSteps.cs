@@ -1,20 +1,20 @@
 using OpenQA.Selenium;
-using ValueOfObjects.Models;
-using ValueOfObjects.Pages.ProjectPages;
+using NLogExample.Pages.ProjectPages;
+using NLogExample.Models;
 
-namespace ValueOfObjects.Steps;
+namespace NLogExample.Steps;
 
 public class ProjectSteps(IWebDriver driver) : BaseStep(driver)
 {
     public ProjectsPage AddProject(Project project)
     {
         AddProjectPage = new AddProjectPage(Driver, true);
-        
+
         AddProjectPage.NameInput.SendKeys(project.ProjectName);
         AddProjectPage.AnnouncementTextArea.SendKeys(project.Announcement);
         AddProjectPage.TypeRadioButton.SelectByIndex(project.ProjectType);
         AddProjectPage.AddButton.Click();
-        
+
         return new ProjectsPage(Driver);
     }
 }

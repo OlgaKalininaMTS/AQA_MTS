@@ -1,11 +1,11 @@
 using OpenQA.Selenium;
 
-namespace ValueOfObjects.Elements;
+namespace NLogExample.Elements;
 
 public class TableCell
 {
     private UIElement _uiElement;
-    
+
     public TableCell(UIElement uiElement)
     {
         _uiElement = uiElement;

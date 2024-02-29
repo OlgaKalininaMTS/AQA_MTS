@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
-using ValueOfObjects.Elements;
+using NLogExample.Elements;
 
-namespace ValueOfObjects.Pages.ProjectPages;
+namespace NLogExample.Pages.ProjectPages;
 
 public class AddProjectPage(IWebDriver? driver, bool openByURL = false) : ProjectBasePage(driver, openByURL)
 {
@@ -14,12 +14,12 @@ public class AddProjectPage(IWebDriver? driver, bool openByURL = false) : Projec
     {
         return END_POINT;
     }
-    
+
     protected override bool EvaluateLoadedStatus()
     {
         return WaitsHelper.WaitForVisibilityLocatedBy(AddButtonBy).Displayed;
     }
-    
+
     // Атомарные Методы
     public Button AddButton => new Button(Driver, AddButtonBy);
 }

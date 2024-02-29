@@ -1,18 +1,18 @@
 using NLog;
 using OpenQA.Selenium;
-using ValueOfObjects.Core;
-using ValueOfObjects.Helpers.Configuration;
-using ValueOfObjects.Models;
-using ValueOfObjects.Steps;
+using NLogExample.Core;
+using NLogExample.Helpers.Configuration;
+using NLogExample.Steps;
+using NLogExample.Models;
 
-namespace ValueOfObjects.Tests;
+namespace NLogExample.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class BaseTest
 {
     protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-    
+
     protected IWebDriver Driver { get; private set; }
 
     protected NavigationSteps _navigationSteps;
@@ -24,7 +24,7 @@ public class BaseTest
     public void Setup()
     {
         Logger.Info("Method setup started...");
-        
+
         Driver = new Browser().Driver;
         Logger.Debug(Driver);
 
@@ -37,7 +37,7 @@ public class BaseTest
             Password = Configurator.AppSettings.Password
         };
         Logger.Info(Admin);
-        
+
         Driver.Navigate().GoToUrl(Configurator.AppSettings.URL);
     }
 

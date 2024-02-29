@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace ValueOfObjects.Pages.ProjectPages;
+namespace NLogExample.Pages.ProjectPages;
 
 public class UpdateProjectPage(IWebDriver? driver, bool openByURL = false) : ProjectBasePage(driver, openByURL)
 {
@@ -8,7 +8,7 @@ public class UpdateProjectPage(IWebDriver? driver, bool openByURL = false) : Pro
 
     // Описание элементов
     private static readonly By SaveButtonBy = By.Id("name");
-    
+
     protected override bool EvaluateLoadedStatus()
     {
         return WaitsHelper.WaitForExists(SaveButtonBy).Displayed;

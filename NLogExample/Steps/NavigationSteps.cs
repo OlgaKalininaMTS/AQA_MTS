@@ -1,14 +1,14 @@
 using OpenQA.Selenium;
-using ValueOfObjects.Models;
-using ValueOfObjects.Pages;
-using ValueOfObjects.Pages.ProjectPages;
+using NLogExample.Pages;
+using NLogExample.Pages.ProjectPages;
+using NLogExample.Models;
 
-namespace ValueOfObjects.Steps;
+namespace NLogExample.Steps;
 
 public class NavigationSteps : BaseStep
 {
     public NavigationSteps(IWebDriver driver) : base(driver) { }
-    
+
     public LoginPage NavigateToLoginPage()
     {
         return new LoginPage(Driver);
@@ -18,12 +18,12 @@ public class NavigationSteps : BaseStep
     {
         return new DashboardPage(Driver);
     }
-    
+
     public AddProjectPage NavigateToAddProjectPage()
     {
         return new AddProjectPage(Driver);
     }
-    
+
     public DashboardPage SuccessfulLogin(User user)
     {
         return Login<DashboardPage>(user);
@@ -33,11 +33,11 @@ public class NavigationSteps : BaseStep
     {
         return Login<LoginPage>(user);
     }
-    
+
     public T Login<T>(User user) where T : BasePage
     {
         LoginPage = new LoginPage(Driver);
-        
+
         LoginPage.EmailInput.SendKeys(user.Email);
         LoginPage.PswInput.SendKeys(user.Password);
         LoginPage.LoginInButton.Click();

@@ -1,13 +1,13 @@
 using NLog;
-using ValueOfObjects.Core;
+using NLogExample.Core;
 
-namespace ValueOfObjects.Tests;
+namespace NLogExample.Tests;
 
 [SetUpFixture]
 public class BaseSuite
 {
     private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-    
+
     [OneTimeSetUp]
     public static void SuiteSetUp()
     {

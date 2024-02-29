@@ -1,4 +1,4 @@
-namespace ValueOfObjects.Helpers.Configuration;
+namespace NLogExample.Helpers.Configuration;
 
 public class AppSettings
 {

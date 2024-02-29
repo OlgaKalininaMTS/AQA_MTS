@@ -1,6 +1,6 @@
-using ValueOfObjects.Models;
+using NLogExample.Models;
 
-namespace ValueOfObjects.Tests;
+namespace NLogExample.Tests;
 
 //[TestFixture]
 public class ProjectTest : BaseTest

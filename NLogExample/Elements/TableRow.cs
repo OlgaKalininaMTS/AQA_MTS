@@ -1,12 +1,12 @@
 using OpenQA.Selenium;
 
-namespace ValueOfObjects.Elements;
+namespace NLogExample.Elements;
 
 public class TableRow
 {
     private UIElement _uiElement;
     private List<TableCell> _cells;
-    
+
     public TableRow(UIElement uiElement)
     {
         _uiElement = uiElement;
@@ -14,10 +14,10 @@ public class TableRow
 
         foreach (var cellElement in _uiElement.FindUIElements(By.TagName("td")))
         {
-            _cells.Add(new TableCell(cellElement)); 
+            _cells.Add(new TableCell(cellElement));
         }
     }
-    
+
     /// <summary>
     /// 
     /// </summary>

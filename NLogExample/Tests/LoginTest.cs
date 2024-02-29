@@ -1,4 +1,4 @@
-namespace ValueOfObjects.Tests;
+namespace NLogExample.Tests;
 
 [TestFixture]
 public class LoginTest : BaseTest

@@ -1,15 +1,15 @@
 using OpenQA.Selenium;
-using ValueOfObjects.Helpers;
-using ValueOfObjects.Helpers.Configuration;
+using NLogExample.Helpers;
+using NLogExample.Helpers.Configuration;
 
-namespace ValueOfObjects.Elements;
+namespace NLogExample.Elements;
 
 public class RadioButton
 {
     private List<UIElement> _uiElements;
     private List<string> _values;
     private List<string> _texts;
-    
+
     /// <summary>
     /// Локатор данного элемента должен использовать атрибут name
     /// </summary>
@@ -20,9 +20,9 @@ public class RadioButton
         _uiElements = new List<UIElement>();
         _values = new List<string>();
         _texts = new List<string>();
-        
+
         WaitsHelper _waitsHelper = new WaitsHelper(webDriver, TimeSpan.FromSeconds(Configurator.WaitsTimeout));
-            
+
         foreach (var webElement in _waitsHelper.WaitForPresenceOfAllElementsLocatedBy(by))
         {
             UIElement uiElement = new UIElement(webDriver, webElement);

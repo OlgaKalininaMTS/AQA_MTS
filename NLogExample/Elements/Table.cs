@@ -1,14 +1,14 @@
 using OpenQA.Selenium;
 
-namespace ValueOfObjects.Elements;
+namespace NLogExample.Elements;
 
 public class Table
 {
     private UIElement _uiElement;
     private List<string> _columns;
     private List<TableRow> _rows;
-    
-    
+
+
     /// <summary>
     /// Локатор данного элемента должен использовать тэг table
     /// </summary>
@@ -30,7 +30,7 @@ public class Table
             _rows.Add(new TableRow(rowElement));
         }
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
@@ -45,7 +45,7 @@ public class Table
 
     public TableCell GetCell(string targetColumn, string uniqueValue, int columnIndex)
     {
-        TableRow tableRow = GetRow(targetColumn, uniqueValue); 
+        TableRow tableRow = GetRow(targetColumn, uniqueValue);
         return tableRow.GetCell(columnIndex);
     }
 

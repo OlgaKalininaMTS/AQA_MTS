@@ -1,6 +1,7 @@
+using NLogExample;
 using NLog;
 
-namespace ValueOfObjects.Tests;
+namespace NLogExample.Tests;
 
 [TestFixture]
 public class NLogTest

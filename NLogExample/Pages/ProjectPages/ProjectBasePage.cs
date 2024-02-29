@@ -1,7 +1,8 @@
 using OpenQA.Selenium;
-using ValueOfObjects.Elements;
+using NLogExample.Pages;
+using NLogExample.Elements;
 
-namespace ValueOfObjects.Pages.ProjectPages;
+namespace NLogExample.Pages.ProjectPages;
 
 public abstract class ProjectBasePage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
 {
@@ -9,7 +10,7 @@ public abstract class ProjectBasePage(IWebDriver? driver, bool openByURL = false
     private static readonly By AnnouncementTextAreaBy = By.Id("announcement_display");
     private static readonly By ShowAnnouncementCheckBoxBy = By.Id("show_announcement");
     private static readonly By TypeRadioButtonBy = By.Name("suite_mode");
-    
+
     // Атомарные Методы
     public IWebElement NameInput => WaitsHelper.WaitForExists(NameInputBy);
     public IWebElement AnnouncementTextArea => WaitsHelper.WaitForExists(AnnouncementTextAreaBy);

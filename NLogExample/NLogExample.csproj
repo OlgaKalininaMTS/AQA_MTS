@@ -18,13 +18,14 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
         <PackageReference Include="NLog" Version="5.2.8" />
+        <PackageReference Include="NLog.Schema" Version="5.2.8" />
         <PackageReference Include="NUnit" Version="4.0.1" />
         <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
         <PackageReference Include="NUnit.Analyzers" Version="4.0.1">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="coverlet.collector" Version="6.0.0"/>
+        <PackageReference Include="coverlet.collector" Version="6.0.0" />
         <PackageReference Include="Selenium.Support" Version="4.17.0" />
         <PackageReference Include="Selenium.WebDriver" Version="4.17.0" />
         <PackageReference Include="WebDriverManager" Version="2.17.1" />
@@ -38,12 +39,12 @@
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-      <None Remove="NLog.config" />
-      <None Include="NLog.config.colored">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
+      <Content Include="NLog.config.colored">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="NLog.config.general" />
       <Content Update="NLog.config.general">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
 

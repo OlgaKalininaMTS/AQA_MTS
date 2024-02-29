@@ -1,9 +1,9 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using ValueOfObjects.Helpers;
-using ValueOfObjects.Helpers.Configuration;
+using NLogExample.Helpers;
+using NLogExample.Helpers.Configuration;
 
-namespace ValueOfObjects.Pages;
+namespace NLogExample.Pages;
 
 public abstract class BasePage : LoadableComponent<BasePage>
 {

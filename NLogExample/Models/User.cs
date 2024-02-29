@@ -1,4 +1,4 @@
-namespace ValueOfObjects.Models;
+namespace NLogExample.Models;
 
 public class User
 {
