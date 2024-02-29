@@ -1,5 +1,4 @@
-﻿using SeleniumBasic.Core;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumBasic.Utilites.Configuration;
 
 namespace SeleniumBasic.Core
@@ -18,7 +17,7 @@ namespace SeleniumBasic.Core
             };
 
             Driver?.Manage().Window.Maximize();
-            Driver?.Manage().Cookies.DeleteAllCookies();  // удаляем все куки
+            Driver?.Manage().Cookies.DeleteAllCookies();
             //Driver!.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
     }

@@ -1,25 +1,24 @@
-﻿using OpenQA.Selenium;
+﻿using System.Reflection;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Reflection;
 
 namespace SeleniumBasic.Core;
 
-public class SimpleDriver  // отвечает за создание нового экземпляра браузера
+public class SimpleDriver
 {
-    public IWebDriver Driver  // тип IWebDriver
+    public IWebDriver Driver
     {
         get
         {
-            var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); // путь к папке debug/reliase ПРАВИЛЬНО
-        // string path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName; // путь до директории
-          // return new ChromeDriver(@"C:\Users\Olga\source\repos\AQA_MTS\SeleniumBasic\Resources\");  // путь до драйвера на моем пк
+            var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            // string path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
-            //   Console.WriteLine(basePath);
-            //    Console.WriteLine(path);
+            //return new ChromeDriver(
+            //    @"/Users/aleksandr.trostyanko/Documents/Work/TeachMeSkills/Code/CSharp/AQA_MTS/SeleniumBasic/Resources/");
 
+            //return new ChromeDriver(path + @"/Resources/");
 
-            return new ChromeDriver(basePath + @"\Resources\");  // более правильный 
-
+            return new ChromeDriver(basePath + @"/Resources/");
         }
     }
 }
