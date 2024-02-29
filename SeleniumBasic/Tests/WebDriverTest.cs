@@ -1,8 +1,7 @@
-﻿using Microsoft.Playwright;
-using NUnitTest.Core;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
+using SeleniumBasic.Core;
 
-namespace NUnitTest.Tests;
+namespace SeleniumBasic.Tests;
 
 [TestFixture]
 public class WebDriverTest
@@ -11,32 +10,31 @@ public class WebDriverTest
     public void SimpleDriverTest()
     {
         IWebDriver webDriver = new SimpleDriver().Driver;
-
-
-        // webDriver.Close(); //закрывает текущую закладку браузера
-
-        webDriver.Manage().Window.Maximize();  // размеры окна браузера
-       // webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
-        webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
-
-
+        webDriver.Manage().Window.Maximize();
+        webDriver.Navigate().GoToUrl("http://onliner.by");
+        webDriver.Quit();
     }
 
     [Test]
     public void AdvancedDriverTest()
     {
         IWebDriver webDriver = new AdvancedDriver().GetChromeDriver();
-        webDriver.Manage().Window.Maximize();  // размеры окна браузера
-      //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
-        webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
+        webDriver.Manage().Window.Maximize();
+        webDriver.Navigate().GoToUrl("http://onliner.by");
+        webDriver.Quit();
     }
 
     [Test]
     public void FactoryDriverTest()
     {
-        IWebDriver webDriver = new Browser().Driver!;
-        webDriver.Manage().Window.Maximize();  // размеры окна браузера
-      //  webDriver.Navigate().GoToUrl("http://www.gismeteo.ru//");
-        webDriver.Quit(); // закрывает процесс/сессию диспетчере задач
+        IWebDriver webDriver = new Browser().Driver;
+        IWebDriver webDriver1 = new Browser().Driver;
+        webDriver.Manage().Window.Maximize();
+        webDriver.Navigate().GoToUrl("http://onliner.by");
+        webDriver1.Manage().Window.Maximize();
+        webDriver1.Navigate().GoToUrl("http://onliner.by");
+
+        webDriver.Quit();
+        webDriver1.Quit();
     }
 }
