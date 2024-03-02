@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Support\" />
+    <Folder Include="Hooks\" />
+    <Folder Include="Steps\" />
   </ItemGroup>
 
 </Project>
