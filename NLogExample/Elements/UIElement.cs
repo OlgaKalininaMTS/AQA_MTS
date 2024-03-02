@@ -1,11 +1,11 @@
 using System.Collections.ObjectModel;
 using System.Drawing;
+using CoreProject.Helpers;
+using CoreProject.Helpers.Configuration;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using NLogExample.Helpers;
-using NLogExample.Helpers.Configuration;
 
-namespace NLogExample.Elements;
+namespace CoreProject.Elements;
 
 public class UIElement : IWebElement
 {

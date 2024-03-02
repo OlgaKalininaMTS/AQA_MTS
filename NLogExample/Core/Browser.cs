@@ -1,8 +1,8 @@
-﻿using NLogExample.Core;
+﻿using CoreProject.Helpers.Configuration;
 using OpenQA.Selenium;
-using NLogExample.Helpers.Configuration;
+using CoreProject.Core;
 
-namespace NLogExample.Core
+namespace CoreProject.Core
 {
     public class Browser
     {

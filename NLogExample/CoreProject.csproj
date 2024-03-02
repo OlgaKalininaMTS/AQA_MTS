@@ -7,7 +7,7 @@
 
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
-        <RootNamespace>ValueOfObjects</RootNamespace>
+        <RootNamespace>CoreProject</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -42,8 +42,8 @@
       <Content Include="NLog.config.colored">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-      <Content Include="NLog.config.general" />
-      <Content Update="NLog.config.general">
+      <Content Include="NLog.config" />
+      <Content Update="NLog.config">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>

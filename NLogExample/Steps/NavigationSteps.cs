@@ -1,9 +1,9 @@
 using OpenQA.Selenium;
-using NLogExample.Pages;
-using NLogExample.Pages.ProjectPages;
-using NLogExample.Models;
+using CoreProject.Models;
+using CoreProject.Pages;
+using CoreProject.Pages.ProjectPages;
 
-namespace NLogExample.Steps;
+namespace CoreProject.Steps;
 
 public class NavigationSteps : BaseStep
 {

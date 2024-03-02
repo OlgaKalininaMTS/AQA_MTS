@@ -1,7 +1,7 @@
+using CoreProject.Pages;
 using OpenQA.Selenium;
-using NLogExample.Pages;
 
-namespace NLogExample.Pages.ProjectPages;
+namespace CoreProject.Pages.ProjectPages;
 
 public class ProjectDetailsPage(IWebDriver? driver, bool openByURL = false) : BasePage(driver, openByURL)
 {
