@@ -49,7 +49,6 @@ public class FirstTest : BaseTest
         countButton.Click();
         Thread.Sleep(2000);
 
-
         IWebElement resultMdrd = Driver.FindElement(By.Id("mdrd_res"));
         Assert.That(resultMdrd.Text, Is.EqualTo("64.11"));
 

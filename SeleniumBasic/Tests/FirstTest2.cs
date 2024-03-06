@@ -1,10 +1,15 @@
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumBasic.Core;
 
 namespace SeleniumBasic.Tests;
 
-public class FirstTest2 : BaseTest
+
+/// ///////////////////////////////////// Домашняя работа по Selenium.Basic. Задание 2 "Калькулятор ламината"
+
+
+public class FirstTest2 : BaseTest  // Калькулятор ламината
 {
     [Test]
     public void Laminate()
@@ -51,55 +56,26 @@ public class FirstTest2 : BaseTest
          installationMethodDropdown.SelectByText("со смещением на 1/2 длины");
          Thread.Sleep(1000);
 
-      // sendKeys(Keys.Chord(Keys.Control, "a", Keys.Delete))
-
-      //   Driver.FindElement(By.Id("min_length_segment_id")).SendKeys(Keys.Chord(Keys.Control, "a", Keys.Delete));
-       // MinimumCuttingLength.Actio
-      //  MinimumCuttingLength.SendKeys("350");
-      //  Thread.Sleep(1000);
-
-        /* IWebElement distanceWalls = Driver.FindElement(By.Id("indent_walls_id"));
-         distanceWalls.Clear();
-         distanceWalls.SendKeys("5");
-         Thread.Sleep(1000);
-        
-        IWebElement indent = Driver.FindElement(By.Id("indent_walls_id"));
-        indent.SendKeys(Keys.Control + "a");
-        indent.SendKeys(Keys.Delete);
-        indent.SendKeys("12");
+        /* не заполняется для способа укладки "со смещением на 1/2 длины"
+        IWebElement MinimumCuttingLength = Driver.FindElement(By.Id("min_length_segment_id"));
+        MinimumCuttingLength.SendKeys(Keys.Backspace);
+        MinimumCuttingLength.SendKeys("285");
+        Thread.Sleep(1000);
         */
-        /*  
 
-          IWebElement selectRace = Driver.FindElement(By.Id("race"));
-          SelectElement selectElementRace = new SelectElement(selectRace);
-          selectElementRace.SelectByValue("O");
-          Thread.Sleep(1000);
+        IWebElement DistanceWalls = Driver.FindElement(By.Id("indent_walls_id"));
+        DistanceWalls.SendKeys(Keys.Backspace);
+        DistanceWalls.SendKeys("7");
+        Thread.Sleep(1000);
 
-          IWebElement mass = Driver.FindElement(By.Id("mass"));
-          mass.SendKeys("60");
-          Thread.Sleep(1000);
+        IWebElement countButton = Driver.FindElement(By.Id("btn_calculate"));
+        countButton.Click();
+        Thread.Sleep(3000);
 
-          IWebElement grow = Driver.FindElement(By.Id("grow"));
-          grow.SendKeys("156");
-          Thread.Sleep(1000);
+        IWebElement RequiredLaminateDies = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[1]//span"));
+        Assert.That(RequiredLaminateDies.Text, Is.EqualTo("186"));
 
-          IWebElement countButton = Driver.FindElement(By.XPath("//button[text()='Рассчитать']"));
-          countButton.Click();
-          Thread.Sleep(2000);
-
-
-          IWebElement resultMdrd = Driver.FindElement(By.Id("mdrd_res"));
-          Assert.That(resultMdrd.Text, Is.EqualTo("64.11"));
-
-          IWebElement resultCkd_epi = Driver.FindElement(By.Id("ckd_epi_res"));
-          Assert.That(resultCkd_epi.Text, Is.EqualTo("72.55"));
-
-          IWebElement resultCge = Driver.FindElement(By.Id("cge_res"));
-          Assert.That(resultCge.Text, Is.EqualTo("77.95"));
-
-          IWebElement resultsChwartz = Driver.FindElement(By.Id("schwartz_res"));
-          Assert.That(resultsChwartz.Text, Is.EqualTo("78"));
-        */
-        //Console.WriteLine(Driver.FindElement(By.ClassName("calc-result")).Text);
+        IWebElement laminatePackages = Driver.FindElement(By.XPath("//div[@class='calc-result']//div[2]//span"));
+        Assert.That(laminatePackages.Text, Is.EqualTo("31"));       
     }
 }
