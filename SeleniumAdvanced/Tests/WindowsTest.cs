@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace SeleniumBasic.Tests;
+namespace SeleniumAdvanced.Tests;
 
 public class WindowsTest : BaseTest
 {

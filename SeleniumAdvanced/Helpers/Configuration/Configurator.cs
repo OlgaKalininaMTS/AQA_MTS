@@ -1,7 +1,8 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using SeleniumAdvanced.Helpers.Configuration;
 
-namespace SeleniumBasic.Helpers.Configuration
+namespace SeleniumAdvanced.Helpers.Configuration
 {
     public static class Configurator
     {
