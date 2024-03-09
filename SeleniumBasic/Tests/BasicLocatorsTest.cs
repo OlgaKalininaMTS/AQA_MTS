@@ -2,7 +2,7 @@ using Locators.Helpers.Configuration;
 using OpenQA.Selenium;
 //using SeleniumBasic.Helpers;
 
-namespace SeleniumBasic.Tests;
+namespace Locators.Tests;
 
 public class BasicLocatorsTest : BaseTest
 {

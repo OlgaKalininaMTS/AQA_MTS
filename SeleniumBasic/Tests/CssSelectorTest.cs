@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace SeleniumBasic.Tests;
+namespace Locators.Tests;
 
 public class CssSelectorTest : BaseTest
 {

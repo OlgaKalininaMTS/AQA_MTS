@@ -4,7 +4,7 @@
 //using NUnitTest.Core;
 using OpenQA.Selenium;
 
-namespace SeleniumBasic.Core
+namespace Locators.Core
 {
     public class Browser
     {

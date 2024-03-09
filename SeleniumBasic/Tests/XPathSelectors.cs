@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
 using Locators.Helpers.Configuration;
 
-namespace SeleniumBasic.Tests;
+namespace Locators.Tests;
 
 public class XPathSelectors : BaseTest
 {

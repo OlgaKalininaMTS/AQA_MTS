@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace NUnitTest.Tests;
+namespace Locators.Tests;
 
 public class CssSelectors
 {
