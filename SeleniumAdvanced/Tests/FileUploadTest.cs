@@ -18,12 +18,16 @@ public class FileUploadTest : BaseTest
         string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); // Получаем путь к исполняемому файлу (exe)
 
         // Конструируем путь к файлу внутри проекта
-        string filePath = Path.Combine(assemblyPath, "Resources", "Shelt.jpeg");
+        string filePath = Path.Combine(assemblyPath, "Resources", "Shelti.jpeg");
         Console.WriteLine(filePath);
 
         fileUploadPath.SendKeys(filePath);
 
         WaitsHelper.WaitForExists(By.Id("file-submit")).Submit();
+
+        // Assert.That(Driver.FindElement(By.CssSelector("#uploaded-files")).Text, Is.EqualTo("Shelti.jpeg"));
+        Assert.That(Driver.FindElement(By.XPath("//*[contains(text(), 'Shelti.jpeg')]")).Displayed);
+
         Thread.Sleep(5000);
     }
     
