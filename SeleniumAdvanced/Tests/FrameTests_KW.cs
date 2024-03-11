@@ -2,7 +2,7 @@ using OpenQA.Selenium;
 
 namespace SeleniumAdvanced.Tests;
 
-public class FrameTests : BaseTest
+public class FrameTests_KW : BaseTest
 {
     [Test]
     public void FrameTest() {
