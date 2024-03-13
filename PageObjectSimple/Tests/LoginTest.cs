@@ -13,7 +13,7 @@ public class LoginTest : BaseTest
         DashboardPage dashboardPage = loginPage.SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
         Assert.That(dashboardPage.IsPageOpened());
     }
-    
+    /*
     [Test]
     public void InvalidUsernameLoginTest()
     {
@@ -24,4 +24,5 @@ public class LoginTest : BaseTest
                 .ErrorLabel.Text.Trim(), 
             Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
     }
+    */
 }

@@ -7,9 +7,8 @@ namespace PageObjectSimple.Pages
         private static string END_POINT = "";
         
         // Описание элементов
-        private static readonly By EmailInputBy = By.Id("name");
-        private static readonly By PswInputBy = By.Id("password");
-        private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
+        private static readonly By UserNameInputBy = By.Id("user-name");
+        private static readonly By PasswordInputBy = By.Id("password");
         private static readonly By LoginInButtonBy = By.Id("button_primary");
         private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
         
@@ -19,10 +18,9 @@ namespace PageObjectSimple.Pages
         }
         
         // Методы
-        public IWebElement EmailInput => WaitsHelper.WaitForExists(EmailInputBy);  
+        public IWebElement EmailInput => WaitsHelper.WaitForExists(UserNameInputBy);  
         public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);  
-        public IWebElement PswInput => WaitsHelper.WaitForExists(PswInputBy);
-        public IWebElement RememberMeCheckbox => WaitsHelper.WaitForExists(RememberMeCheckboxBy);  
+        public IWebElement PswInput => WaitsHelper.WaitForExists(PasswordInputBy);
         public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
 
         // Комплексные
