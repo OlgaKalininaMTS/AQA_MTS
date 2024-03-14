@@ -9,25 +9,26 @@ namespace PageObjectSimple.Pages
         // Описание элементов
         private static readonly By UserNameInputBy = By.Id("user-name");
         private static readonly By PasswordInputBy = By.Id("password");
-        private static readonly By LoginInButtonBy = By.Id("button_primary");
-        private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
-        
+        private static readonly By LoginInButtonBy = By.Id("login-button");
+        private static readonly By ErrorLabelBy = By.ClassName("error-message-container");
+
+
         // Инициализация класса
         public LoginPage(IWebDriver driver) : base(driver)
         {
         }
         
         // Методы
-        public IWebElement EmailInput => WaitsHelper.WaitForExists(UserNameInputBy);  
+        public IWebElement UserlInput => WaitsHelper.WaitForExists(UserNameInputBy);  
         public IWebElement ErrorLabel => WaitsHelper.WaitForExists(ErrorLabelBy);  
-        public IWebElement PswInput => WaitsHelper.WaitForExists(PasswordInputBy);
+        public IWebElement PasswordInput => WaitsHelper.WaitForExists(PasswordInputBy);
         public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
 
         // Комплексные
         public DashboardPage SuccessFulLogin(string username, string password)
         {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
+            UserlInput.SendKeys(username);
+            PasswordInput.SendKeys(password);
             LoginInButton.Click();
 
             return new DashboardPage(Driver);
@@ -35,8 +36,8 @@ namespace PageObjectSimple.Pages
 
         public LoginPage IncorrectLogin(string username, string password)
         {
-            EmailInput.SendKeys(username);
-            PswInput.SendKeys(password);
+            UserlInput.SendKeys(username);
+            PasswordInput.SendKeys(password);
             LoginInButton.Click();
 
             return this;
@@ -49,7 +50,9 @@ namespace PageObjectSimple.Pages
 
         public override bool IsPageOpened()
         {
-            return LoginInButton.Displayed && EmailInput.Displayed;
+            return LoginInButton.Displayed && UserlInput.Displayed;
         }
+
+        public void ClickLoginInButton() => LoginInButton.Click();
     }
 }

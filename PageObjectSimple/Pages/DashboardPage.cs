@@ -4,7 +4,7 @@ namespace PageObjectSimple.Pages
 {
     public class DashboardPage : BasePage
     {
-        private static string END_POINT = "index.php?/dashboard";
+        private static string END_POINT = "inventory.html";
         
         // Описание элементов
         private static readonly By SidebarProjectsAddButtonBy = By.Id("sidebar-projects-add");
