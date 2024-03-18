@@ -25,13 +25,13 @@ namespace PageObjectSimple.Pages
         public IWebElement LoginInButton => WaitsHelper.WaitForExists(LoginInButtonBy);
 
         // Комплексные
-        public DashboardPage SuccessFulLogin(string username, string password)
+        public ProductsPage SuccessFulLogin(string username, string password)
         {
             UserlInput.SendKeys(username);
             PasswordInput.SendKeys(password);
             LoginInButton.Click();
 
-            return new DashboardPage(Driver);
+            return new ProductsPage(Driver);
         }
 
         public LoginPage IncorrectLogin(string username, string password)

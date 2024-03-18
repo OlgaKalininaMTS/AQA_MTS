@@ -1,26 +1,23 @@
-using PageObjectSimple.Helpers.Configuration;
 using PageObjectSimple.Pages;
-using PageObjectSimple.Steps;
+using PageObjectSimple.Helpers.Configuration;
 
-namespace PageObjectSimple.Tests;
+namespace PageObjectSimple.Tests;   // Готов
 
 public class LoginTest : BaseTest
 {
-    
+
     [Test]
     public void SuccessfulLoginTest()
     {
-        UserSteps userSteps = new UserSteps(Driver);
-        DashboardPage dashboardPage = userSteps
-            .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.SuccessFulLogin("standard_user", "secret_sauce");
+        ProductsPage productsPage = new ProductsPage(Driver);
 
-        Assert.That(dashboardPage.IsPageOpened);
-        
-
+        // Проверка 
+        Assert.That(productsPage.IsPageOpened);
     }
 
-    
-    /* готов
+
     [Test]
     public void InvalidUsernameLoginTest()
     {
@@ -28,8 +25,32 @@ public class LoginTest : BaseTest
         Assert.That(
             new LoginPage(Driver)
                 .IncorrectLogin("ssdd", "yyy")
-                .ErrorLabel.Text.Trim(), 
+                .ErrorLabel.Text.Trim(),
             Is.EqualTo("Epic sadface: Username and password do not match any user in this service"));
     }
-    */
+
+
+    [Test]
+    public void InvalidUsernameLoginLockedTest()
+    {
+        // Вид в стилистике Builder
+        Assert.That(
+            new LoginPage(Driver)
+                .IncorrectLogin("locked_out_user", "secret_sauce")
+                .ErrorLabel.Text.Trim(),
+            Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
+    }
+
+    [Test]
+    public void SuccessfulLoginProblemTest()
+    {
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.SuccessFulLogin("problem_user", "secret_sauce");
+        ProductsPage productsPage = new ProductsPage(Driver);
+
+        // Проверка 
+        Assert.That(productsPage.IsPageOpened);
+    }
+
+
 }
