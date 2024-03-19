@@ -19,6 +19,7 @@ namespace PageObjectSimple.Pages
 
         public IWebElement SidebarProjectsAddButton => Driver.FindElement(SidebarProjectsAddButtonBy);
         public IWebElement СheckingСart => WaitsHelper.WaitForExists(CartBadge);
+        //public IWebElement СheckingСartClick => СheckingСart.Click();
         public IWebElement AddProductButton => WaitsHelper.WaitForExists(AddProductButtonBy);
         public void AddProduct() => AddProductButton.Click();
         public IWebElement RemoveProductButton => WaitsHelper.WaitForExists(RemoveProductButtonBy);
