@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PageObject_HW.Pages
 {
-    public class CartPage : BasePage
+    public class YourCartPage : BasePage
     {
         private static string END_POINT = "cart.html";
 
@@ -22,7 +22,7 @@ namespace PageObject_HW.Pages
         private static readonly By ContinueShoppingButtonBy = By.Id("continue-shopping");
 
         // Инициализация класса + переопределение
-        public CartPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
+        public YourCartPage(IWebDriver driver, bool openPageByUrl = false) : base(driver, openPageByUrl)
         {
         }
 

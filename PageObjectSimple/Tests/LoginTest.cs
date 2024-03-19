@@ -10,14 +10,14 @@ public class LoginTest : BaseTest
     public void SuccessfulLoginTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
-        loginPage.SuccessFulLogin("standard_user", "secret_sauce");
+        loginPage.SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
         ProductsPage productsPage = new ProductsPage(Driver);
 
         // Проверка 
         Assert.That(productsPage.IsPageOpened);
     }
 
-
+    
     [Test]
     public void InvalidUsernameLoginTest()
     {
@@ -29,7 +29,7 @@ public class LoginTest : BaseTest
             Is.EqualTo("Epic sadface: Username and password do not match any user in this service"));
     }
 
-
+   
     [Test]
     public void InvalidUsernameLoginLockedTest()
     {
@@ -40,17 +40,17 @@ public class LoginTest : BaseTest
                 .ErrorLabel.Text.Trim(),
             Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
     }
+    
+   [Test]
+   public void SuccessfulLoginProblemTest()
+   {
+       LoginPage loginPage = new LoginPage(Driver);
+       loginPage.SuccessFulLogin("problem_user", "secret_sauce");
+       ProductsPage productsPage = new ProductsPage(Driver);
 
-    [Test]
-    public void SuccessfulLoginProblemTest()
-    {
-        LoginPage loginPage = new LoginPage(Driver);
-        loginPage.SuccessFulLogin("problem_user", "secret_sauce");
-        ProductsPage productsPage = new ProductsPage(Driver);
+       // Проверка 
+       Assert.That(productsPage.IsPageOpened);
+   }
 
-        // Проверка 
-        Assert.That(productsPage.IsPageOpened);
-    }
-
-
+   
 }
