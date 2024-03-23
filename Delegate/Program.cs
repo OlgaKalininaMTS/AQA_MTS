@@ -10,22 +10,25 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 /////////////////////////////////////////////////// Домашняя работа Задание 1
 //new Exercise1().RunNum();
 
+Exercise1 metodDeleg = new Exercise1();
+Exercise1.Num num = new Exercise1.Num(metodDeleg.RunNum);
+Console.WriteLine($"Случайное число: {num()}");
+
 /////////////////////////////////////////////////// Домашняя работа Задание 2
-/*
+
 FormulaClass formula = new FormulaClass();
 Exercise2 circumference = formula.Circumference;
 Exercise2 areaCircle = formula.AreaCircle;
 Exercise2 volumeBall = formula.VolumeBall;
 
-double circum = circumference(2);
-double area = areaCircle(7);
-double volume = volumeBall(3);
+double radius = 5;
 
-Console.WriteLine($"Длина окружности: {circum}");
-Console.WriteLine($"Площадь круга: {area}");
-Console.WriteLine($"Объем шара: {volume}");
-*/
+Console.WriteLine($"Длина окружности: {circumference(radius)}");
+Console.WriteLine($"Площадь круга: {areaCircle(radius)}");
+Console.WriteLine($"Объем шара: {volumeBall(radius)}");
+
 /////////////////////////////////////////////////// Домашняя работа Задание 3
+/*
 static void Main(string[] args)
 {
     int[] randomArray = GenerateRandomArray(8); // создаем массив из 8 чисел
@@ -64,4 +67,5 @@ static void Main(string[] args)
         }
         Console.WriteLine("]");
     }
+*/
 
