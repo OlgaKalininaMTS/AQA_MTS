@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueOfObjects", "ValueOfObject\ValueOfObjects.csproj", "{F6EBBFCC-9646-49FF-8998-6927904F1EE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpApi", "ValueOfObject\RestSharpApi.csproj", "{F6EBBFCC-9646-49FF-8998-6927904F1EE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

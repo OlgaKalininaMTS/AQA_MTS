@@ -1,0 +1,14 @@
+ 2024/03/23 14:30:18.438|DEBUG|{
+	 "id":18,
+	 "name":"WP Project 1",
+	 "announcement":"Test project&#039;s description",
+	 "show_announcement":true,
+	 "is_completed":false,
+	 "completed_on":null,
+	 "suite_mode":3,
+	 "default_role_id":null,
+	 "case_statuses_enabled":false,
+	 "url":"https:\/\/aqa2504.testrail.io\/index.php?\/projects\/overview\/18",
+	 "users":[],
+	 "groups":[]} 
+Значение поля 'id': 18
