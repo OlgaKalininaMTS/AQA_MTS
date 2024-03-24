@@ -29,7 +29,7 @@ public class LoginTest : BaseTest
         Assert.That(dashboardPage.IsPageOpened);
     }
 
-    //[Test]
+    [Test]
     public void InvalidUsernameLoginTest()
     {
         // Проверка
@@ -37,7 +37,7 @@ public class LoginTest : BaseTest
             new UserSteps(Driver)
                 .IncorrectLogin("ssdd", "")
                 .GetErrorLabelText(),
-            Is.EqualTo("Email/Login or Password is incorrect. Please try again."));
+            Is.EqualTo("Password is required."));
     }
 
     

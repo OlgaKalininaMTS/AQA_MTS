@@ -1,84 +1,39 @@
-using System.Collections.ObjectModel;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
 using Wrappers.Elements;
 
 namespace Wrappers.Pages;
 
-public class WaitsHelper(IWebDriver driver, TimeSpan timeout)
+public class ProjectsPage : BasePage
 {
-    private readonly WebDriverWait _wait = new(driver, timeout);
+    private static string END_POINT = "index.php?/admin/projects/overview";
 
-    public IWebElement WaitForVisibilityLocatedBy(By locator)
+    // Описание элементов
+    private static readonly By TitleLabelBy = By.ClassName("page_title");
+    private static readonly By AddProjectButtonBy = By.XPath("//*[contains(text(), 'Add Project')]");
+    private static readonly By ProjectsTableBy = By.CssSelector("table.grid");
+
+
+    // Инициализация класса
+    public ProjectsPage(IWebDriver driver) : base(driver)
     {
-        return _wait.Until(ExpectedConditions.ElementIsVisible(locator));
     }
 
-    public ReadOnlyCollection<IWebElement> WaitForAllVisibleElementsLocatedBy(By locator)
+    public ProjectsPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
     {
-        return _wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
     }
 
-    public ReadOnlyCollection<IWebElement> WaitForPresenceOfAllElementsLocatedBy(By locator)
+    protected override string GetEndpoint()
     {
-        return _wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(locator));
+        return END_POINT;
     }
 
-    public IWebElement WaitForExists(By locator)
+    public override bool IsPageOpened()
     {
-        return _wait.Until(ExpectedConditions.ElementExists(locator));
+        return TitleLabel.Text.Trim().Equals("Projects");
     }
 
-    public bool WaitForElementInvisible(By locator)
-    {
-        return _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(locator));
-    }
-
-    public bool WaitForElementInvisible(IWebElement webElement)
-    {
-        try
-        {
-            // Проверка, видим ли элемент
-            return _wait.Until(d => !webElement.Displayed);
-        }
-        catch (NoSuchElementException)
-        {
-            // Если элемент не найден, считаем его невидимым
-            return true;
-        }
-        catch (StaleElementReferenceException)
-        {
-            // Если элемент устарел, считаем его невидимым
-            return true;
-        }
-        catch (WebDriverTimeoutException)
-        {
-            throw new WebDriverTimeoutException("Элемент не стал невидимым в течение заданного времени");
-        }
-    }
-
-    public bool WaitForVisibility(IWebElement element)
-    {
-        return _wait.Until(_ => element.Displayed);
-    }
-
-    public UIElement WaitChildElement(IWebElement webElement, By by)
-    {
-        return new UIElement(driver, _wait.Until(_ => webElement.FindElement(by)));
-    }
-
-    public IWebElement FluentWaitForElement(By locator)
-    {
-        // Инициализация и параметризация FluentWait
-        WebDriverWait fluentWait = new WebDriverWait(driver, TimeSpan.FromSeconds(12))
-        {
-            PollingInterval = TimeSpan.FromMilliseconds(50)
-        };
-
-        fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-
-        // Использование
-        return fluentWait.Until(_ => driver.FindElement(locator));
-    }
+    // Атомарные Методы
+    public UIElement TitleLabel => new(Driver, TitleLabelBy);
+    public Button AddProjectButton => new(Driver, AddProjectButtonBy);
+    public Table ProjectsTable => new(Driver, ProjectsTableBy);
 }

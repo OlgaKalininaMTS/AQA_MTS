@@ -1,4 +1,5 @@
 using OpenQA.Selenium;
+using Wrappers.Elements;
 
 namespace Wrappers.Pages.ProjectPages;
 

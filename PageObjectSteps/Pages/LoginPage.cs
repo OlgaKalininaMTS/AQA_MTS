@@ -12,7 +12,9 @@ namespace Wrappers.Pages
         private static readonly By PswInputBy = By.Id("password");
         private static readonly By RememberMeCheckboxBy = By.Id("rememberme");
         private static readonly By LoginInButtonBy = By.Id("button_primary");
-        private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
+        //private static readonly By ErrorLabelBy = By.CssSelector("[data-testid='loginErrorText']");
+        private static readonly By ErrorLabelBy = By.ClassName("loginpage-message-image loginpage-message ");
+
 
         // Инициализация класса
         public LoginPage(IWebDriver driver) : base(driver)
