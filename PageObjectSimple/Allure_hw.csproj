@@ -11,6 +11,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Allure.Net.Commons" Version="2.11.0" />
+        <PackageReference Include="Allure.NUnit" Version="2.11.0" />
         <PackageReference Include="ExtentReports" Version="5.0.2" />
         <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
@@ -31,7 +33,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="allureConfig.json" />
       <None Remove="appsettings.json" />
+      <Content Include="allureConfig.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="appsettings.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>

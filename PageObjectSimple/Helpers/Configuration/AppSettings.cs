@@ -1,4 +1,4 @@
-namespace PageObjectSimple.Helpers.Configuration;
+namespace Allure_hw.Helpers.Configuration;
 
 public class AppSettings
 {

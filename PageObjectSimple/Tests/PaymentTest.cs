@@ -1,9 +1,9 @@
 using OpenQA.Selenium;
-using PageObjectSimple.Helpers;
-using PageObjectSimple.Helpers.Configuration;
-using PageObjectSimple.Pages;
+using Allure_hw.Helpers;
+using Allure_hw.Helpers.Configuration;
+using Allure_hw.Pages;
 
-namespace PageObjectSimple.Tests;
+namespace Allure_hw.Tests;
 
 public class PaymentTest : BaseTest
 {

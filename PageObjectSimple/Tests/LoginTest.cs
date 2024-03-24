@@ -1,12 +1,16 @@
-using PageObjectSimple.Pages;
-using PageObjectSimple.Helpers.Configuration;
+using Allure_hw.Pages;
+using Allure_hw.Helpers.Configuration;
+using NUnit.Allure.Attributes;
+using Allure.Net.Commons;
 
-namespace PageObjectSimple.Tests;
+namespace Allure_hw.Tests;
 
 public class LoginTest : BaseTest
 {
 
-    [Test]
+    [Test(Description = "Проверка успешного логирования стандартного пользователя")]
+    [AllureSeverity(SeverityLevel.normal)]
+    [AllureOwner("oakalinina")]   
     public void SuccessfulLoginTest()
     {
         LoginPage loginPage = new LoginPage(Driver);

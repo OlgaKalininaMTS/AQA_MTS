@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
-using PageObjectSimple.Helpers;
+using Allure_hw.Helpers;
 
-namespace PageObjectSimple.Pages
+namespace Allure_hw.Pages
 {
     public class YourCartPage : BasePage
     {
