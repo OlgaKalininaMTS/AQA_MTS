@@ -17,14 +17,14 @@ public class LoginTest : BaseTest
         loginPage.SuccessFulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password);
         ProductsPage productsPage = new ProductsPage(Driver);
 
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
     }
 
-    [Test]
+    [Test(Description = "Проверка неуспешного логирования")]
+    [AllureSeverity(SeverityLevel.critical)]
+    [AllureOwner("oakalinina")]
     public void InvalidUsernameLoginTest()
     {
-        // Вид в стилистике Builder
         Assert.That(
             new LoginPage(Driver)
                 .IncorrectLogin("ssdd", "yyy")
@@ -32,10 +32,11 @@ public class LoginTest : BaseTest
             Is.EqualTo("Epic sadface: Username and password do not match any user in this service"));
     }
 
-    [Test]
+    [Test(Description = "Проверка неуспешного логирования блокированного пользователя")]
+    [AllureSeverity(SeverityLevel.normal)]
+    [AllureOwner("oakalinina")]
     public void InvalidUsernameLoginLockedTest()
     {
-        // Вид в стилистике Builder
         Assert.That(
             new LoginPage(Driver)
                 .IncorrectLogin("locked_out_user", "secret_sauce")
@@ -43,16 +44,27 @@ public class LoginTest : BaseTest
             Is.EqualTo("Epic sadface: Sorry, this user has been locked out."));
     }
 
-    [Test]
+    [Test(Description = "Проверка успешного логирования проблемного пользователя")]
+    [AllureSeverity(SeverityLevel.normal)]
+    [AllureOwner("oakalinina")]
     public void SuccessfulLoginProblemTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.SuccessFulLogin("problem_user", "secret_sauce");
         ProductsPage productsPage = new ProductsPage(Driver);
 
-        // Проверка 
         Assert.That(productsPage.IsPageOpened);
     }
 
+    [Test(Description = "Проверка создания скриншота")]
+    [AllureSeverity(SeverityLevel.critical)]
+    [AllureOwner("oakalinina")]
+    public void ScreenshortSuccessfulLoginTest()
+    {
+        LoginPage loginPage = new LoginPage(Driver);
+        loginPage.SuccessFulLogin("standard_", "secret_sauce");
+        ProductsPage productsPage = new ProductsPage(Driver);
 
+        Assert.That(productsPage.IsPageOpened);
+    }
 }

@@ -2,13 +2,17 @@ using OpenQA.Selenium;
 using Allure_hw.Helpers;
 using Allure_hw.Helpers.Configuration;
 using Allure_hw.Pages;
+using Allure.Net.Commons;
+using NUnit.Allure.Attributes;
 
 namespace Allure_hw.Tests;
 
 public class PaymentTest : BaseTest
 {
-    [Test]
-    public void SuccessfulPaymentTest()
+    [Test(Description = "Проверка успешной покупки товара")]
+    [AllureSeverity(SeverityLevel.critical)]
+    [AllureOwner("oakalinina")]
+    public void PaymentSuccessfulTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.SuccessFulLogin("standard_user", "secret_sauce");

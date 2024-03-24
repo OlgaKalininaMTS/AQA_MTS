@@ -1,13 +1,17 @@
 using OpenQA.Selenium;
 using Allure_hw.Helpers.Configuration;
 using Allure_hw.Pages;
+using Allure.Net.Commons;
+using NUnit.Allure.Attributes;
 
 namespace Allure_hw.Tests;   
 
 public class ProductsTest : BaseTest
 {
-    [Test]
-    public void SuccessfulAddProductTest()
+    [Test(Description = "Проверка добавления товара")]
+    [AllureSeverity(SeverityLevel.critical)]
+    [AllureOwner("oakalinina")]
+    public void AddProductSuccessfulTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.SuccessFulLogin("standard_user", "secret_sauce");
@@ -16,9 +20,11 @@ public class ProductsTest : BaseTest
 
         Assert.That(productsPage.СheckingСart.Text, Is.EqualTo("1"));
     }
-    
-    [Test]
-    public void InvalidAddProductTest()
+
+    [Test(Description = "Проверка удаления товара")]
+    [AllureSeverity(SeverityLevel.critical)]
+    [AllureOwner("oakalinina")]
+    public void RemoveProductTest()
     {
         LoginPage loginPage = new LoginPage(Driver);
         loginPage.SuccessFulLogin("standard_user", "secret_sauce");

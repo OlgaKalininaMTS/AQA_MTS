@@ -45,18 +45,8 @@ public class BaseTest
             Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
             byte[] screenshotBytes = screenshot.AsByteArray;
 
-            //IWebElement test = Driver.FindElement(By.Id("sss"));
-            //Screenshot screenshotElement = ((ITakesScreenshot)test).GetScreenshot();
-
-            // Прикрепление скриншота к отчету
-            // Вариант 1
-            AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
-
-            // Вариант 2
-            //AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
-            //AllureApi.AddAttachment("data.txt", "text/plain", Encoding.UTF8.GetBytes("This os the file content."));
+            AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);            
         }
-
         Driver.Quit();
     }
 }
