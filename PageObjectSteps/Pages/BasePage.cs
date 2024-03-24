@@ -1,8 +1,8 @@
 using OpenQA.Selenium;
-using Wrappers.Helpers;
-using Wrappers.Helpers.Configuration;
+using Wrappers_hw.Helpers.Configuration;
+using Wrappers_hw.Helpers;
 
-namespace Wrappers.Pages;
+namespace Wrappers_hw.Pages;
 
 public abstract class BasePage
 {

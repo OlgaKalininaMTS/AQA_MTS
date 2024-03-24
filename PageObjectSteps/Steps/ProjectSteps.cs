@@ -1,8 +1,9 @@
 using OpenQA.Selenium;
-using Wrappers.Pages;
-using Wrappers.Pages.ProjectPages;
+using Wrappers_hw.Pages.ProjectPages;
+using Wrappers_hw.Pages;
+using Wrappers_hw.Steps;
 
-namespace Wrappers.Steps;
+namespace Wrappers_hw.Steps;
 
 public class ProjectsSteps : BaseSteps
 {

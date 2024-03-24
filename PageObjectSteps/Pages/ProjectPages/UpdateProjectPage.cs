@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
+using Wrappers_hw.Helpers;
 
-namespace Wrappers.Pages.ProjectPages;
+namespace Wrappers_hw.Pages.ProjectPages;
 
 public class UpdateProjectPage : BasePage
 {

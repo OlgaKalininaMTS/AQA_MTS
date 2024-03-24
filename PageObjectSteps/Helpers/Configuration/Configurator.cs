@@ -1,7 +1,8 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using Wrappers_hw.Helpers.Configuration;
 
-namespace Wrappers.Helpers.Configuration
+namespace Wrappers_hw.Helpers.Configuration
 {
     public static class Configurator
     {

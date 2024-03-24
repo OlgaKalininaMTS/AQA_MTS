@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
+using Wrappers_hw.Elements;
 
-namespace Wrappers.Elements;
+namespace Wrappers_hw.Elements;
 
 public class TableRow
 {

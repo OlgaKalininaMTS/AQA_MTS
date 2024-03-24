@@ -1,7 +1,6 @@
 using OpenQA.Selenium;
-using Wrappers.Elements;
 
-namespace Wrappers.Pages.ProjectPages;
+namespace Wrappers_hw.Pages.ProjectPages;
 
 public class AddProjectPage : ProjectBasePage
 {

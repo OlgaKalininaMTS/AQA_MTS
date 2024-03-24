@@ -1,6 +1,6 @@
 using OpenQA.Selenium;
 
-namespace Wrappers.Elements;
+namespace Wrappers_hw.Elements;
 
 public class Button
 {

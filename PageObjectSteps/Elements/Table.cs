@@ -1,9 +1,8 @@
 using OpenQA.Selenium;
-using Wrappers.Helpers;
-using Wrappers.Helpers.Configuration;
+using Wrappers_hw.Helpers;
+using Wrappers_hw.Helpers.Configuration;
 
-
-namespace Wrappers.Elements;
+namespace Wrappers_hw.Elements;
 
 public class Table
 {

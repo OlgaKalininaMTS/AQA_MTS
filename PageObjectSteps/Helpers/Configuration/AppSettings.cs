@@ -1,4 +1,4 @@
-namespace Wrappers.Helpers.Configuration;
+namespace Wrappers_hw.Helpers.Configuration;
 
 public class AppSettings
 {

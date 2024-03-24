@@ -1,7 +1,9 @@
 using OpenQA.Selenium;
-using Wrappers.Elements;
+using Wrappers_hw.Elements;
+using Wrappers_hw.Helpers;
+using Wrappers_hw.Pages;
 
-namespace Wrappers.Pages;
+namespace Wrappers_hw.Pages;
 
 public class DashboardPage : BasePage
 {

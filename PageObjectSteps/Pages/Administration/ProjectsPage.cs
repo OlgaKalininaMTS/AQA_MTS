@@ -1,7 +1,7 @@
 using OpenQA.Selenium;
-using Wrappers.Elements;
+using Wrappers_hw.Elements;
 
-namespace Wrappers.Pages;
+namespace Wrappers_hw.Pages;
 
 public class ProjectsPage : BasePage
 {

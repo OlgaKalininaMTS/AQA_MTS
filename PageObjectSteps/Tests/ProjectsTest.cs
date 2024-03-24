@@ -1,9 +1,11 @@
 using OpenQA.Selenium;
-using Wrappers.Elements;
-using Wrappers.Helpers.Configuration;
-using Wrappers.Pages.ProjectPages;
+using Wrappers_hw.Elements;
+using Wrappers_hw.Helpers.Configuration;
+using Wrappers_hw.Pages.ProjectPages;
+using Wrappers_hw.Steps;
+using Wrappers_hw.Tests;
 
-namespace Wrappers.Tests;
+namespace Wrappers_hw.Tests;
 
 public class ProjectsTest : BaseTest
 {

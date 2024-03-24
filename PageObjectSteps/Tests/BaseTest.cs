@@ -2,12 +2,12 @@ using System.Text;
 using Allure.Net.Commons;
 using NUnit.Allure.Core;
 using OpenQA.Selenium;
-using Wrappers.Core;
-using Wrappers.Helpers;
-using Wrappers.Helpers.Configuration;
-using Wrappers.Steps;
+using Wrappers_hw.Core;
+using Wrappers_hw.Helpers.Configuration;
+using Wrappers_hw.Helpers;
+using Wrappers_hw.Steps;
 
-namespace Wrappers.Tests;
+namespace Wrappers_hw.Tests;
 
 [Parallelizable(scope: ParallelScope.All)]
 [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
@@ -49,10 +49,10 @@ public class BaseTest
 
             // Прикрепление скриншота к отчету
             // Вариант 1
-            //AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
 
             // Вариант 2
-             AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            // AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
             // AllureApi.AddAttachment("data.txt", "text/plain", Encoding.UTF8.GetBytes("This os the file content."));
         }
 

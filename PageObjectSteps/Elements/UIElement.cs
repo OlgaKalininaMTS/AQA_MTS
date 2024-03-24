@@ -2,10 +2,10 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using Wrappers.Helpers;
-using Wrappers.Helpers.Configuration;
+using Wrappers_hw.Helpers;
+using Wrappers_hw.Helpers.Configuration;
 
-namespace Wrappers.Elements;
+namespace Wrappers_hw.Elements;
 
 public class UIElement : IWebElement
 {
@@ -30,8 +30,6 @@ public class UIElement : IWebElement
     {
         _webElement = webElement;
     }
-
-    //public IWebElement FindElement(By by) =>
 
     public IWebElement FindElement(By by)
     {

@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
-using Wrappers.Helpers.Configuration;
+using Wrappers_hw.Helpers.Configuration;
 
-namespace Wrappers.Core
+namespace Wrappers_hw.Core
 {
     public class Browser
     {
