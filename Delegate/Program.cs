@@ -1,68 +1,71 @@
 ﻿
 using Delegate;
-
-// делегаты могут ссылаться только на методы с параметрами аналогичными указанными в делегате
-// сигнатура делегата и метода должны совпадать
-// если делегат без параметров, то и метод должен быть без параметров
-// делегаты нужны для вызова методов, которые нам понадобятся
-// делегат может ссылаться на несколько методов одновременно - Multi Cast мультикаст,в должны совпадать сигнатуры
-
-// -================= Single Cast Delegate
-//new Example1().Run();  // делегат без параметров
-//new Example2().Run();
-
-// -================= Multi Cast Delegate
-//new Example3().Run();
-
-// -================= Анонимные методы
- //new Example4().Run();
-
-// -================= Delegate как параметр
-//new Example5().Run();
-
-// -================= Живой пример
- //new Example6().Run();
-
-// -================= Invoke
-// new Example7().Run();
+using System;
+using System.Drawing;
+using System.Numerics;
+//using static Delegate.Exercise3;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
+/////////////////////////////////////////////////// Домашняя работа Задание 1
+//new Exercise1().RunNum();
 
-// -================= Generic Delegates
- //new Example8().Run();
+Exercise1 metodDeleg = new Exercise1();
+Exercise1.Num num = new Exercise1.Num(metodDeleg.RunNum);
+Console.WriteLine($"Случайное число: {num()}");
 
-// -================= Lambda
-// Lambda lambda = new Lambda();
-// lambda.Example0();
-// lambda.Example1();
-// lambda.Example2();
-// lambda.Example3();
-// lambda.Example4();
-// lambda.Example5();
-// lambda.Example6();
+/////////////////////////////////////////////////// Домашняя работа Задание 2
 
-// -================= Action Delegate
-ActionExamples actionExamples = new ActionExamples();
+FormulaClass formula = new FormulaClass();
+Exercise2 circumference = formula.Circumference;
+Exercise2 areaCircle = formula.AreaCircle;
+Exercise2 volumeBall = formula.VolumeBall;
+
+double radius = 5;
+
+Console.WriteLine($"Длина окружности: {circumference(radius)}");
+Console.WriteLine($"Площадь круга: {areaCircle(radius)}");
+Console.WriteLine($"Объем шара: {volumeBall(radius)}");
+
+/////////////////////////////////////////////////// Домашняя работа Задание 3
 /*
-actionExamples.SimpleAction();
-
-actionExamples.PerformOperation(5, 3, Calc);
-actionExamples.PerformOperation(5, 3, (a, b) => Console.WriteLine($"Sum: {a + b}"));
-actionExamples.PerformOperation(5, 3, (a, b) => Console.WriteLine($"Multiply: {a * b}"));
-
-actionExamples.Run();
-
-void Calc(int x, int y)
+static void Main(string[] args)
 {
-    Console.WriteLine($"{x} {y}");
-}
-*/
-// -================= Predicate Delegate
-/*
-PredicateExample predicateExample = new PredicateExample();
-predicateExample.Run();
+    int[] randomArray = GenerateRandomArray(8); // создаем массив из 8 чисел
+    Console.WriteLine("Исходный массив:");
+    PrintArrayRun(randomArray);
+
+    TypeSorting typesorting = (TypeSorting)new Random().Next(0, 2); // выбираем тип сортировки
+    SortArrayDelegate sortingDelegate = TypeSort.GetSelectSortMetDelegate(typesorting);
+    int[] sortedArray = sortingDelegate(randomArray);
+
+    Console.WriteLine($"Массив отсортирован методом сортировки {typesorting}:");
+    PrintArrayRun(sortedArray); //вывод сортированного массива в виде строки
+} 
+     
+    static int[] GenerateRandomArray(int size)   // Генерация случайного массива состоящий из 10 чисел от 0 до 100
+    {
+        var random = new Random();
+        int[] runArray = new int[size];
+        for (int i = 0; i < size; i++)           //runArray.Length; i++)
+        {
+            // runArray[i] = new Random().Next(100);
+            runArray[i] = random.Next(100);
+        }
+        return runArray;
+    }
+    static void PrintArrayRun(int[] runArray)
+    {
+        Console.Write("[");
+        for (int i = 0; i < runArray.Length; i++)
+        {
+            Console.Write(runArray[i]);
+            if (i < runArray.Length - 1)
+            {
+                Console.Write(", ");
+            }
+        }
+        Console.WriteLine("]");
+    }
 */
 
-// -================= Func Delegate
-FuncExample funcExample = new FuncExample();
-funcExample.Run();
