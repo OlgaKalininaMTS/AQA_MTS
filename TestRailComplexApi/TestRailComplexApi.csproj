@@ -10,21 +10,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Fakers\**" />
-	  <Compile Remove="Models\**" />
-	  <Compile Remove="Services\**" />
-	  <Compile Remove="Tests\**" />
-	  <EmbeddedResource Remove="Fakers\**" />
-	  <EmbeddedResource Remove="Models\**" />
-	  <EmbeddedResource Remove="Services\**" />
-	  <EmbeddedResource Remove="Tests\**" />
-	  <None Remove="Fakers\**" />
-	  <None Remove="Models\**" />
-	  <None Remove="Services\**" />
-	  <None Remove="Tests\**" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Bogus" Version="35.5.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0" />
@@ -52,6 +37,10 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<None Remove="NLog.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Fakers\" />
 	</ItemGroup>
 
 </Project>

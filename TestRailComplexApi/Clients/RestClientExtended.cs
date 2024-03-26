@@ -4,7 +4,7 @@ using RestSharp;
 using RestSharp.Authenticators;
 using TestRailComplexApi.Helpers.Configuration;
 
-namespace TestRail_Example.Clients
+namespace TestRailComplexApi.Clients
 {
     public sealed class RestClientExtended
     {
@@ -20,7 +20,7 @@ namespace TestRail_Example.Clients
             };
 
             _client = new RestClient(options);
-            Debug.Assert(Configurator.Admin != null, "Configurator.Admin != null");
+            Debug.Assert(Configurator.Admin != null, "Configurator.Admin != null");  // сообщение об ошибке во время ОТЛАДКИ
         }
 
         public async Task<T> ExecuteAsync<T>(RestRequest request)
@@ -31,15 +31,7 @@ namespace TestRail_Example.Clients
 
             return response.Data ?? throw new InvalidOperationException();
         }
-
-        public async Task<RestResponse> ExecuteAsync(RestRequest request)
-        {
-            LogRequest(request);
-            var response = await _client.ExecuteAsync(request);
-            LogResponse(response);
-
-            return response;
-        }
+              
 
         private void LogRequest(RestRequest request)
         {
@@ -70,10 +62,12 @@ namespace TestRail_Example.Clients
             }
         }
 
-        public void Dispose()
+        public void Dispose()  // очистка объекта
         {
             _client?.Dispose();
             GC.SuppressFinalize(this);
         }
     }
+
+
 }

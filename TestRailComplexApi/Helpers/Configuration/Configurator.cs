@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using TestRailComplexApi.ApiTesting;
 
 namespace TestRailComplexApi.Helpers.Configuration
 {
@@ -39,15 +40,40 @@ namespace TestRailComplexApi.Helpers.Configuration
 
                 appSettings.URL = child["URL"];
                 appSettings.URI = child["URI"];
-                appSettings.Username = child["Username"];
-                appSettings.Password = child["Password"];
 
                 return appSettings;
             }
         }
 
-        public static string? BrowserType => Configuration[nameof(BrowserType)];
+        public static List<User?> Users
+        {
+            get
+            {
+                List<User?> users = new List<User?>();
+                var child = Configuration.GetSection("Users");
+                foreach (var section in child.GetChildren())
+                {
+                    var user = new User
+                    {
+                        Password = section["Password"],
+                        Username = section["Username"]
+                    };
+                    user.UserType = section["UserType"].ToLower() switch
+                    {
+                        "admin" => UserType.Admin,
+                        "standart" => UserType.Standart,
+                        _ => user.UserType
+                    };
 
+                    users.Add(user);
+                }
+
+                return users;
+            }
+        }
+        public static string? BrowserType => Configuration[nameof(BrowserType)];
         public static double WaitsTimeout => Double.Parse(Configuration[nameof(WaitsTimeout)]);
+        public static User? Admin => Users.Find(x => x?.UserType == UserType.Admin);
+        //public static User? UserByUsername(string username) => Users.Find(x => x?.Username == username);
     }
 }
