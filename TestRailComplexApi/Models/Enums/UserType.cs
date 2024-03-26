@@ -3,5 +3,5 @@
 public enum UserType
 {
     Admin,
-    Standart
+    Standard
 }

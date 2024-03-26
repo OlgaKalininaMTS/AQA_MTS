@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using RestSharp;
-using TestRailComplexApi.Clients;
 using TestRailComplexApi.ApiTesting;
+using TestRailComplexApi.Clients;
 
 namespace TestRailComplexApi.Services;
 

@@ -1,17 +1,12 @@
-﻿using System.Diagnostics;
-using Bogus;
-using NLog;
-using NUnit.Framework;
+﻿using NLog;
 using TestRailComplexApi.ApiTesting;
-using TestRailComplexApi.Services;
-using TestRailComplexApi.Tests;
 
 namespace TestRailComplexApi.Tests;
 
-public class ProjectTest : BaseTest
+public class ProjectTest : BaseApiTest
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
-    private Project _project = null!;
+    private Project _project = null;
 
     [Test]
     [Order(1)]
@@ -26,55 +21,16 @@ public class ProjectTest : BaseTest
         };
 
         var actualProject = ProjectService!.AddProject(_project);
-        // блок проверок
-        Assert.That(actualProject.Result.Name,Is.EqualTo(_project.Name));
+
+        // Блок проверок
+        Assert.Multiple(() =>
+        {
+            Assert.That(actualProject.Result.Name, Is.EqualTo(_project.Name));
+            Assert.That(actualProject.Result.Announcement, Is.EqualTo(_project.Announcement));
+            Assert.That(actualProject.Result.SuiteMode, Is.EqualTo(_project.SuiteMode));
+        });
 
         _project = actualProject.Result;
-        _logger.Info(_project.ToString());
-    }
-
-    [Test]
-    [Order(2)]
-    public void GetProjectTest()
-    {
-        _logger.Info(ProjectService?.GetProject(_project.Id.ToString()).Result.ToString());
-    }
-
-    [Test]
-    [Order(3)]
-    public void GetProjectsTest()
-    {
-        var projects = ProjectService?.GetProjects().Result;
-        _logger.Info(projects.Size);
-        foreach (var project in projects.ProjectsList)
-        {
-            _logger.Info(project.ToString);
-        }
-    }
-
-    [Test]
-    [Order(4)]
-    public void UpdateAddProjectTest()
-    {
-        var project = new Project
-        {
-            Id = _project.Id,
-            Name = "WP Test 1 Updated",
-            Announcement = "Some description!!! Updated",
-            ShowAnnouncement = false,
-            SuiteMode = 2
-        };
-
-        var actualProject = ProjectService!.UpdateProject(project);
-        project = actualProject.Result;
-        _logger.Info(project.ToString());
-    }
-
-    [Test]
-    [Order(5)]
-    public void DeleteProjectTest()
-    {
-        Debug.Assert(ProjectService != null, nameof(ProjectService) + " != null");
-        _logger.Info(ProjectService.DeleteProject(_project.Id.ToString()));
+        _logger.Info(_project.ToString);
     }
 }

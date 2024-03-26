@@ -4,7 +4,7 @@ using TestRailComplexApi.Services;
 
 namespace TestRailComplexApi.Tests;
 
-public class BaseTest
+public class BaseApiTest
 {
     private readonly Logger _logger = LogManager.GetCurrentClassLogger();
     protected ProjectService? ProjectService;
@@ -15,10 +15,10 @@ public class BaseTest
         var restClient = new RestClientExtended();
         ProjectService = new ProjectService(restClient);
     }
-    
+
     [OneTimeTearDown]
     public void TearDown()
     {
-        ProjectService.Dispose;
+        ProjectService?.Dispose();
     }
 }
