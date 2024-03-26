@@ -3,7 +3,6 @@ using Wrappers_hw.Elements;
 using Wrappers_hw.Helpers.Configuration;
 using Wrappers_hw.Pages;
 using Wrappers_hw.Steps;
-using Wrappers_hw.Tests;
 
 namespace Wrappers_hw.Tests;
 
