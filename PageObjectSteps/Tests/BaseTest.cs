@@ -49,10 +49,10 @@ public class BaseTest
 
             // Прикрепление скриншота к отчету
             // Вариант 1
-            AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            //AllureLifecycle.Instance.AddAttachment("Screenshot", "image/png", screenshotBytes);
 
             // Вариант 2
-            // AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
+             AllureApi.AddAttachment("Screenshot", "image/png", screenshotBytes);
             // AllureApi.AddAttachment("data.txt", "text/plain", Encoding.UTF8.GetBytes("This os the file content."));
         }
 

@@ -23,13 +23,16 @@ public class CheckBoxTest : BaseTest
     }*/
 
     [Test]
-    public void SuccessfulLoginTest1()
+    public void SuccessfulCheckBoxTest()
     {
         UserSteps
              .SuccessfulLogin(Configurator.AppSettings.Username, Configurator.AppSettings.Password)
              .AddProjectButton.Click();
 
-        //Assert.That(AddProjectPage.IsPageOpened);
+        AddProjectPage addProjectPage = new AddProjectPage(Driver);
+
+        //Assert.That(Driver.FindElement(By.ClassName("page_title")).Displayed);
+        Assert.That(addProjectPage.IsPageOpened);
 
     }    
 }

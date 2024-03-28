@@ -8,8 +8,6 @@ namespace Wrappers_hw.Pages;
 public class DashboardPage : BasePage
 {
     private static string END_POINT = "index.php?/dashboard";
-    //private static string END_POINT = "index.php?/admin/projects/overview";
-
 
     // Описание элементов
     private static readonly By TitleLabelBy = By.ClassName("page_title");
