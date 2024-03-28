@@ -39,8 +39,4 @@
 		<None Remove="NLog.config" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Fakers\" />
-	</ItemGroup>
-
 </Project>
